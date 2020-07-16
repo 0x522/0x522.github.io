@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>利用hugo搭建个人博客 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="利用hugo搭建个人博客" />
-<meta property="og:description" content="使用Hugo搭建个人博客 前期准备工作 下载hugo[https://gohugo.io/]，查看官方文档根据步骤下载。 测试hugo能否运行，在" />
+<meta property="og:description" content="使用Hugo搭建个人博客 前期准备工作 下载 hugo，查看官方文档根据步骤下载。 测试hugo能否运行，在gitbash或者cmd中写入命令 hugo ve" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
 <meta property="og:image" content="/logo.png"/>
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="利用hugo搭建个人博客"/>
-<meta name="twitter:description" content="使用Hugo搭建个人博客 前期准备工作 下载hugo[https://gohugo.io/]，查看官方文档根据步骤下载。 测试hugo能否运行，在"/>
+<meta name="twitter:description" content="使用Hugo搭建个人博客 前期准备工作 下载 hugo，查看官方文档根据步骤下载。 测试hugo能否运行，在gitbash或者cmd中写入命令 hugo ve"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/"
-        },"genre": "posts","wordcount":  166 ,
+        },"genre": "posts","wordcount":  700 ,
         "url": "\/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2020-07-16T09:59:56+08:00","dateModified": "2020-07-16T09:59:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">利用hugo搭建个人博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-16">2020-07-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 166 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-16">2020-07-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 700 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -117,12 +117,20 @@
   <ul>
     <li><a href="#前期准备工作">前期准备工作</a></li>
     <li><a href="#创建你的项目">创建你的项目</a></li>
+    <li><a href="#初始化一个本地git仓库">初始化一个本地git仓库</a></li>
+    <li><a href="#为博客选择一个主题">为博客选择一个主题</a></li>
+    <li><a href="#添加一些内容">添加一些内容</a></li>
+    <li><a href="#启动hugo本地服务器">启动hugo本地服务器</a></li>
+    <li><a href="#自定义主题">自定义主题</a></li>
+    <li><a href="#建立静态页面">建立静态页面</a></li>
+    <li><a href="#连接到github">连接到github</a></li>
+    <li><a href="#搭建完成快去丰富你的博客吧">搭建完成，快去丰富你的博客吧！</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="使用hugo搭建个人博客">使用Hugo搭建个人博客</h1>
 <h2 id="前期准备工作">前期准备工作</h2>
 <ol>
-<li>下载hugo[https://gohugo.io/]，查看官方文档根据步骤下载。</li>
+<li>下载 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer">hugo</a>，查看官方文档根据步骤下载。</li>
 <li>测试hugo能否运行，在gitbash或者cmd中写入命令 <code>hugo version</code>，出现 <code>Hugo Static Site Generator v0.74.1-15163266 </code>类似的字样说明你安装成功。</li>
 </ol>
 <h2 id="创建你的项目">创建你的项目</h2>
@@ -130,10 +138,120 @@
 <li>Hugo 提供了一个 new 命令来创建一个新的网站:你应当在一个安全的目录下运行以下命令。
 <ul>
 <li><code>hugo new site my_website</code></li>
-<li><code>cd my_website</code></li>
+<li><code>cd my_website </code></li>
 </ul>
 </li>
 </ul>
+<h2 id="初始化一个本地git仓库">初始化一个本地git仓库</h2>
+<ul>
+<li><code>git init</code></li>
+</ul>
+<h2 id="为博客选择一个主题">为博客选择一个主题</h2>
+<ul>
+<li><code>git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke</code></li>
+<li>利用上面一行命令下载一个主题，如果有需要请访问<a href="https://themes.gohugo.io" target="_blank" rel="noopener noreffer">hugo主题页面</a>令行下载其他主题。</li>
+<li><code>echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml</code> 添加主题到配置文件。</li>
+</ul>
+<h2 id="添加一些内容">添加一些内容</h2>
+<ul>
+<li><code>hugo new posts/my-first-post.md</code></li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown"> ---
+ title: &#34;My First Post&#34;
+ date: 2019-03-26T08:47:11+01:00
+ draft: true
+ ---
+ ## 里面的内容可以按照格式修改。
+ ## draft 参数表示是否被部署 true则不会被直接部署。
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="启动hugo本地服务器">启动hugo本地服务器</h2>
+<ul>
+<li><code>hugo server -D</code> 或者 <code>hugo server</code></li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">                         | EN
+ +------------------+----+
+ Pages            | 10
+ Paginator pages  |  0
+ Non-page files   |  0
+ Static files     |  3
+ Processed images |  0
+ Aliases          |  1
+ Sitemaps         |  1
+ Cleaned          |  0
+
+ Total in 11 ms
+ Watching for changes in /Users/bep/quickstart/{content,data,layouts,static,themes}
+ Watching for config changes in /Users/bep/quickstart/config.toml
+ Environment: &#34;development&#34;
+ Serving pages from memory
+ Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+ Press Ctrl+C to stop
+
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="自定义主题">自定义主题</h2>
+<p>您的新站点看起来已经不错了，但是在将其发布给公众之前，您需要对其进行一些调整，只需要配置config.toml文件。</p>
+<h2 id="建立静态页面">建立静态页面</h2>
+<ul>
+<li><code>hugo -D</code></li>
+<li>将会在你的站点目录下输出一个public目录。</li>
+</ul>
+<h2 id="连接到github">连接到github</h2>
+<ul>
+<li>首先你需要在github建立一个仓库，名字为(0x522.github.io)，0x522是作者的用户名，这里需要该为你自己的。<br>
+运行命令</li>
+<li><code>git remote add origin 你仓库的ssh或https链接</code> 这样就把public的本地仓库和你的github中的repo关联。</li>
+<li>在public目录下
+<ul>
+<li><code>git add .</code></li>
+<li><code>git commit -m 你要备注的内容</code></li>
+<li><code>git push -u origin master</code> 这是第一次push的写法，以后都直接<br>
+<code>git push</code> 即可。</li>
+</ul>
+</li>
+</ul>
+<h2 id="搭建完成快去丰富你的博客吧">搭建完成，快去丰富你的博客吧！</h2>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -19,7 +19,7 @@
     <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
     <author>作者</author>
     <guid>/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[使用Hugo搭建个人博客 前期准备工作 下载hugo[https://gohugo.io/]，查看官方文档根据步骤下载。 测试hugo能否运行，在]]></description>
+    <description><![CDATA[使用Hugo搭建个人博客 前期准备工作 下载 hugo，查看官方文档根据步骤下载。 测试hugo能否运行，在gitbash或者cmd中写入命令 hugo ve]]></description>
 </item><item>
     <title>Vim</title>
     <link>/vim/</link>
@@ -28,19 +28,19 @@
     <guid>/vim/</guid>
     <description><![CDATA[Vim 什么是vim？ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi]]></description>
 </item><item>
-    <title>cookie</title>
-    <link>/cookie/</link>
-    <pubDate>Tue, 19 May 2020 14:29:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/cookie/</guid>
-    <description><![CDATA[会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一]]></description>
-</item><item>
     <title>session</title>
     <link>/session/</link>
     <pubDate>Wed, 29 Apr 2020 14:29:56 &#43;0800</pubDate>
     <author>作者</author>
     <guid>/session/</guid>
     <description><![CDATA[Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object]]></description>
+</item><item>
+    <title>cookie</title>
+    <link>/cookie/</link>
+    <pubDate>Sun, 19 Apr 2020 14:29:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/cookie/</guid>
+    <description><![CDATA[会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一]]></description>
 </item><item>
     <title>堆排序</title>
     <link>/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
