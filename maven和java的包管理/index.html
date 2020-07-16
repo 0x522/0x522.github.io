@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title> - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="" />
+<meta property="og:description" content="什么是Maven Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。 Maven 也可被用于构建和管理各种项目，例如 java，Ruby，Scala 和其" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" />
+<meta property="og:image" content="/logo.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="什么是Maven Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。 Maven 也可被用于构建和管理各种项目，例如 java，Ruby，Scala 和其"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" /><link rel="next" href="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86\/"
+        },"genre": "posts","wordcount":  1570 ,
+        "url": "\/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/" title="访问博客主页">🎈 Back </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/" title="访问博客主页">🎈Back</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX"></h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1570 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#去哪里加载包中的类">去哪里加载包中的类</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#maven-一个跨时代的包管理程序">Maven 一个跨时代的包管理程序</a></li>
+    <li><a href="#maven的坐标">Maven的坐标</a></li>
+    <li><a href="#maven传递性依赖的解决">Maven传递性依赖的解决</a>
+      <ul>
+        <li><a href="#何为传递性依赖">何为传递性依赖</a></li>
+        <li><a href="#传递性依赖的动管理">传递性依赖的⾃动管理</a></li>
+        <li><a href="#依赖冲突的解决">依赖冲突的解决</a></li>
+        <li><a href="#依赖的scope">依赖的scope</a></li>
+        <li><a href="#当你看到如下异常大概率是发生了包冲突">当你看到如下异常，大概率是发生了包冲突</a></li>
+      </ul>
+    </li>
+    <li><a href="#值得一提的是maven还是优秀的自动化构建工具">值得一提的是Maven还是优秀的自动化构建工具</a></li>
+    <li><a href="#maven的生命周期">Maven的生命周期</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="什么是maven">什么是Maven</h1>
+<p>Maven 是一个项目管理工具，可以对 Java 项目进行构建、依赖管理。</p>
+<p>Maven 也可被用于构建和管理各种项目，例如 java，Ruby，Scala 和其他语言编写的项目。Maven 曾是 Jakarta 项目的子项目，现为由 Apache 软件基金会主持的独立 Apache 项目。</p>
+<h1 id="包的概念">包的概念</h1>
+<p>在java的概念中，包就是一些被用于某些功能的类的集合，把各种类打包压缩在一个文件中，表现为jar包war包等形式。</p>
+<ul>
+<li>JVM的工作被设计地相当简单
+<ul>
+<li>执行一个类的字节码</li>
+<li>假如执行过程中碰到了该类引用的其他类，就找到它并加载它。</li>
+</ul>
+</li>
+</ul>
+<h2 id="去哪里加载包中的类">去哪里加载包中的类</h2>
+<p><strong>类路径Classpath</strong><br>
+答案是通过-classpath/-cp可以找到JVM加载运行的每一个类，它们在classpath中以 : 分隔。<br>
+<strong>如何确定一个类</strong><br>
+利用类的全限定类名(目录层级)可以唯一确定一个类。</p>
+<h1 id="什么是包管理">什么是包管理</h1>
+<p>包管理的本质就是告诉JVM去哪里寻找第三方类，然后如何解决其中的版本冲突问题。</p>
+<h2 id="maven-一个跨时代的包管理程序">Maven 一个跨时代的包管理程序</h2>
+<ul>
+<li>Maven的包按照约定为所有的包编号，方便检索</li>
+<li>扩展：语义化版本
+<ul>
+<li>在软件管理的领域里存在着被称作“依赖地狱”的死亡之谷，系统规模越大，加入的包越多，你就越有可能在未来的某一天发现自己已深陷绝望之中。</li>
+<li>版本语义化就是依赖地狱的解决方案之一，例如<br></li>
+<li><strong>语义化版本 x.y.z  <em>主版本号.次版本号.修订号</em>，遵循版本号递增规则</strong><br><code>x是主版本号：当你做了不兼容的 API 修改，y是次版本号：当你做了向下兼容的功能性新增，z是修订号：当你做了向下兼容的问题修正。</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="maven的坐标">Maven的坐标</h2>
+<p>关于<strong>坐标</strong>，我们最早的认知应该是平面几何中的二维坐标系(x,y)，这样可以通过一个坐标唯一确定一个点。Maven也是利用坐标唯一确定一个包，坐标是Maven依赖管理的基础，Maven的中央仓库里拥有无数的jar或war包，通过项目中的<code>pom.xml</code>文件引入Maven依赖，Maven的坐标元素常用的有<code>&lt;groupId&gt;&lt;artifactId&gt;&lt;version&gt;&lt;packaging&gt;</code>等等，利用这些坐标可以轻松的确定一个包，以前需要什么包就去什么网站寻找的日子一去不复返了。<br>
+在我们开发项目的时候，我们要严格写入坐标，这样Maven才可以正确的注入依赖。</p>
+<h2 id="maven传递性依赖的解决">Maven传递性依赖的解决</h2>
+<h3 id="何为传递性依赖">何为传递性依赖</h3>
+<p>简单来说就是某个项目添加的第三方依赖中又依赖了其他的第三方依赖。</p>
+<h3 id="传递性依赖的动管理">传递性依赖的⾃动管理</h3>
+<ul>
+<li>原则上绝对不允许最终的classpath中出现同名不同版本的jar包。</li>
+</ul>
+<h3 id="依赖冲突的解决">依赖冲突的解决</h3>
+<ul>
+<li>原则：最近的胜出</li>
+<li>举个例子：<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../../static/%e4%be%9d%e8%b5%96%e5%9b%be.jpg"
+        data-srcset="../../static/%e4%be%9d%e8%b5%96%e5%9b%be.jpg, ../../static/%e4%be%9d%e8%b5%96%e5%9b%be.jpg 1.5x, ../../static/%e4%be%9d%e8%b5%96%e5%9b%be.jpg 2x"
+        data-sizes="auto"
+        alt="../../static/依赖图.jpg"
+        title="../../static/依赖图.jpg" /></li>
+<li>图中C的jar有两个版本，由于0.2版本离项目比较近，所以优先使用C的0.2版本。</li>
+<li>假如你一定要使用C的0.1版本，那么需要做以下操作之一：
+<ol>
+<li>在pom.xml中重新添加依赖，添加到依赖树 <code>mvn dependency:tree</code> 离你的项目相对更近的位置。</li>
+<li>在pom.xml中D的依赖标签中加入<code>&lt;exclusions&gt;</code>标签声明排除C的0.2版本。</li>
+</ol>
+</li>
+</ul>
+<h3 id="依赖的scope">依赖的scope</h3>
+<p>Maven的依赖范围在xml文件中用<code>&lt;scope&gt;</code>表示，参数有以下：</p>
+<ul>
+<li><code>compile</code> ：编译依赖。如果没有手动指定，那么就默认使用该参数，对于编译、测试、运行的三种classpath都有效。</li>
+<li><code>test</code> ：测试依赖。只对于测试classpath的范围有效，但是在编译代码或者运行项目时无效。</li>
+<li><code>provide</code> ：已提供依赖。别的容器(Web Container)会提供，对于编译、测试的classpath有效，对运行无效。</li>
+<li><code>runtime</code> ：运行时依赖。对于测试、运行时的classpath有效，但在编译代码时无效。</li>
+<li><code>system</code> ：系统依赖。从参与度来说，也provided相同，不过被依赖项不会从maven仓库抓，而是从本地文件系统拿，一定需要配合systemPath属性使用。</li>
+<li><code>import</code> ：导入依赖。略</li>
+</ul>
+<h3 id="当你看到如下异常大概率是发生了包冲突">当你看到如下异常，大概率是发生了包冲突</h3>
+<ul>
+<li>AbstractMethodError</li>
+<li>NoClassDefFoundError</li>
+<li>ClassNotFoundException</li>
+<li>LinkageError</li>
+</ul>
+<h2 id="值得一提的是maven还是优秀的自动化构建工具">值得一提的是Maven还是优秀的自动化构建工具</h2>
+<h2 id="maven的生命周期">Maven的生命周期</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../../static/maven.jpg"
+        data-srcset="../../static/maven.jpg, ../../static/maven.jpg 1.5x, ../../static/maven.jpg 2x"
+        data-sizes="auto"
+        alt="../../static/maven.jpg"
+        title="../../static/maven.jpg" /><br></p>
+<h1 id="参考书">参考书</h1>
+<p><a href="https://github.com/guanpengchn/awesome-books" target="_blank" rel="noopener noreffer">Maven实战.pdf</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 0001-01-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title=""><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title="" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title=""><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title=""><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title="" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title="" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/maven%E5%92%8Cjava%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86/" data-title=""><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" class="next" rel="next" title="算法第四版关于栈和队列">算法第四版关于栈和队列<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
