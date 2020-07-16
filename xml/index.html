@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>XML - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="XML" />
+<meta property="og:description" content="XML XML **概念：**Extensible Markup language 可扩展标记语言 可扩展：标签都是自定义的 功能： 存储数据 配置文件 在网络中传输数据 XML和HTML的区别" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/xml/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-02-22T14:29:56+08:00" />
+<meta property="article:modified_time" content="2020-02-22T14:29:56+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="XML"/>
+<meta name="twitter:description" content="XML XML **概念：**Extensible Markup language 可扩展标记语言 可扩展：标签都是自定义的 功能： 存储数据 配置文件 在网络中传输数据 XML和HTML的区别"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/xml/" /><link rel="prev" href="/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA/" /><link rel="next" href="/tomcat%E9%85%8D%E7%BD%AE/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "XML",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/xml\/"
+        },"genre": "posts","wordcount":  1873 ,
+        "url": "\/xml\/","datePublished": "2020-02-22T14:29:56+08:00","dateModified": "2020-02-22T14:29:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈 Google </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈Google</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">XML</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-22">2020-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1873 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#语法详情见w3school文档">语法详情见w3school文档</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="xml">XML</h1>
+<p><strong>XML</strong></p>
+<ul>
+<li>
+<p>**概念：**Extensible Markup language 可扩展标记语言</p>
+<ul>
+<li>可扩展：标签都是自定义的</li>
+</ul>
+</li>
+<li>
+<p><strong>功能：</strong></p>
+<ul>
+<li>存储数据
+<ul>
+<li>配置文件</li>
+<li>在网络中传输数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>XML和HTML的区别</strong></p>
+<ol>
+<li>xml标签都是自定义的，html标签都是预定义的</li>
+<li>xml的语法严格，html的语法松散</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li>xml是存储数据的，html是展示数据的</li>
+</ol>
+<ul>
+<li>
+<p><strong>语法</strong></p>
+<ol>
+<li>xml文档的后缀名是.xml</li>
+<li>xml文档的第一行必须写文档声明</li>
+<li>xml文档中有且仅有一个根标签</li>
+<li>属性值必须使用引号引起来</li>
+<li>标签必须正确关闭</li>
+<li>xml标签名称区分大小写</li>
+</ol>
+</li>
+<li>
+<p><strong>XML组成部分</strong></p>
+<ol>
+<li>
+<p>文档声明：</p>
+<ol>
+<li>
+<p>格式：<?xml 属性列表 ?></p>
+</li>
+<li>
+<p>属性列表：</p>
+<ul>
+<li>
+<p>version 版本号</p>
+</li>
+<li>
+<p>encoding 编码方式：告知解析引擎当前文档使用的字符集</p>
+</li>
+<li>
+<p>standalone 是否独立：</p>
+<p>​	取值：yes：依赖其他文件   no：不依赖其他文件</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>指令：结合css来控制xml中标签的样式</p>
+</li>
+<li>
+<p>标签：标签名称自定义，遵循万维网指定的规则</p>
+</li>
+<li>
+<p>属性：id值唯一</p>
+</li>
+<li>
+<p>文本：</p>
+<ul>
+<li>CDATA区：在该区域中的数据会被原样展示
+<ul>
+<li>格式：<![CDATA[数据]]></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>约束：规定xml文档的书写规则</p>
+<ul>
+<li>
+<p>作为框架的使用者</p>
+<ol>
+<li>能够在xml中引入约束文档</li>
+<li>能够读懂约束文档</li>
+</ol>
+</li>
+<li>
+<p>分类</p>
+<ol>
+<li>DTD：一种简单的约束技术
+<ul>
+<li>引入dtd文档到xml文档中
+<ul>
+<li>内部dtd：将约束规则定义在xml文档中</li>
+<li>外部dtd：将约束的规则定义在外部的dtd文件中
+<ul>
+<li>本地：<!DOCTYPE 根标签名 SYSTEM "dtd文件的位置"></li>
+<li>网络：<!DOCTYPE 根标签名 PUBLIC "dtd文件名字" “dtd文件位置的URL"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Schema；一种复杂的约束技术，可以限定标签的内容
+<ul>
+<li>后缀名.xsd</li>
+<li>引入Schema文档到xml
+<ol>
+<li>填写xml文档的根元素</li>
+<li>引入xsi前缀    <code>xmlns:xsi=&quot;&quot;</code></li>
+<li>引入xsd文件命名空间  <code>xsi:schemaLocation=&quot;xsd文档的URL名    XXX.xsd&quot;</code></li>
+<li>为每一个xsd约束声明一个前缀作为标识   <code>xmlns=&quot;xsd文档的URL名&quot;</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>解析XML文档</p>
+<ul>
+<li>
+<p>操作xml文档</p>
+<ol>
+<li>解析(读取)：将文档中的数据读取到内存中</li>
+<li>写入：将内存中的数据保存到xml文档中，持久化的存储</li>
+</ol>
+</li>
+<li>
+<p>解析xml的方式</p>
+<ul>
+<li>DOM：将标记语言文档一次性加载进内存，生成一棵<strong>DOM树</strong>
+<ul>
+<li>优点：操作方便，可以对文档进行CRUD的所有操作</li>
+<li>缺点：占内存多</li>
+</ul>
+</li>
+<li>SAX：逐行读取，基于事件驱动的
+<ul>
+<li>优点：不占内存</li>
+<li>缺点：只能读取，读取完立即释放，不能CRUD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>xml常见的解析器</p>
+<ol>
+<li>JAXP：sun公司提供的解析器，支持dom和sax两种思想</li>
+<li>DOM4J：一款非常优秀的解析器</li>
+<li>Jsoup；Jsoup是一款java的HTML解析器，也可以用来解析XML。它提供了一套非常省力的API，可通过DOM，css以及类似于JQuery的操作方法来取出和操作数据</li>
+<li>PULL：安卓操作系统内置的解析器，sax方式的</li>
+</ol>
+<p><strong>Jsoup的使用</strong></p>
+<ol>
+<li>导入jar包</li>
+<li>获取Document对象</li>
+<li>获取对应的标签Element对象</li>
+<li>获取数据</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JsoupDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//获取document对象，根据xml文档获取
+</span><span class="c1"></span>        <span class="c1">//获取student.xml的path
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="n">JsoupDemo</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getClassLoader</span><span class="o">().</span><span class="na">getResource</span><span class="o">(</span><span class="s">&#34;student.xml&#34;</span><span class="o">).</span><span class="na">getPath</span><span class="o">();</span>
+        <span class="n">Jsoup</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+        <span class="c1">//解析xml文档，加载文档进内存，获取dom树
+</span><span class="c1"></span>        <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">path</span><span class="o">),</span> <span class="s">&#34;utf-8&#34;</span><span class="o">);</span>
+        <span class="c1">//获取元素对象
+</span><span class="c1"></span>        <span class="n">Elements</span> <span class="n">names</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="na">getElementsByTag</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
+        <span class="n">Element</span> <span class="n">name</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+        <span class="n">String</span> <span class="n">ele</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="na">text</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ele</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>student.xml</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;</span>
+<span class="nt">&lt;student&gt;</span>
+    <span class="nt">&lt;student</span> <span class="na">number=</span><span class="s">&#34;0001&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>zhangsan<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;age&gt;</span>18<span class="nt">&lt;/age&gt;</span>
+        <span class="nt">&lt;sex&gt;</span>male<span class="nt">&lt;/sex&gt;</span>
+    <span class="nt">&lt;/student&gt;</span>
+    <span class="nt">&lt;student</span> <span class="na">number=</span><span class="s">&#34;0002&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>lisi<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;age&gt;</span>20<span class="nt">&lt;/age&gt;</span>
+        <span class="nt">&lt;sex&gt;</span>female<span class="nt">&lt;/sex&gt;</span>
+    <span class="nt">&lt;/student&gt;</span>
+<span class="nt">&lt;/student&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>对象的使用</strong></p>
+<ol>
+<li>
+<p>Jsoup：工具类，可以解析html或xml文档，返回Document</p>
+<ul>
+<li>parse：解析html或xml文档，返回Document
+<ul>
+<li><code>parse(File in, String charsetName)</code> 解析xml或html文件</li>
+<li><code>parse(String html)</code> 解析xml或html字符串</li>
+<li><code>parse(URL url, int timeoutMillis)</code> 通过网络路径解析</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Document：文档对象。代表内存中的dom树</p>
+<ul>
+<li>获取Element对象
+<ul>
+<li>getElementById(String id) 根据id属性值获取唯一的element对象</li>
+<li>getElementByTag(String tagName) 根据标签名称获取元素对象集合</li>
+<li>getElementByAttribute(String key) 根据属性名称获取元素对象的集合</li>
+<li>getElementByAttributeValue(String key,String value) 根据对应的属性名和属性值获取元素对象集合</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Elements：元素Element对象的<strong>集合</strong>，可以当作ArrayList<Element>来使用</p>
+</li>
+<li>
+<p>Element：元素对象</p>
+<ol>
+<li>获取element对象(获取的是子标签对象)
+<ul>
+<li>getElementById(String id) 根据id属性值获取唯一的element对象</li>
+<li>getElementByTag(String tagName) 根据标签名称获取元素对象集合</li>
+<li>getElementByAttribute(String key) 根据属性名称获取元素对象的集合</li>
+<li>getElementByAttributeValue(String key,String value) 根据对应的属性名和属性值获取元素对象集合</li>
+</ul>
+</li>
+<li>获取属性值
+<ul>
+<li>String attr(String key) 根据属性名称获取属性值，属性名不区分大小写</li>
+</ul>
+</li>
+<li>获取文本内容
+<ul>
+<li>String text() 获取文本内容，所有纯文本内容</li>
+<li>String html() 获取标签体所有内容，包括子标签的标签和文本内容</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Node：节点对象</p>
+<ul>
+<li>document和element的父类</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>快捷的查询方式</strong></p>
+<ul>
+<li>
+<p>selector：选择器</p>
+<ul>
+<li>使用方法：Elements    select(String cssQuery)
+<ul>
+<li>document.select(&ldquo;标签名称/#id名称/.类名称&rdquo;);</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Xpath：是xml路径语言，它是一种用来确定XML文档中某部分位置的语言</p>
+<ul>
+<li>
+<p>使用Jsoup的Xpath需要额外导入jar包</p>
+</li>
+<li>
+<p>根据document对象，创建JXDocument对象，来自JsoupXpath包</p>
+</li>
+<li>
+<h5 id="语法详情见w3school文档">语法详情见w3school文档</h5>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/xml/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/xml/" data-title="XML"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/xml/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/xml/" data-title="XML" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/xml/" data-title="XML"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/xml/" data-title="XML"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/xml/" data-title="XML" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/xml/" data-title="XML" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/xml/" data-title="XML"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA/" class="prev" rel="prev" title="关于href=&#34;javascript:void(0);&#34;的讨论"><i class="fas fa-angle-left fa-fw"></i>关于href=&#34;javascript:void(0);&#34;的讨论</a>
+            <a href="/tomcat%E9%85%8D%E7%BD%AE/" class="next" rel="next" title="Tomcat的配置">Tomcat的配置<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

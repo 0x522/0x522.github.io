@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>请求响应原理原理 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="请求响应原理原理" />
+<meta property="og:description" content="Request和Response 假设一个场景：我们使用客户端的浏览器输入url去访问服务器(tomcat)，叫做一个请求，请求包含请求消息，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-02-29T14:29:56+08:00" />
+<meta property="article:modified_time" content="2020-02-29T14:29:56+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="请求响应原理原理"/>
+<meta name="twitter:description" content="Request和Response 假设一个场景：我们使用客户端的浏览器输入url去访问服务器(tomcat)，叫做一个请求，请求包含请求消息，"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" /><link rel="prev" href="/http/" /><link rel="next" href="/%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "请求响应原理原理",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86\/"
+        },"genre": "posts","wordcount":  1601 ,
+        "url": "\/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86\/","datePublished": "2020-02-29T14:29:56+08:00","dateModified": "2020-02-29T14:29:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈 Google </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈Google</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">请求响应原理原理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-29">2020-02-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1601 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#request和response">Request和Response</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="request和response">Request和Response</h2>
+<p><strong>假设一个场景：我们使用客户端的浏览器输入url去访问服务器(tomcat)，叫做一个请求，请求包含请求消息，服务器会最终会给我们一个响应，这里面的响应消息是人为设置的，然而这里面的具体操作如下：</strong></p>
+<ol>
+<li>tomcat服务器会根据请求的url中的资源路径(这里是虚拟目录，人为配置的资源路径)，创建对应的Servlet实现类对象</li>
+<li>tomcat服务器，会创建request和response对象，request对象中封装请求消息数据</li>
+<li>tomcat将request和response两个对象传递给<strong>service</strong>方法，并且调用<strong>service</strong>方法，进行具体的操作</li>
+<li>我们可以通过request对象获取请求消息数据，通过response对象设置响应消息数据</li>
+<li>服务器在给浏览器做出响应之前，会从response对象中拿已经设置好的响应消息数据</li>
+</ol>
+<ul>
+<li>
+<p><strong>request和response对象的原理</strong></p>
+<ol>
+<li>request和response对象是由服务器创建的</li>
+<li>request对象是来获取请求消息，response对象是来设置响应消息</li>
+</ol>
+</li>
+<li>
+<p><strong>request对象继承的体系结构</strong></p>
+<ul>
+<li>ServletRequest接口</li>
+<li>HttpServletRequest接口是ServletRequest的子接口，由tomcat服务器来实现
+<ul>
+<li>具体是在tomcat源码下的<strong>java.org.apache.catalina.connector.RequestFacade类实现了HttpServletRequest</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>request功能</strong></p>
+<ul>
+<li>
+<p>获取请求消息数据</p>
+<ol>
+<li>
+<p><strong>获取请求行的数据</strong></p>
+<ul>
+<li><strong>例：GET(请求方式)    /tomcat/demo2?name=zhangsan  	HTTP/1.1</strong></li>
+<li>方法：
+<ol>
+<li>获取请求方式：获取GET、POST或者其他请求方式
+<ul>
+<li><code>String getMethod()</code></li>
+</ul>
+</li>
+<li>获取虚拟目录，这里是<code>/tomcat</code>：
+<ul>
+<li><code>String getContextPath()</code></li>
+</ul>
+</li>
+<li>获取Servlet路径，这里是<code>/demo2</code>：
+<ul>
+<li><code>String getServletPath()</code></li>
+</ul>
+</li>
+<li>获取<strong>get方式</strong>的请求参数,这里是<code>name=zhangsan</code>：
+<ul>
+<li><code>String getQueryString()</code></li>
+</ul>
+</li>
+<li>获取请求的URI/URL(<strong>URL是URI的子集，URL可以是URL，URI不一定是URL，URL可以实现某个资源的具体locate</strong>)
+<ul>
+<li><code>String getRequestURI()</code> ，这里是 <code>/tomcat/demo2</code></li>
+<li><code>StringBuffer getRequestURL()</code>，这里是 <code>https://localhost:80/tomcat/demo2</code></li>
+</ul>
+</li>
+<li>获取协议以及版本 <code>HTTP/1.1</code>
+<ul>
+<li><code>String getProtocol()</code></li>
+</ul>
+</li>
+<li>获取客户机的ip地址
+<ul>
+<li><code>String getRemoteAddr()</code></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>获取请求头的数据</strong></p>
+<p><strong>方法：</strong></p>
+<ul>
+<li>
+<p><code>String getHeader(String name)</code> 通过请求头的名称获取请求头的值，<strong>参数值不区分大小写</strong></p>
+<p><strong>常用请求头：</strong></p>
+<ol>
+<li>user-agent：使用的浏览器版本</li>
+<li>referer：发出请求的URL</li>
+</ol>
+</li>
+<li>
+<p><code>Enumeration&lt;String&gt; getHeaderNames()</code> 获取所有的请求头名称</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>获取请求体的数据</strong></p>
+<ul>
+<li>请求体：只有Post请求方式，才有请求体，在请求体中封装了Post请求的请求参数</li>
+<li>获取方法：
+<ol>
+<li>获取流对象
+<ul>
+<li><code>BufferedReader getReader()</code> 获取字符输入流，只能操作字符数据</li>
+<li><code>ServletInputStream getInputStream()</code>  获取字节输入流，可以操作所有类型的数据</li>
+</ul>
+</li>
+<li>再从流对象中拿数据</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>其他功能</p>
+<ol>
+<li>
+<p>获取请求参数通用的方法，<strong>兼容get和post两种请求方式</strong></p>
+<ol>
+<li>
+<p><code>String getParameter(String name)</code>  根据参数名称获取参数值</p>
+</li>
+<li>
+<p><code>String[] getParameterValues(String name)</code> 根据参数名称获取参数值的数组</p>
+</li>
+<li>
+<p><code>Enumeration&lt;String&gt; getParameterNames()</code> 获取所有请求参数的名称</p>
+</li>
+<li>
+<p><code>Map&lt;String,String[]&gt; getParameterMap()</code> 获取所有参数的Map集合</p>
+<ul>
+<li>使用<code>keySet()</code>可以把Map里的<strong>key</strong>封装成<strong>Set</strong>，再通过<code>get()</code>来获取每一个<strong>key</strong>对应的<strong>value[]</strong></li>
+<li>使用<code>entrySet()</code></li>
+</ul>
+<p><strong>中文乱码问题</strong></p>
+<ul>
+<li>在doPost方法中的获取请求参数之前使用<code>request.setCharacterEncoding(&quot;utf-8&quot;);</code>可以避免乱码</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>请求转发：一种在服务器内部的资源跳转方式</p>
+<p>步骤：</p>
+<ol>
+<li>通过Request对象获取请求转发器对象：RequestDispatcher <code>getRequestDispatcher (String path)</code></li>
+<li>通过RequestDispatcher对象来进行转发：<code>forward(ServletRequest request,Servlet Response response)</code></li>
+</ol>
+<p>特点：</p>
+<ol>
+<li>浏览器地址栏路径不发生变化</li>
+<li>只能转发到当前服务器内部资源中</li>
+<li>转发是一次请求</li>
+</ol>
+</li>
+<li>
+<p>共享数据：</p>
+<ul>
+<li>域对象：一个有作用范围的对象，可以在范围内共享数据</li>
+<li>request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据</li>
+<li>方法：
+<ol>
+<li><code>setAttribute(String name,Object obj)</code>：存储数据</li>
+<li><code>Object  getAttribute(String name)</code>：通过键获取值</li>
+<li><code>removeAttribute(String name)</code>：通过键移除键值对</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>获取ServletContext ：</p>
+<p><code>request.getServletContext()</code></p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/request%E5%92%8Cresponse%E5%8E%9F%E7%90%86/" data-title="请求响应原理原理"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/http/" class="prev" rel="prev" title="HTTP"><i class="fas fa-angle-left fa-fw"></i>HTTP</a>
+            <a href="/%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8/" class="next" rel="next" title="循环链表">循环链表<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>算法第四版关于栈和队列 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="算法第四版关于栈和队列" />
+<meta property="og:description" content="栈和队列 许多基础数据类型都和对象的集合有关。具体来说，数据类型的值就是一组对象的集合，所有操作都是关于添加、删除或者是访问集合中的对象。这里" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-01-16T09:29:56+08:00" />
+<meta property="article:modified_time" content="2020-01-16T09:29:56+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="算法第四版关于栈和队列"/>
+<meta name="twitter:description" content="栈和队列 许多基础数据类型都和对象的集合有关。具体来说，数据类型的值就是一组对象的集合，所有操作都是关于添加、删除或者是访问集合中的对象。这里"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" /><link rel="next" href="/jdbc/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "算法第四版关于栈和队列",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0\/"
+        },"genre": "posts","wordcount":  2554 ,
+        "url": "\/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0\/","datePublished": "2020-01-16T09:29:56+08:00","dateModified": "2020-01-16T09:29:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈 Google </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/https:/www.google.com" title="访问google">🎈Google</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">算法第四版关于栈和队列</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-16">2020-01-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2554 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#栈和队列">栈和队列</a>
+      <ul>
+        <li><a href="#链表">链表</a></li>
+        <li><a href="#栈">栈</a>
+          <ul>
+            <li><a href="#应用">应用</a></li>
+          </ul>
+        </li>
+        <li><a href="#队列">队列</a></li>
+        <li><a href="#练习">练习</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="栈和队列">栈和队列</h2>
+<p>许多基础数据类型都和对象的集合有关。具体来说，数据类型的值就是一组对象的集合，所有操作都是关于添加、删除或者是访问集合中的对象。这里主要讨论的是栈（stack）和队列（queue）的几种实现。</p>
+<h3 id="链表">链表</h3>
+<p>**定义：**链表是一种递归的数据结构，它或者为空（null），或者是指向一个结点（node）的引用，该结点含有一个泛型元素和一个指向另一条链表的引用。</p>
+<p>**注意：**之所以在这里定义，是因为后续我们的栈和队列的实现都要使用链表来构造。<strong>在结构化存储数据集时，链表是数组的一种重要的代替方式</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//定义Node，且将Node声明为私有嵌套类之后，我们可以将Node的方法和实例变量的访问范围限制在包含它的类中
+</span><span class="c1"></span><span class="kd">private</span> <span class="kd">class</span> <span class="nc">Node</span>
+<span class="o">{</span>
+	<span class="n">Item</span> <span class="n">item</span><span class="o">;</span>
+	<span class="n">Node</span> <span class="n">next</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">数据结构</span>							<span class="n">优点</span>								<span class="n">缺点</span>
+<span class="n">数组</span>						<span class="n">通过索引可以直接访问任意元素</span>				<span class="n">在初始化时就需要知道元素的数量</span>
+<span class="n">链表</span>						<span class="n">使用的空间大小和元素数量成正比</span>				<span class="n">需要通过引用访问任意元素</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="栈">栈</h3>
+<p>下压栈或简称栈，是一种基于后进先出（LIFO）策略的集合类型。</p>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">下压栈</span><span class="err">（</span><span class="n">后进先出</span><span class="err">，</span><span class="n">LIFO</span><span class="err">）</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span>
+
+<span class="nf">Stack</span><span class="o">()</span> <span class="c1">//创建一个空栈
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">push</span><span class="o">()</span> <span class="c1">//添加一个元素
+</span><span class="c1"></span><span class="n">Item</span> <span class="nf">pop</span><span class="o">()</span>	<span class="c1">//删除最近添加的元素
+</span><span class="c1"></span><span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="c1">//栈是否为空
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">size</span><span class="o">()</span>	<span class="c1">//栈中元素的数量
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>下压(LIFO)栈（能够动态的调整数组大小）</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.Iterator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ResizingArrayStack</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Item</span><span class="o">[]</span> <span class="n">a</span> <span class="o">=</span> <span class="o">(</span><span class="n">Item</span><span class="o">[])</span> <span class="k">new</span> <span class="n">Objects</span><span class="o">[</span><span class="n">1</span><span class="o">];</span><span class="c1">//栈元素
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span><span class="c1">//元素数量
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">N</span> <span class="o">==</span> <span class="n">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">N</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">resize</span><span class="o">(</span><span class="kt">int</span> <span class="n">max</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//将栈移动到一个大小为max的新数组
+</span><span class="c1"></span>        <span class="n">Item</span><span class="o">[]</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="n">Item</span><span class="o">[])</span> <span class="k">new</span> <span class="n">Objects</span><span class="o">[</span><span class="n">max</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">temp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="o">}</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//将元素添加到栈顶
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">N</span> <span class="o">==</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="n">resize</span><span class="o">(</span><span class="n">2</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">N</span><span class="o">++]</span> <span class="o">=</span> <span class="n">item</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Item</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//从栈顶删除元素
+</span><span class="c1"></span>        <span class="n">Item</span> <span class="n">item</span> <span class="o">=</span> <span class="n">a</span><span class="o">[--</span><span class="n">N</span><span class="o">];</span>
+        <span class="n">a</span><span class="o">[</span><span class="n">N</span><span class="o">]</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span><span class="c1">//避免对象游离
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">N</span> <span class="o">&gt;</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">N</span> <span class="o">==</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">4</span><span class="o">)</span> <span class="n">resize</span><span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">2</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">item</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;)</span> <span class="k">new</span> <span class="n">ReverseArrayIterator</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kd">class</span> <span class="nc">ReverseArrayIterator</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="o">{</span>
+        <span class="c1">//支持后进先出的迭代
+</span><span class="c1"></span>        <span class="kd">private</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">N</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasnext</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="n">Item</span> <span class="nf">next</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">a</span><span class="o">[--</span><span class="n">i</span><span class="o">];</span>
+        <span class="o">}</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">}</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="nf">iterator</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这份泛型的可迭代的<code>Stack API</code>的实现是所有集合类抽象数据类型实现的模板。它将所有元素保存在数组中，并动态调整数组的大小以保持数组大小和栈大小之比小于一个常数。</p>
+<p>特别要注意的是</p>
+<ul>
+<li><code>push()</code>操作中，检查数组是否太小。具体来说，我们会通过检查栈大小N和数组大小<code>a.length</code>是否相等来检查数组是否能够容纳新的元素。如果没有多余的空间，我们会将数组的长度加倍。然后就可以像以前一样使用<code>a[N++] = item</code>插入新元素了。</li>
+<li>类似，<code>pop()</code>操作中，首先删除栈顶元素，然后如果数组太大我们就将它的长度减半。只要稍加思考，你就明白正确的检测条件是栈的大小是否小于数组的四分之一。在数组长度被减半之后，它的状态大约为半满，在下次需要改变数组大小之前 仍然能够进行多次<code>push()</code>和<code>pop()</code>操作。</li>
+<li>在以上实现中，栈永远不会溢出，使用率也永远不会低于四分之一（除非栈为空，那种情况下数组的大小为1）。</li>
+</ul>
+<h4 id="应用">应用</h4>
+<ul>
+<li>
+<p>算数表达式求值</p>
+<ul>
+<li>将操作数压入操作数栈；</li>
+<li>将运算符压入运算符栈；</li>
+<li>忽略左括号；</li>
+<li>在遇到右括号时，弹出一个运算符，弹出所需数量的操作数，并将运算符和操作数的运算结果压入操作数栈。</li>
+</ul>
+<p><strong>Dijkstra的双栈算数表达式求值算法</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Evaluate</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ops</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">vals</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;();</span>
+        <span class="k">while</span> <span class="o">(!</span><span class="n">StdIn</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span><span class="c1">//读取字符，如果是运算符则压入栈
+</span><span class="c1"></span>            <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">StdIn</span><span class="o">.</span><span class="na">readString</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;(&#34;</span><span class="o">))</span> <span class="o">;</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;+&#34;</span><span class="o">))</span>
+                <span class="n">ops</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;-&#34;</span><span class="o">))</span>
+                <span class="n">ops</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;*&#34;</span><span class="o">))</span>
+                <span class="n">ops</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">))</span>
+                <span class="n">ops</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;sqrt&#34;</span><span class="o">))</span>
+                <span class="n">ops</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;)&#34;</span><span class="o">))</span> <span class="o">{</span><span class="c1">//如果字符是“）”则弹出运算符和操作数，计算结果并压入栈
+</span><span class="c1"></span>                <span class="n">String</span> <span class="n">op</span> <span class="o">=</span> <span class="n">ops</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+                <span class="kt">double</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;+&#34;</span><span class="o">))</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">+</span> <span class="n">v</span><span class="o">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;-&#34;</span><span class="o">))</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">-</span> <span class="n">v</span><span class="o">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;*&#34;</span><span class="o">))</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">*</span> <span class="n">v</span><span class="o">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">))</span> <span class="n">v</span> <span class="o">=</span> <span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">()</span> <span class="o">/</span> <span class="n">v</span><span class="o">;</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;sqrt&#34;</span><span class="o">))</span> <span class="n">v</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">v</span><span class="o">);</span>
+                <span class="n">vals</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">v</span><span class="o">);</span>
+            <span class="o">}</span><span class="c1">//如果字符既不是运算符也不是运算数，将它作为double压入栈
+</span><span class="c1"></span>            <span class="k">else</span> <span class="n">vals</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">s</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="n">StdOut</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">vals</span><span class="o">.</span><span class="na">pop</span><span class="o">());</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>}```</p>
+<p><strong>下压堆栈（链表实现）</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;{</span>
+	<span class="kd">private</span> <span class="n">Node</span> <span class="n">first</span><span class="o">;</span><span class="c1">//栈顶，最近添加的元素
+</span><span class="c1"></span>	<span class="kd">private</span> <span class="kt">int</span> <span class="n">N</span><span class="o">;</span><span class="c1">//元素的数量
+</span><span class="c1"></span>	<span class="kd">private</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">{</span>
+		<span class="c1">//定义了结点的嵌套
+</span><span class="c1"></span>		<span class="n">Item</span> <span class="n">item</span><span class="o">;</span>
+		<span class="n">Node</span> <span class="n">next</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">(){</span><span class="k">return</span> <span class="n">first</span> <span class="o">==</span> <span class="kc">null</span><span class="o">;}</span><span class="c1">//或N == 0
+</span><span class="c1"></span>	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">(){</span><span class="k">return</span> <span class="n">N</span><span class="o">;}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">push</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span><span class="o">){</span>
+		<span class="n">Node</span> <span class="n">oldfirst</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span><span class="c1">//将栈顶元素变成第二个最近添加的元素
+</span><span class="c1"></span>		<span class="n">first</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="o">();</span><span class="c1">//申请一个新的结点
+</span><span class="c1"></span>		<span class="n">first</span><span class="o">.</span><span class="na">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">;</span><span class="c1">//新结点的item赋值
+</span><span class="c1"></span>		<span class="n">first</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">oldfirst</span><span class="o">;</span><span class="c1">//连接,此时新结点变成栈顶的元素
+</span><span class="c1"></span>		<span class="n">N</span><span class="o">++;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="n">Item</span> <span class="nf">pop</span><span class="o">(){</span>
+		<span class="n">Item</span> <span class="n">item</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">item</span><span class="o">;</span><span class="c1">//保存栈顶元素的item值
+</span><span class="c1"></span>		<span class="n">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span><span class="c1">//修改栈顶元素,first的后一个元素变为栈顶元素
+</span><span class="c1"></span>		<span class="n">N</span><span class="o">--;</span>
+		<span class="k">return</span> <span class="n">item</span><span class="o">;</span><span class="c1">//返回栈顶元素
+</span><span class="c1"></span>	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="队列">队列</h3>
+<p>先进先出队列或简称队列，是一种基于先进先出（FIFO）策略的集合类型。</p>
+<hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">先进先出</span><span class="err">（</span><span class="n">FIFO</span><span class="err">）</span><span class="n">队列</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Queue</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span>
+
+<span class="nf">Queue</span><span class="o">()</span> <span class="c1">//创建空队列
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">enqueue</span><span class="o">()</span> <span class="c1">//添加一个元素
+</span><span class="c1"></span><span class="n">Item</span> <span class="nf">dequeue</span><span class="o">()</span> <span class="c1">//删除最早添加的元素
+</span><span class="c1"></span><span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="c1">//判断队列是否为空
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">size</span><span class="o">()</span> <span class="c1">//队列中元素的数量`
+</span></code></pre></td></tr></table>
+</div>
+</div><p><strong>先进先出队列(链表实现)</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Queue</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="kd">implements</span> <span class="n">Iterable</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;{</span>
+	<span class="kd">private</span> <span class="n">Node</span> <span class="n">first</span><span class="o">;</span><span class="c1">//指向最早添加的结点链接
+</span><span class="c1"></span>	<span class="kd">private</span> <span class="n">Node</span> <span class="n">last</span><span class="o">;</span><span class="c1">//指向最近添加的结点链接
+</span><span class="c1"></span>	<span class="kd">private</span> <span class="kt">int</span> <span class="n">N</span><span class="o">;</span><span class="c1">//队列中的元素数量
+</span><span class="c1"></span>	<span class="kd">private</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">{</span>
+		<span class="n">Item</span> <span class="n">item</span><span class="o">;</span>
+		<span class="n">Node</span> <span class="n">next</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">(){</span><span class="k">return</span> <span class="n">N</span> <span class="o">==</span> <span class="n">0</span><span class="o">;}</span><span class="c1">//或者first == null
+</span><span class="c1"></span>	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">(){</span><span class="k">return</span> <span class="n">N</span><span class="o">;}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">enqueue</span><span class="o">(){</span>
+		<span class="c1">//向表尾添加元素
+</span><span class="c1"></span>		<span class="n">Node</span> <span class="n">oldlast</span> <span class="o">=</span> <span class="n">last</span><span class="o">;</span>
+		<span class="n">last</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="o">();</span>
+		<span class="n">last</span><span class="o">.</span><span class="na">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">;</span>
+		<span class="n">last</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">isEmpty</span><span class="o">()){</span><span class="c1">//判断队列是否之前是空队列，如果是那么此时队列里只有刚刚添加的一个元素
+</span><span class="c1"></span>			<span class="n">first</span> <span class="o">=</span> <span class="n">last</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="k">else</span>
+			<span class="n">oldlast</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">last</span><span class="o">;</span>
+		<span class="n">N</span><span class="o">++;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="n">Item</span> <span class="nf">dequeue</span><span class="o">(){</span>
+		<span class="c1">//从表头删除元素
+</span><span class="c1"></span>		<span class="n">Item</span> <span class="n">item</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">item</span><span class="o">;</span>
+		<span class="n">first</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">isEmpty</span><span class="o">()){</span>
+			<span class="n">last</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="n">N</span><span class="o">--;</span>
+		<span class="k">return</span> <span class="n">item</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="练习">练习</h3>
+<p>编写一个函数，接受一条链表的首结点作为参数，将链表反转并返回结果链表的首结点。</p>
+<p>迭代的方式解答：为了完成这个任务，我们需要记录链表中的三个连续的结点：<code>reverse、first、second</code>。
+在每一轮迭代中，我们从原始链表中提取结点first并将它插入到逆链表的开头。我们需要一直保持<code>first</code>指向原来链表中所有剩余结点的首结点，<code>second</code>指向原来链表的所有剩余结点的第二个结点，<code>reverse</code>指向结果链表中的首结点。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">迭代</span>
+<span class="kd">public</span> <span class="n">Node</span> <span class="nf">reverse</span><span class="o">(</span><span class="n">Node</span> <span class="n">x</span><span class="o">){</span>
+    <span class="n">Node</span> <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">reverse</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">first</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+        <span class="n">Node</span> <span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="n">first</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">reverse</span><span class="o">;</span>
+        <span class="n">reverse</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">second</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">reverse</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="nl">
+</span><span class="nl">递归:</span><span class="n">假设链表含有N个结点</span><span class="err">，</span><span class="n">我们先递归颠倒最后N</span><span class="o">-</span><span class="n">1个结点</span><span class="err">，</span><span class="n">然后小心地将原链表中的首结点插入到结果链表的末端</span><span class="err">。</span>
+<span class="kd">public</span> <span class="n">Node</span> <span class="nf">reverse</span><span class="o">(</span><span class="n">Node</span> <span class="n">first</span><span class="o">){</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">first</span> <span class="o">=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">first</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="k">return</span> <span class="n">first</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">second</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="n">Node</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">reverse</span><span class="o">(</span><span class="n">second</span><span class="o">);</span>
+    <span class="n">second</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">first</span><span class="o">;</span>
+    <span class="n">first</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">rest</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-01-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E7%AE%97%E6%B3%95%E7%AC%AC%E5%9B%9B%E7%89%88%E5%85%B3%E4%BA%8E%E6%A0%88%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E7%8E%B0/" data-title="算法第四版关于栈和队列"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/jdbc/" class="next" rel="next" title="JDBC">JDBC<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
