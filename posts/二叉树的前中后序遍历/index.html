@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>二叉树的前中后序遍历 - This is Chen Yuntao&#39;s cabin</title><meta name="Description" content=""><meta property="og:title" content="二叉树的前中后序遍历" />
+<meta property="og:description" content="构造二叉树 /** * @author: YunTaoChen * @description: * @Date: Create in * @Modified by: */ public class BinaryTree { //二叉树里只需要包含根节点，通过方法调用来使用其他子节点 TreeNode root; //空树构造函数 public BinaryTree() { } public void setRoot(TreeNode root)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" />
+<meta property="article:published_time" content="2020-03-21T11:16:56+08:00" />
+<meta property="article:modified_time" content="2020-03-21T11:16:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="二叉树的前中后序遍历"/>
+<meta name="twitter:description" content="构造二叉树 /** * @author: YunTaoChen * @description: * @Date: Create in * @Modified by: */ public class BinaryTree { //二叉树里只需要包含根节点，通过方法调用来使用其他子节点 TreeNode root; //空树构造函数 public BinaryTree() { } public void setRoot(TreeNode root)"/>
+<meta name="application-name" content="This is Chen Yuntao&#39;s cabin">
+<meta name="apple-mobile-web-app-title" content="This is Chen Yuntao&#39;s cabin"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" /><link rel="prev" href="http://example.org/posts/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" /><link rel="next" href="http://example.org/posts/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "二叉树的前中后序遍历",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86\/"
+        },"genre": "posts","wordcount":  1203 ,
+        "url": "http:\/\/example.org\/posts\/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86\/","datePublished": "2020-03-21T11:16:56+08:00","dateModified": "2020-03-21T11:16:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">二叉树的前中后序遍历</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-21">2020-03-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1203 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#构造二叉树">构造二叉树</a></li>
+    <li><a href="#构造树节点">构造树节点</a>
+      <ul>
+        <li><a href="#测试类">测试类</a></li>
+        <li><a href="#二叉树的前中后序遍历都是运用了递归的思想"><strong>二叉树的前中后序遍历都是运用了递归的思想。</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#前序遍历">前序遍历</a></li>
+    <li><a href="#中序遍历">中序遍历</a></li>
+    <li><a href="#后序遍历">后序遍历</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="构造二叉树">构造二叉树</h2>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * @author: YunTaoChen
+</span><span class="cm"> * @description:
+</span><span class="cm"> * @Date: Create in
+</span><span class="cm"> * @Modified by:
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryTree</span> <span class="o">{</span>
+    <span class="c1">//二叉树里只需要包含根节点，通过方法调用来使用其他子节点
+</span><span class="c1"></span>    <span class="n">TreeNode</span> <span class="n">root</span><span class="o">;</span>
+	<span class="c1">//空树构造函数
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="nf">BinaryTree</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRoot</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">;</span>
+    <span class="o">}</span>
+
+   	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">root</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">root</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">root</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">preorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">inorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="na">inorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">postorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">root</span><span class="o">.</span><span class="na">postorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="构造树节点">构造树节点</h2>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.time.temporal.Temporal</span><span class="o">;</span>
+
+<span class="cm">/**
+</span><span class="cm"> * @author: YunTaoChen
+</span><span class="cm"> * @description:
+</span><span class="cm"> * @Date: Create in
+</span><span class="cm"> * @Modified by:
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TreeNode</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+    <span class="n">TreeNode</span> <span class="n">leftNode</span><span class="o">;</span>
+    <span class="n">TreeNode</span> <span class="n">rightNode</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">TreeNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setValue</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">getLeftNode</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">leftNode</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLeftNode</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">leftNode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">=</span> <span class="n">leftNode</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">getRightNode</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">rightNode</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRightNode</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">rightNode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">=</span> <span class="n">rightNode</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="c1">//前序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//中序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//后序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">//使用前序遍历查找节点
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">preorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="c1">//如果当前节点的值等于目标值，返回当前节点
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">//从左子树中查找目标值
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//判断右子树中书否查找到了目标值，如果找到则返回target
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//如果不存在该目标值，就直接返回target，此时target值为null
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">//使用中序遍历查找目标值
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">inorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">inorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">inorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">postorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">postorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">postorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="测试类">测试类</h3>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">
+<span class="cm">/**
+</span><span class="cm"> * @author: YunTaoChen
+</span><span class="cm"> * @description:
+</span><span class="cm"> * @Date: Create in
+</span><span class="cm"> * @Modified by:
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinaryTreeTest</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//建立一个空树
+</span><span class="c1"></span>        <span class="n">BinaryTree</span> <span class="n">tree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BinaryTree</span><span class="o">();</span>
+        <span class="c1">//建立一个根节点
+</span><span class="c1"></span>        <span class="n">TreeNode</span> <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+        <span class="c1">//把根节点赋值给新创建的空树
+</span><span class="c1"></span>        <span class="n">tree</span><span class="o">.</span><span class="na">setRoot</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+        <span class="c1">//创建左右节点
+</span><span class="c1"></span>        <span class="n">TreeNode</span> <span class="n">rootleft</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+        <span class="n">TreeNode</span> <span class="n">rootright</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+        <span class="c1">//把左右节点分别赋值给根节点的左右节点
+</span><span class="c1"></span>        <span class="n">root</span><span class="o">.</span><span class="na">setLeftNode</span><span class="o">(</span><span class="n">rootleft</span><span class="o">);</span>
+        <span class="n">root</span><span class="o">.</span><span class="na">setRightNode</span><span class="o">(</span><span class="n">rootright</span><span class="o">);</span>
+        <span class="c1">//为根节点的左子节点创建左右子节点
+</span><span class="c1"></span>        <span class="n">rootleft</span><span class="o">.</span><span class="na">setRightNode</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">5</span><span class="o">));</span>
+        <span class="n">rootleft</span><span class="o">.</span><span class="na">setLeftNode</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">4</span><span class="o">));</span>
+        <span class="c1">//为根节点的右子节点创建左右子节点
+</span><span class="c1"></span>        <span class="n">rootright</span><span class="o">.</span><span class="na">setLeftNode</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">6</span><span class="o">));</span>
+        <span class="n">rootright</span><span class="o">.</span><span class="na">setRightNode</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">(</span><span class="n">7</span><span class="o">));</span>
+        <span class="c1">//调用前序遍历
+</span><span class="c1"></span>        <span class="n">tree</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----&#34;</span><span class="o">);</span>
+        <span class="c1">//调用中序遍历
+</span><span class="c1"></span>        <span class="n">tree</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;-----&#34;</span><span class="o">);</span>
+        <span class="c1">//调用后序遍历
+</span><span class="c1"></span>        <span class="n">tree</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="c1">//调用查找方法
+</span><span class="c1"></span>        <span class="n">TreeNode</span> <span class="n">result</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">3</span><span class="o">);</span>
+        <span class="c1">//已经知道value是3的节点对象是rootright，判断两者是否是同一对象，结果返回true
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span> <span class="n">rootright</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="二叉树的前中后序遍历都是运用了递归的思想"><strong>二叉树的前中后序遍历都是运用了递归的思想。</strong></h3>
+<h2 id="前序遍历">前序遍历</h2>
+<p>前序遍历的顺序：根节点-左孩子-右孩子</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//前序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">preorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="c1">//使用前序遍历查找节点
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">preorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="c1">//如果当前节点的值等于目标值，返回当前节点
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">//从左子树中查找目标值
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//判断右子树中书否查找到了目标值，如果找到则返回target
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">preorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//如果不存在该目标值，就直接返回target，此时target值为null
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div><h2 id="中序遍历">中序遍历</h2>
+<p>中序遍历的顺序：左孩子-根节点-右孩子</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//中序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">inorder</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="c1">//使用中序遍历查找目标值
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">inorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">inorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">inorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div><h2 id="后序遍历">后序遍历</h2>
+<p>后序遍历的顺序：左孩子-右孩子-根节点</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//后序遍历
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postorder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">postorder</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="kd">public</span> <span class="n">TreeNode</span> <span class="nf">postorderSearch</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">TreeNode</span> <span class="n">target</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">leftNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">leftNode</span><span class="o">.</span><span class="na">postorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rightNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">rightNode</span><span class="o">.</span><span class="na">postorderSearch</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-21</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="prev" rel="prev" title="希尔排序"><i class="fas fa-angle-left fa-fw"></i>希尔排序</a>
+            <a href="/posts/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/" class="next" rel="next" title="顺序存储的二叉树">顺序存储的二叉树<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

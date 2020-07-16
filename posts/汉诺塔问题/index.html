@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>汉诺塔问题 - This is Chen Yuntao&#39;s cabin</title><meta name="Description" content=""><meta property="og:title" content="汉诺塔问题" />
+<meta property="og:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。 2、" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-03-17T17:59:56+08:00" />
+<meta property="article:modified_time" content="2020-03-17T17:59:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="汉诺塔问题"/>
+<meta name="twitter:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。 2、"/>
+<meta name="application-name" content="This is Chen Yuntao&#39;s cabin">
+<meta name="apple-mobile-web-app-title" content="This is Chen Yuntao&#39;s cabin"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" /><link rel="prev" href="http://example.org/posts/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" /><link rel="next" href="http://example.org/posts/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "汉诺塔问题",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98\/"
+        },"genre": "posts","wordcount":  1038 ,
+        "url": "http:\/\/example.org\/posts\/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98\/","datePublished": "2020-03-17T17:59:56+08:00","dateModified": "2020-03-17T17:59:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">汉诺塔问题</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1038 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#汉诺塔问题">汉诺塔问题</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="汉诺塔问题">汉诺塔问题</h2>
+<ul>
+<li>
+<p>汉诺塔问题是递归的一个具体案例。</p>
+</li>
+<li>
+<p>汉诺游戏规则如下：</p>
+<p>1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。</p>
+<p>2、A柱子上从下到上按金字塔状叠放着n个不同大小的圆盘。</p>
+<p>3、现在把所有盘子一个一个移动到柱子C上，并且每次移动同一根柱子上都不能出现大盘子在小盘子上方。</p>
+</li>
+<li>
+<p><strong>汉诺塔的解题思想</strong></p>
+<ul>
+<li>不考虑全局，不展开递归，人脑的思维内能力有限，所以我们需要把问题简化，<strong>只考虑当前应该怎么做即可</strong>。</li>
+<li>将汉诺塔问题看作两种情况：1.只有一个圆盘时 2.只有两个圆盘时(最下面的最大的盘子和上面的其他所有的盘子)。</li>
+<li>当递归调用开始，每一次递归都是对之前递归的重复，直到条件或断言终止。</li>
+<li>汉诺塔问题不是单一的递归问题，当圆盘个数大于1时，里面包含了3个步骤：(上面代表除最下面以外的所有盘子，下面代表最下面的盘子)
+<ul>
+<li>移动上面的所有盘子到中间柱子</li>
+<li>移动下面的盘子到目标柱子</li>
+<li>再把移动过的上面的所有盘子从中间柱子移动到目标柱子</li>
+</ul>
+</li>
+<li><strong>递归联想：假如有十个农民工，我们姑且叫他们老1，老2 &hellip;..老10</strong>
+<ul>
+<li><strong>村里承包项目，盖十层楼</strong></li>
+<li>村里把项目交给老10来做，老10只会盖第十层楼，没办法，没有前面9层楼他也没法盖啊，然后就把前9层的项目外包给了老9</li>
+<li>很巧，老9只会盖第九层楼，老9又把前8层项目外包给了老8</li>
+<li>老8也是一样，只会盖第8层，又把前7层外包给了老7</li>
+<li>老7只会盖第7层，然后又外包了下去</li>
+<li>老6&hellip;..</li>
+<li>老5&hellip;.</li>
+<li>老4&hellip;</li>
+<li>老3..</li>
+<li>老2..</li>
+<li><strong>最终老1拿到了这个盖第1层楼的活，没法再外包了(条件终止),然后老1就盖了起来，然后老1盖好1层了老2盖好2层&hellip;&hellip;老7盖好7层，老8盖好8层，直到老10盖好第十层，这个项目就算完工了</strong></li>
+<li>这个故事就是纯正的递归思想，包括思路应该很清楚了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>测试代码：</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * @author: YunTaoChen
+</span><span class="cm"> * @description:
+</span><span class="cm"> * @Date: Create in
+</span><span class="cm"> * @Modified by:
+</span><span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hanoi</span> <span class="o">{</span>
+    <span class="c1">//全局变量count统计方法调用的次数
+</span><span class="c1"></span>    <span class="kd">static</span> <span class="kt">int</span> <span class="n">count</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">move</span><span class="o">(</span><span class="n">8</span><span class="o">,</span> <span class="sc">&#39;a&#39;</span><span class="o">,</span> <span class="sc">&#39;b&#39;</span><span class="o">,</span> <span class="sc">&#39;c&#39;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="c1">//A表示起始位置，B表示中间位置，C表示目标位置
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">char</span> <span class="n">A</span><span class="o">,</span> <span class="kt">char</span> <span class="n">B</span><span class="o">,</span> <span class="kt">char</span> <span class="n">C</span><span class="o">)</span> <span class="o">{</span>
+       
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//如果只有一个盘子，那么就从起始位置直接移到目标位置
+</span><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">1</span> <span class="o">+</span> <span class="s">&#34; From &#34;</span> <span class="o">+</span> <span class="n">A</span> <span class="o">+</span> <span class="s">&#34; to &#34;</span> <span class="o">+</span> <span class="n">C</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+             <span class="c1">//这里运用了递归思想，无论有多少个盘子，我们都认为只有两个，上面所有的和最下面的单独的一个盘子
+</span><span class="c1"></span>            <span class="c1">//移动上面的所有圆盘到中间位置
+</span><span class="c1"></span>            <span class="n">move</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">A</span><span class="o">,</span> <span class="n">C</span><span class="o">,</span> <span class="n">B</span><span class="o">);</span>
+            <span class="c1">//移动最下面的圆盘到目标位置
+</span><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="s">&#34; From &#34;</span> <span class="o">+</span> <span class="n">A</span> <span class="o">+</span> <span class="s">&#34; to &#34;</span> <span class="o">+</span> <span class="n">C</span><span class="o">);</span>
+            <span class="c1">//把中间位置的圆盘移到目标位置
+</span><span class="c1"></span>            <span class="n">move</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">B</span><span class="o">,</span> <span class="n">A</span><span class="o">,</span> <span class="n">C</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="c1">//每调用一次move，count计数一次
+</span><span class="c1"></span>        <span class="n">count</span><span class="o">++;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="prev" rel="prev" title="插入排序"><i class="fas fa-angle-left fa-fw"></i>插入排序</a>
+            <a href="/posts/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="next" rel="next" title="选择排序">选择排序<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

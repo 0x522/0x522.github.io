@@ -1,0 +1,77 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - This is Chen Yuntao&#39;s cabin</title>
+        <link>http://example.org/posts/</link>
+        <description>所有文章 | This is Chen Yuntao&#39;s cabin</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>使用hexo搭建个人博客</title>
+    <link>http://example.org/posts/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[hexo 和 hugo 都是现在比较火的搭建博客的第三方框架 前期准备 git https://git-scm.com/ nodejs https://nodejs.org/ 两者直接安装最新版本或者推荐版本即可。 开始搭建 因为hexo是基于nodejs框架的]]></description>
+</item><item>
+    <title>利用hugo搭建个人博客</title>
+    <link>http://example.org/posts/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[使用Hugo搭建个人博客 前期准备工作 下载hugo[https://gohugo.io/]，查看官方文档根据步骤下载。 测试hugo能否运行，在]]></description>
+</item><item>
+    <title>Vim</title>
+    <link>http://example.org/posts/vim/</link>
+    <pubDate>Sat, 20 Jun 2020 09:59:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/vim/</guid>
+    <description><![CDATA[Vim 什么是vim？ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi]]></description>
+</item><item>
+    <title>cookie</title>
+    <link>http://example.org/posts/cookie/</link>
+    <pubDate>Tue, 19 May 2020 14:29:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/cookie/</guid>
+    <description><![CDATA[会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一]]></description>
+</item><item>
+    <title>session</title>
+    <link>http://example.org/posts/session/</link>
+    <pubDate>Wed, 29 Apr 2020 14:29:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/session/</guid>
+    <description><![CDATA[Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object]]></description>
+</item><item>
+    <title>堆排序</title>
+    <link>http://example.org/posts/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Wed, 01 Apr 2020 17:59:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[堆排序 O (nlgn) 堆排序是指利用堆这种数据结构所设计的一种排序算法。堆是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于]]></description>
+</item><item>
+    <title>顺序存储的二叉树</title>
+    <link>http://example.org/posts/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+    <pubDate>Tue, 31 Mar 2020 08:20:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%9A%84%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+    <description><![CDATA[顺序存储的二叉树 顺序存储的二叉树通常情况 只考虑完全二叉树。 常用基本性质： 第n个元素的左子节点是2n+1，它的右子节点是2n+2 第n个元素的父]]></description>
+</item><item>
+    <title>二叉树的前中后序遍历</title>
+    <link>http://example.org/posts/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+    <pubDate>Sat, 21 Mar 2020 11:16:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+    <description><![CDATA[构造二叉树 /** * @author: YunTaoChen * @description: * @Date: Create in * @Modified by: */ public class BinaryTree { //二叉树里只需要包含根节点，通过方法调用来使用其他子节点 TreeNode root; //空树构造函数 public BinaryTree() { } public void setRoot(TreeNode root)]]></description>
+</item><item>
+    <title>希尔排序</title>
+    <link>http://example.org/posts/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Fri, 20 Mar 2020 11:29:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[希尔排序 O(nlog2n) import java.util.Arrays; /** * @author: YunTaoChen * @description: * @Date: Create in * @Modified by: */ public class ShellSort { public static void main(String[] args) { int[] arr = new int[]{2, 3, 7, 3, 0, 8, 1, 4}; shellsort(arr); System.out.println(Arrays.toString(arr)); } public static void shellsort(int[] arr) { //这里的i是步长，每多少个步长分组]]></description>
+</item><item>
+    <title>选择排序</title>
+    <link>http://example.org/posts/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Thu, 19 Mar 2020 14:29:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/posts/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[选择排序 O(n²) 选择排序（Selection sort）是一种简单直观的排序算法。 它的工作原理是：第一次从待排序的数据元素数据元素中选出最小]]></description>
+</item></channel>
+</rss>

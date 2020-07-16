@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>cookie - This is Chen Yuntao&#39;s cabin</title><meta name="Description" content=""><meta property="og:title" content="cookie" />
+<meta property="og:description" content="会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/cookie/" />
+<meta property="article:published_time" content="2020-05-19T14:29:56+08:00" />
+<meta property="article:modified_time" content="2020-05-19T14:29:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="cookie"/>
+<meta name="twitter:description" content="会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一"/>
+<meta name="application-name" content="This is Chen Yuntao&#39;s cabin">
+<meta name="apple-mobile-web-app-title" content="This is Chen Yuntao&#39;s cabin"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/cookie/" /><link rel="prev" href="http://example.org/posts/session/" /><link rel="next" href="http://example.org/posts/vim/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "cookie",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/cookie\/"
+        },"genre": "posts","wordcount":  935 ,
+        "url": "http:\/\/example.org\/posts\/cookie\/","datePublished": "2020-05-19T14:29:56+08:00","dateModified": "2020-05-19T14:29:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">cookie</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-19">2020-05-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 935 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#会话技术">会话技术</a></li>
+      </ul>
+    </li>
+    <li><a href="#cookie">Cookie</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="会话技术">会话技术</h3>
+<ul>
+<li>会话：一次会话中包含多次请求和响应。
+<ul>
+<li>一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。</li>
+</ul>
+</li>
+<li>功能：在一次会话的范围内的多次请求间，共享数据</li>
+<li>方式：
+<ul>
+<li>客户端会话技术：Cookie</li>
+<li>服务器端会话技术：Session</li>
+</ul>
+</li>
+</ul>
+<h2 id="cookie">Cookie</h2>
+<ul>
+<li><strong>概念</strong>：客户端会话技术，将数据保存到客户端</li>
+<li>使用步骤：
+<ol>
+<li>创建Cookie对象，绑定数据
+<ul>
+<li><code>new Cookie(String name,String value)</code></li>
+</ul>
+</li>
+<li>发送Cookie对象
+<ul>
+<li><code>response.addCookie(Cookie cookie)</code></li>
+</ul>
+</li>
+<li>获取Cookie对象，拿到数据
+<ul>
+<li><code>Cookie[] request.getCookies()</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>原理</strong>：
+<ul>
+<li>基于响应头set-cookie和请求头cookie实现</li>
+<li>在一次会话中，当客户端请求服务器端的资源，服务器端会将设置好的cookie对象响应给客户端一个响应头<code>set-cookie：a = b</code>，浏览器根据http协议会在客户端的浏览器中键值a = b对并保存,然后再下一次请求服务器资源的时候，会携带一个请求头<code>cookie：a = b</code>,在服务器中就可以获取请求头中的数据进行操作</li>
+</ul>
+</li>
+<li><strong>细节</strong>
+<ol>
+<li>一次可不可以发送多个cookie？
+<ul>
+<li>可以</li>
+<li>可以创建多个cookie对象，使用response调用多次addCookie方法发送cookie即可</li>
+</ul>
+</li>
+<li>cookie在浏览器中保存多长时间？
+<ol>
+<li>默认情况下，当浏览器关闭后，cookie数据被销毁，cookie保存在浏览器内存中</li>
+<li>持久化存储：
+<ul>
+<li><code>setMaxAge(int seconds)</code>
+<ul>
+<li>参数
+<ol>
+<li>正数：将cookie数据写到硬盘的文件中。持久化存储，cookie存活的时间。</li>
+<li>负数：默认值一次会话后销毁cookie</li>
+<li>零：删除cookie信息</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>cookie能不能存中文？
+<ul>
+<li>在tomcat 8 之前不能存中文，需要将中文数据转码&mdash;一般采用URL编码（%E3）</li>
+</ul>
+</li>
+<li>cookie获取范围多大？
+<ul>
+<li>假设在一个tomcat服务器中，部署了多个web项目，那么在这些项目中cookie能不能共享
+<ul>
+<li>默认情况下cookie不能共享</li>
+<li><code>cookie对象.setPath(String path)</code>:设置cookie的获取范围。默认情况下，设置当前的虚拟目录，共享就设置为/，是最大共享范围</li>
+</ul>
+</li>
+<li>不同的tomcat服务器间cookie共享问题
+<ul>
+<li><code>setDomain(String path)</code>:如果设置一级域名相同，那么多个服务器间cookie可以共享</li>
+<li>例如setDomain(&quot;.baidu.com&rdquo;),那么tieba.baidu.com和news.baidu.com中的cookie可以共享</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-05-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/session/" class="prev" rel="prev" title="session"><i class="fas fa-angle-left fa-fw"></i>session</a>
+            <a href="/posts/vim/" class="next" rel="next" title="Vim">Vim<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

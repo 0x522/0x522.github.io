@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>session - This is Chen Yuntao&#39;s cabin</title><meta name="Description" content=""><meta property="og:title" content="session" />
+<meta property="og:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/session/" />
+<meta property="article:published_time" content="2020-04-29T14:29:56+08:00" />
+<meta property="article:modified_time" content="2020-04-29T14:29:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="session"/>
+<meta name="twitter:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object"/>
+<meta name="application-name" content="This is Chen Yuntao&#39;s cabin">
+<meta name="apple-mobile-web-app-title" content="This is Chen Yuntao&#39;s cabin"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/session/" /><link rel="prev" href="http://example.org/posts/%E5%A0%86%E6%8E%92%E5%BA%8F/" /><link rel="next" href="http://example.org/posts/cookie/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "session",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/session\/"
+        },"genre": "posts","wordcount":  628 ,
+        "url": "http:\/\/example.org\/posts\/session\/","datePublished": "2020-04-29T14:29:56+08:00","dateModified": "2020-04-29T14:29:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">session</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-29">2020-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 628 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#session">Session</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="session">Session</h2>
+<ul>
+<li><strong>概念</strong>：服务器端会话技术，<strong>在一次会话</strong>的多次请求间共享数据，将数据保存在服务器端的对象中。<strong>HttpSession</strong>
+<ul>
+<li>HttpSession对象：
+<ul>
+<li>Object getAttribute(String name)</li>
+<li>void setAttribute(String name, object value)</li>
+<li>void removeAttribute(String name)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>获取session对象</strong>
+<ul>
+<li>HttpSession session = request.getSession();</li>
+</ul>
+</li>
+<li><strong>Session原理</strong>
+<ul>
+<li>Session的实现是依赖于cookie的，当第一次请求时，会创建一个session对象，并给他一个JsessionID，然后再次请求时getSession方法会寻找这个ID返回给session对象。所以在一次会话的多次请求中，使用的session是同一个。</li>
+</ul>
+</li>
+<li><strong>细节</strong>
+<ol>
+<li>当客户端关闭后，服务端不关闭，两次获取session是否为同一个？
+<ul>
+<li>默认情况下，不是。</li>
+<li>可以手动设置使客户端关闭后再次访问服务器获取的session是同一个
+<ul>
+<li>创建一个cookie，
+<ul>
+<li><code>Cookie cookie = new  Cookie(&quot;JSession&quot;,session.getId());</code></li>
+</ul>
+</li>
+<li>设置cookie对象的最大存活时间 1小时
+<ul>
+<li><code>cookie.setMaxAge(60*60)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？
+<ul>
+<li>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作：
+<ul>
+<li>session的钝化：
+<ul>
+<li>在服务器正常关闭之前，将session对象序列化到硬盘上。</li>
+</ul>
+</li>
+<li>session的活化：
+<ul>
+<li>在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>session的失效时间？什么时候被销毁？
+<ol>
+<li>服务器关闭</li>
+<li>session对象调用<code>invalidate（）</code></li>
+<li>session默认失效时间 30分钟
+<ul>
+<li>如何修改失效时间
+<ul>
+<li>找到web.xml里面的<code>&lt;session-config&gt;</code>标签修改<code>session-timeout</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-04-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E5%A0%86%E6%8E%92%E5%BA%8F/" class="prev" rel="prev" title="堆排序"><i class="fas fa-angle-left fa-fw"></i>堆排序</a>
+            <a href="/posts/cookie/" class="next" rel="next" title="cookie">cookie<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

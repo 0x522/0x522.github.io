@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>关于href=&#34;javascript:void(0);&#34;的讨论 - This is Chen Yuntao&#39;s cabin</title><meta name="Description" content=""><meta property="og:title" content="关于href=&#34;javascript:void(0);&#34;的讨论" />
+<meta property="og:description" content="javascript:void(0);含义 我们经常会使用到 javascript:void(0) 这样的代码，那么在 JavaScript 中 javascript:void(0) 代表的是什么意思呢？ javascript:void(0) 中最关键的是 void 关键字， void 是 JavaScript 中非常" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA/" />
+<meta property="article:published_time" content="2020-02-16T20:59:56+08:00" />
+<meta property="article:modified_time" content="2020-02-16T20:59:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="关于href=&#34;javascript:void(0);&#34;的讨论"/>
+<meta name="twitter:description" content="javascript:void(0);含义 我们经常会使用到 javascript:void(0) 这样的代码，那么在 JavaScript 中 javascript:void(0) 代表的是什么意思呢？ javascript:void(0) 中最关键的是 void 关键字， void 是 JavaScript 中非常"/>
+<meta name="application-name" content="This is Chen Yuntao&#39;s cabin">
+<meta name="apple-mobile-web-app-title" content="This is Chen Yuntao&#39;s cabin"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/posts/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA/" /><link rel="prev" href="http://example.org/posts/ss-ssr/" /><link rel="next" href="http://example.org/posts/xml/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "关于href=\"javascript:void(0);\"的讨论",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA\/"
+        },"genre": "posts","wordcount":  1356 ,
+        "url": "http:\/\/example.org\/posts\/%E5%85%B3%E4%BA%8Ehref-javascript-void-0-%E7%9A%84%E8%AE%A8%E8%AE%BA\/","datePublished": "2020-02-16T20:59:56+08:00","dateModified": "2020-02-16T20:59:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is Chen Yuntao&#39;s cabin">This is Chen Yuntao&#39;s cabin</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">关于href=&#34;javascript:void(0);&#34;的讨论</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-16">2020-02-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1356 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#javascriptvoid0含义">javascript:void(0);含义</a></li>
+    <li><a href="#href与hrefjavascriptvoid0的区别">href=&rdquo;#&ldquo;与href=&quot;javascript:void(0);&ldquo;的区别</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#js关于锚a的几种调用方法">js关于锚(a)的几种调用方法</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="javascriptvoid0含义">javascript:void(0);含义</h2>
+<p>我们经常会使用到 javascript:void(0) 这样的代码，那么在 JavaScript 中 javascript:void(0) 代表的是什么意思呢？</p>
+<p>javascript:void(0) 中最关键的是 void 关键字， void 是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值。</p>
+<p><code>&lt;a&gt;&lt;/a&gt;</code>超链接的功能：</p>
+<ul>
+<li>1.可以被点击，有一个下划线样式</li>
+<li>2.点击后跳转到href指定的url</li>
+</ul>
+<p>如果要保留1功能，去掉2功能，需要将href=&quot;javascript:void(0);&rdquo;</p>
+<p>javascript是伪协议，表示这个href的值要使用js代码，而void 是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值。</p>
+<p>javascript:void(0);仅仅表示一个死链接。</p>
+<h2 id="href与hrefjavascriptvoid0的区别">href=&rdquo;#&ldquo;与href=&quot;javascript:void(0);&ldquo;的区别</h2>
+<h5 id="url--超链接的-url"><em>URL</em>  超链接的 URL。</h5>
+<p>可能的值：</p>
+<ul>
+<li>绝对 URL - 指向另一个站点（比如 href=&quot;www.google.com&rdquo;）</li>
+<li>相对 URL - 指向站点内的某个文件（href=&quot;index.htm&rdquo;）</li>
+<li>锚 URL - 指向页面中的锚（href=&rdquo;#top&rdquo;）</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;&#34;</span> <span class="o">&gt;</span> <span class="nx">中</span> <span class="nx">href</span> <span class="nx">为空</span><span class="err">，</span><span class="nx">会怎样</span><span class="err">？</span>
+<span class="nx">答</span><span class="err">：</span><span class="nx">点击会刷新页面</span><span class="err">，</span><span class="nx">相当于访问当前URL</span><span class="err">。</span>
+</code></pre></div><p><strong>#</strong> 包含了一个位置信息，默认的锚是**#top** 也就是网页的上端。</p>
+<p>而javascript:void(0); 仅仅表示一个死链接。</p>
+<p>在页面很长的时候会使用 <strong>#</strong> 来定位页面的具体位置，格式为：<strong># + id</strong>。</p>
+<p>如果你要定义一个死链接请使用 javascript:void(0); 。</p>
+<h2 id="js关于锚a的几种调用方法">js关于锚(a)的几种调用方法</h2>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="mi">1</span><span class="err">、</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:js_method();&#34;</span>
+
+   <span class="nx">这是常用的方法</span><span class="err">，</span><span class="nx">但是这种方法在传递this等参数的时候很容易出问题</span><span class="err">，</span><span class="nx">而且javascript</span><span class="o">:</span><span class="nx">协议作为a的href属性的时候不仅会导致不必要的触发window</span><span class="p">.</span><span class="nx">onbeforeunload事件</span><span class="err">，</span><span class="nx">在IE里面更会使gif动画图片停止播放</span><span class="err">。</span><span class="nx">W3C标准不推荐在href里面执行javascript语句</span>
+
+<span class="mi">2</span><span class="err">、</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:void(0);&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method()&#34;</span>
+
+   <span class="nx">这种方法是很多网站最常用的方法</span><span class="err">，</span><span class="nx">也是最周全的方法</span><span class="err">，</span><span class="nx">onclick方法负责执行js函数</span><span class="err">，</span><span class="nx">而void是一个操作符</span><span class="err">，</span><span class="k">void</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="nx">返回undefined</span><span class="err">，</span><span class="nx">地址不发生跳转</span><span class="err">。</span><span class="nx">而且这种方法不会像第一种方法一样直接将js方法暴露在浏览器的状态栏</span><span class="err">。</span>
+
+<span class="mi">3</span><span class="err">、</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:;&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method()&#34;</span>
+
+   <span class="nx">这种方法跟跟2种类似</span><span class="err">，</span><span class="nx">区别只是执行了一条空的js代码</span><span class="err">。</span>
+
+<span class="mi">4</span><span class="err">、</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;#&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method()&#34;</span>
+
+   <span class="nx">这种方法也是网上很常见的代码</span><span class="err">，#</span><span class="nx">是标签内置的一个方法</span><span class="err">，</span><span class="nx">代表top的作用</span><span class="err">。</span><span class="nx">所以用这种方法点击后网页后返回到页面的最顶端</span><span class="err">。</span>
+
+<span class="mi">5</span><span class="err">、</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;#&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method();return false;&#34;</span>
+
+   <span class="nx">这种方法点击执行了js函数后return</span> <span class="kc">false</span><span class="err">，</span><span class="nx">页面不发生跳转</span><span class="err">，</span><span class="nx">执行后还是在页面的当前位置</span><span class="err">。</span>
+</code></pre></div><p><strong>综合上述，在a中调用js函数最适当的方法推荐使用：</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:void(0);&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method()&#34;</span><span class="o">&gt;&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:;&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method()&#34;</span><span class="o">&gt;&lt;</span><span class="err">/a&gt;</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;#&#34;</span> <span class="nx">οnclick</span><span class="o">=</span><span class="s2">&#34;js_method();return false;&#34;</span><span class="o">&gt;&lt;</span><span class="err">/a&gt;</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/ss-ssr/" class="prev" rel="prev" title="ss/ssr"><i class="fas fa-angle-left fa-fw"></i>ss/ssr</a>
+            <a href="/posts/xml/" class="next" rel="next" title="XML">XML<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
