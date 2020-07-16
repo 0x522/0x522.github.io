@@ -37,7 +37,7 @@ Maven 也可被用于构建和管理各种项目，例如 java，Ruby，Scala �
 * 原则上绝对不允许最终的classpath中出现同名不同版本的jar包。
 ### 依赖冲突的解决
 * 原则：最近的胜出
-* 举个例子：![](/public/依赖图.jpg)
+* 举个例子：![](/dependency.jpg)
 * 图中C的jar有两个版本，由于0.2版本离项目比较近，所以优先使用C的0.2版本。
 * 假如你一定要使用C的0.1版本，那么需要做以下操作之一：
   1. 在pom.xml中重新添加依赖，添加到依赖树 `mvn dependency:tree` 离你的项目相对更近的位置。
@@ -63,6 +63,6 @@ Maven的依赖范围在xml文件中用`<scope>`表示，参数有以下：
 ## 值得一提的是Maven还是优秀的自动化构建工具
 
 ## Maven的生命周期
-![](/public/maven.jpg)<br>
+![](/maven.jpg)<br>
 # 参考书
 [Maven实战.pdf](https://github.com/guanpengchn/awesome-books)
