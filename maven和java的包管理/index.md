@@ -65,4 +65,4 @@ Maven的依赖范围在xml文件中用`<scope>`表示，参数有以下：
 ## Maven的生命周期
 ![](/maven.jpg)<br>
 # 参考书
-[Maven实战.pdf](https://github.com/guanpengchn/awesome-books)
+[Maven实战.pdf](https://github.com/guanpengchn/awesome-books/blob/master/Java/Maven%E5%AE%9E%E6%88%98.pdf)
