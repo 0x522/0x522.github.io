@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/"
-        },"genre": "posts","wordcount":  700 ,
+        },"genre": "posts","wordcount":  867 ,
         "url": "\/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2020-07-16T09:59:56+08:00","dateModified": "2020-07-16T09:59:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">利用hugo搭建个人博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-16">2020-07-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 700 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-16">2020-07-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 867 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -234,8 +234,10 @@
 <p>您的新站点看起来已经不错了，但是在将其发布给公众之前，您需要对其进行一些调整，只需要配置config.toml文件。</p>
 <h2 id="建立静态页面">建立静态页面</h2>
 <ul>
-<li><code>hugo -D</code></li>
-<li>将会在你的站点目录下输出一个public目录。</li>
+<li><code>hugo -D</code>或者<code>hugo</code></li>
+<li>将会在你的站点目录下输出一个public目录，这个就是利用hugo生成的静态页面。</li>
+<li>之后会在public重新建立一个本地git仓库，与github上面一个对应的仓库关联。</li>
+<li>每新写一篇博客就利用<code>hugo</code>命令重新生成一下public目录，也可以说是更新public目录。</li>
 </ul>
 <h2 id="连接到github">连接到github</h2>
 <ul>
@@ -246,12 +248,14 @@
 <ul>
 <li><code>git add .</code></li>
 <li><code>git commit -m 你要备注的内容</code></li>
-<li><code>git push -u origin master</code> 这是第一次push的写法，以后都直接<br>
+<li><code>git push -u origin master</code> 这是第一次push的写法，以后都直接  <br>
 <code>git push</code> 即可。</li>
+<li>每次更新博客时，重复以上三条操作，把更新推送到GitHub。</li>
 </ul>
 </li>
 </ul>
 <h2 id="搭建完成快去丰富你的博客吧">搭建完成，快去丰富你的博客吧！</h2>
+<p>通过访问仓库的域名就可以直接访问你的博客啦！</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -32,7 +32,7 @@
       ## draft 参数表示是否被部署 true则不会被直接部署。
 ## 启动hugo本地服务器
    * `hugo server -D` 或者 `hugo server`
-   * ```
+   * ```运行后显示
                               | EN
       +------------------+----+
       Pages            | 10
@@ -58,8 +58,10 @@
 
 
 ## 建立静态页面
-   * `hugo -D`
-   * 将会在你的站点目录下输出一个public目录。
+   * `hugo -D`或者`hugo`
+   * 将会在你的站点目录下输出一个public目录，这个就是利用hugo生成的静态页面。
+   * 之后会在public重新建立一个本地git仓库，与github上面一个对应的仓库关联。
+   * 每新写一篇博客就利用`hugo`命令重新生成一下public目录，也可以说是更新public目录。
 
 
 ## 连接到github
@@ -69,8 +71,10 @@
    * 在public目录下
      * `git add .`
      * `git commit -m 你要备注的内容`
-     * `git push -u origin master` 这是第一次push的写法，以后都直接<br>
+     * `git push -u origin master` 这是第一次push的写法，以后都直接  <br>
        `git push` 即可。
+     * 每次更新博客时，重复以上三条操作，把更新推送到GitHub。
 
 
 ## 搭建完成，快去丰富你的博客吧！
+通过访问仓库的域名就可以直接访问你的博客啦！
