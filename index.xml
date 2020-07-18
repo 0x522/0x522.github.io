@@ -12,7 +12,7 @@
     <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
     <author>作者</author>
     <guid>/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[hexo 和 hugo 都是现在比较火的搭建博客的第三方框架 前期准备 git https://git-scm.com/ nodejs https://nodejs.org/ 两者直接安装最新版本或者推荐版本即可。 开始搭建 因为hexo是基于nodejs框架的]]></description>
+    <description><![CDATA[hexo 和 hugo 都是现在比较火的搭建博客的第三方框架 前期准备 git nodejs 两者直接安装最新版本或者推荐版本即可。 开始搭建 因为hexo是基于nodejs框架的，所]]></description>
 </item><item>
     <title>利用hugo搭建个人博客</title>
     <link>/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>

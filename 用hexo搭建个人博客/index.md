@@ -4,8 +4,8 @@
 
 ### 前期准备
 
-1. git	https://git-scm.com/
-2. nodejs  https://nodejs.org/
+1. [git](https://git-scm.com/)
+2. [nodejs](https://nodejs.org/)
 
 两者直接安装最新版本或者推荐版本即可。
 
