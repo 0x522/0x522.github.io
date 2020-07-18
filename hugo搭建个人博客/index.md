@@ -21,8 +21,8 @@
    * `echo 'theme = "ananke"' >> config.toml` 添加主题到配置文件。
 
 ## 添加一些内容
-   * `hugo new posts/my-first-post.md`
-   * ```markdown
+   * `hugo new posts/my-first-post.md`，这个操作是在content\posts目录下建立一个你自己的markdown文件，默认都是在posts下添加.md文件，hugo就是利用这些.md文件来作为博客静态页面的内容。
+   * ```
       ---
       title: "My First Post"
       date: 2019-03-26T08:47:11+01:00
@@ -32,7 +32,7 @@
       ## draft 参数表示是否被部署 true则不会被直接部署。
 ## 启动hugo本地服务器
    * `hugo server -D` 或者 `hugo server`
-   * ```运行后显示
+   * ```
                               | EN
       +------------------+----+
       Pages            | 10
