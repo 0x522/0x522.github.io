@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java的collection体系 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Java的collection体系" />
+<meta property="og:description" content="Collection Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。 Collection 是集合类的根接口，是高度抽象的集合，包" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-07-23T09:09:33+08:00" />
+<meta property="article:modified_time" content="2020-07-23T09:09:33+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="Java的collection体系"/>
+<meta name="twitter:description" content="Collection Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。 Collection 是集合类的根接口，是高度抽象的集合，包"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" /><link rel="prev" href="/git%E5%92%8Cgithub/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java的collection体系",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/java%E7%9A%84collection%E4%BD%93%E7%B3%BB\/"
+        },"genre": "posts","wordcount":  2863 ,
+        "url": "\/java%E7%9A%84collection%E4%BD%93%E7%B3%BB\/","datePublished": "2020-07-23T09:09:33+08:00","dateModified": "2020-07-23T09:09:33+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/" title="访问博客主页">🎈 Back </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/" title="访问博客主页">🎈Back</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java的collection体系</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-23">2020-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2863 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#collection的继承体系">Collection的继承体系</a></li>
+    <li><a href="#list和set约定">List和Set约定</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#list">List</a></li>
+    <li><a href="#重要约定hashcode">重要约定：HashCode</a></li>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#queuefifo">Queue(FIFO)</a></li>
+    <li><a href="#vector">Vector</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#注意工具类一般都是在实现类的名字后面加一个s例如guava中的listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个s,例如Guava中的Lists/Sets/Maps。</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#google-guava是java的一组开源通用库主要由google工程师开发">Google Guava是Java的一组开源通用库，主要由Google工程师开发。</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="collection">Collection</h1>
+<ul>
+<li>Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。</li>
+<li>Collection 是集合类的根接口，是高度抽象的集合，包含了集合的基本操作：添加、删除、清空、遍历、是否为空、获取大小等。</li>
+<li>Collection 继承了<code>Iterable&lt;E&gt;</code>，所以Collection的体系都支持<code>iterator()</code>方法，该方法返回一个迭代器，使用该迭代器可以逐一访问Collection的每一个元素。</li>
+<li>Collection体系提供的常⽤⽅法：
+<ul>
+<li>R: <code>size()/isEmpty()/contains()/for()/stream() </code></li>
+<li>C/U: <code>add()/addAll()/retainAll()</code>
+<ul>
+<li>这里特别要说一下，<code>retainAll()</code> 非常容易踩坑，如果<code>a.retainAll(b)</code> 这相当于求集合a、b的交集，然后把结果集放在集合a中，最终可能会导致集合a的<code>size()</code>减少。</li>
+</ul>
+</li>
+<li>D: <code>clear()/remove()/removeAll()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="collection的继承体系">Collection的继承体系</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Collection</span>
+    <span class="o">|-----</span><span class="n">List</span>  <span class="nf">有序</span><span class="o">(</span><span class="n">存储顺序和取出顺序一致</span><span class="o">)</span><span class="err">，</span><span class="n">可重复</span>
+        <span class="o">|----</span><span class="n">ArrayList</span>  <span class="n">线程不安全</span><span class="err">，</span><span class="n">底层使用数组实现</span><span class="err">，</span><span class="n">查询快</span><span class="err">，</span><span class="n">增删慢</span><span class="err">，</span><span class="n">效率高</span><span class="err">。</span>
+        <span class="o">|----</span><span class="n">LinkedList</span>  <span class="n">线程不安全</span><span class="err">，</span><span class="n">底层使用链表实现</span><span class="err">，</span><span class="n">查询慢</span><span class="err">，</span><span class="n">增删快</span><span class="err">，</span><span class="n">效率高</span><span class="err">。</span>
+        <span class="o">|----</span><span class="n">Vector</span>  <span class="n">线程安全</span><span class="err">，</span><span class="n">底层使用数组实现</span><span class="err">，</span><span class="n">查询快</span><span class="err">，</span><span class="n">增删慢</span><span class="err">，</span><span class="n">效率低</span><span class="err">。</span><span class="n">每次容量不足时</span><span class="err">，</span><span class="n">默认自增长度的一倍</span><span class="err">（</span><span class="n">如果不指定增量的话</span><span class="err">）。</span>
+    <span class="o">|-----</span><span class="n">Set</span>   <span class="n">元素唯一一个不包含重复元素的</span> <span class="n">Collection</span><span class="err">。</span><span class="n">更确切地讲</span><span class="err">，</span><span class="n">set</span> <span class="n">不包含满足</span> <span class="n">e1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span> <span class="n">的元素对</span> <span class="n">e1</span> <span class="n">和</span> <span class="n">e2</span><span class="err">，</span><span class="n">并且最多包含一个</span> <span class="kc">null</span> <span class="n">元素</span><span class="err">。</span>
+        <span class="o">|--</span><span class="n">HashSet</span>  <span class="n">底层是由HashMap实现的</span><span class="err">，</span><span class="n">通过对象的hashCode方法与equals方法来保证插入元素的唯一性</span><span class="err">，</span><span class="n">无序</span><span class="o">(</span><span class="n">存储顺序和取出顺序不一致</span><span class="o">)</span><span class="err">，。</span>
+            <span class="o">|--</span><span class="n">LinkedHashSet</span> <span class="n">底层数据结构由哈希表和链表组成</span><span class="err">。</span><span class="n">哈希表保证元素的唯一性</span><span class="err">，</span><span class="n">链表保证元素有序</span><span class="err">。</span><span class="o">(</span><span class="n">存储和取出是一致</span><span class="o">)</span>
+        <span class="o">|--</span><span class="n">TreeSet</span>  <span class="n">基于</span> <span class="n">TreeMap</span> <span class="n">的</span> <span class="n">NavigableSet</span> <span class="n">实现</span><span class="err">。</span><span class="n">使用元素的自然顺序对元素进行排序</span><span class="err">，</span><span class="n">或者根据创建</span> <span class="n">set</span> <span class="n">时提供的</span> <span class="n">Comparator</span> <span class="n">进行排序</span><span class="err">，</span><span class="n">具体取决于使用的构造方法</span><span class="err">。</span> <span class="n">元素唯一</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="list和set约定">List和Set约定</h2>
+<p>集合约定了List是有序的，而Set是无序的，有没有序是根据存储顺序和取出顺序是否一致来约定。</p>
+<h1 id="collection子接口">Collection子接口</h1>
+<h2 id="list">List</h2>
+<p>List是一个有序的队列，每一个元素都有它的索引，第一个元素的索引值是0。</p>
+<ul>
+<li>ArrayList
+<ul>
+<li>List 中最常用的就是ArrayList，它是一个动态数组，它可以实现动态扩容，每次创建原数组容量<strong>1.5倍</strong>的新数组，把原数组的元素拷贝到新数组。ArrayList允许所有元素包括null，同时ArrayList也不是线程安全的。</li>
+</ul>
+</li>
+<li>LinkedList
+<ul>
+<li>LinkedList实现了List接口，允许元素为空，LinkedList提供了额外的get,remove,insert方法，这些操作可以使LinkedList被用作堆栈、队列或双向队列。LinkedList并不是线程安全的，如果多个线程同时访问LinkedList，则必须自己实现访问同步，或者另外一种解决方法是在创建List时构造一个同步的List。</li>
+</ul>
+</li>
+</ul>
+<h2 id="重要约定hashcode">重要约定：HashCode</h2>
+<ul>
+<li>HashCode 在java中是int类型。</li>
+<li>同⼀个对象必须始终返回相同的hashCode 。</li>
+<li>两个对象的equals返回true，必须返回相同的hashCode。</li>
+<li>两个对象不等，也可能返回相同的hashCode，int最大42亿，而对象是无限的。</li>
+</ul>
+<h2 id="set">Set</h2>
+<p>Set是一个不允许有重复元素的集合。
+判断重复：<code>equals()</code><br>
+Set中还引入了Hash桶的概念，这是一个抽象的容器，不同的HashCode就像是一个个的桶，而Set每加入新的对象就会依次对比它们的HashCode，如果与Hash桶相匹配就丢入桶内。将一个个对象映射成HashCode的方法是 <code>HashCode</code>。</p>
+<ul>
+<li>HashSet
+<ul>
+<li>HashSet是最高效的Set实现，线程不安全。</li>
+<li>HashSet依赖于HashMap，底层是通过HashMap实现的，HashMap的Key就是一个HashSet，所以HashSet能实现的HashMap都能实现，HashSet的构造器中 <code>new</code> 了一个HashMap。</li>
+<li>HashMap在1.7之前使用的是数组+链表实现，在1.8+使用的数组+链表+红黑树实现。<strong>链表长度大于8则转为红黑树</strong></li>
+</ul>
+</li>
+<li>LinkedHashSet 继承了HashSet。实现了一个有序的HashSet。</li>
+<li>TreeSet
+<ul>
+<li>同样，TreeSet依赖于TreeMap，底层通过TreeMap来实现的。</li>
+<li>TreeSet不允许null值。</li>
+<li>TreeSet线程不安全。</li>
+<li>TreeSet实现了SortedSet接口，从而保证了添加的元素按照元素的自然顺序(递增或其他顺序)在集合中进行存储。</li>
+</ul>
+</li>
+</ul>
+<h2 id="queuefifo">Queue(FIFO)</h2>
+<p>队列数据结构，先进先出。<br></p>
+<ul>
+<li>Deque 双端队列，继承自Queue，代替了栈(Stack)。</li>
+<li>PriorityQueue 优先级队列，本质上是堆。是Queue的实现类AbstractQueue的子类，实现了Serializable接口。</li>
+</ul>
+<h2 id="vector">Vector</h2>
+<p>类似与ArrayList的动态数组，线程安全，访问较慢。</p>
+<ul>
+<li>Stack 栈，继承自Vector，先进后出，被双端队列替代。</li>
+</ul>
+<h1 id="集合的另一个基本接口map">集合的另一个基本接口Map</h1>
+<p>**在《java Core 卷一 第九版》一书中的569页，13.3节 集合框架 的倒数第16行原文：“集合有两个基本的接口：Collection和Map。可以使用下列方法向集合中插入元素……”**<br>
+Map 接口中键和值一一映射。可以通过键来获取值。</p>
+<ul>
+<li>方法：
+<ul>
+<li>C/U: <code>put()/putAll()</code></li>
+<li>R:
+<ul>
+<li><code>get()/size()</code></li>
+<li><code>containsKey()/containsValue()</code></li>
+<li><code>keySet()/values()/entrySet()</code></li>
+</ul>
+</li>
+<li>D: <code>remove()/clear()</code></li>
+</ul>
+</li>
+<li>HashMap
+<ul>
+<li>HashMap是Map的实现类，是最高效的Map实现。</li>
+<li>HashMap的key和value都允许为null，HashMap遇到key为null的时候，调用putForNullKey方法进行处理，而对value没有处理。</li>
+<li>HashMap是动态的，它的扩容类似与ArrayList，区别是HashMap是申请一个当前容量<strong>2倍</strong>的桶数组，再将HashMap的key/value映射逐个添加进去。</li>
+<li>HashMap线程不安全。原因是HashMap在多线程扩容时可能会变成死循环。解决方案是使用 <strong>ConcurrentHashMap</strong>。
+<ol>
+<li>put时导致多线程数据不一致。有线程A、B，假设HashCode相同，A找到了与之对应的Hash桶坐标准备插入数据，但是此时A的时间片用完了，A进入阻塞状态，此时B找到Hash桶成功插入数据，但是和之前A要插入数据的位置相同，而后A又被调度，就会把B的数据覆盖，最后导致数据不一致问题。</li>
+<li>死循环，<code>get() -&gt; resize()</code> 导致的循环链表。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Hashtable
+<ul>
+<li>继承自Dictionary类。Dictionary 是任何可将键映射到相应值的类的抽象父类。</li>
+<li>Hashtable的key和value都不允许为null，Hashtable遇到key为null，直接返回NullPointerException。</li>
+<li>Hashtable线程安全，而HashMap则不是。Hashtable几乎所有的public的方法都是<strong>synchronized</strong>的，而有些方法也是在内部通过<strong>synchronized</strong>代码块来实现。所以多线程使用Hashtable。</li>
+</ul>
+</li>
+</ul>
+<h1 id="collections工具类">Collections工具类</h1>
+<h2 id="注意工具类一般都是在实现类的名字后面加一个s例如guava中的listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个s,例如Guava中的Lists/Sets/Maps。</h2>
+<ul>
+<li><code>emptySet()</code>: 等返回⼀个⽅便的空集合。</li>
+<li><code>synchronizedCollection</code>: 将⼀个集合变成线程安全的。</li>
+<li><code>unmodifiableCollection</code>: 将⼀个集合变成不可变的(也可以
+使⽤Guava的Immutable)。</li>
+</ul>
+<h1 id="guava">Guava</h1>
+<h2 id="google-guava是java的一组开源通用库主要由google工程师开发">Google Guava是Java的一组开源通用库，主要由Google工程师开发。</h2>
+<ul>
+<li>不要重复发明轮⼦！尽量使⽤经过实战检验的类库</li>
+<li><a href="https://github.com/google/guava" target="_blank" rel="noopener noreffer">Guava Github Repo</a><br></li>
+<li><a href="https://legacy.gitbook.com/book/wizardforcel/guava-tutorial/details" target="_blank" rel="noopener noreffer">Guava 中文教程</a></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-07-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" data-title="Java的collection体系"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/git%E5%92%8Cgithub/" class="prev" rel="prev" title="Git和Github"><i class="fas fa-angle-left fa-fw"></i>Git和Github</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
