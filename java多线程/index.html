@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java多线程 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Java多线程" />
+<meta property="og:description" content="Java多线程 什么是进程 什么是线程 《操作系统》一书中给出了一个定义：进程是程序关于某数据集合的一次执行，是系统进行资源分配和调度的基本单位。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-08-07T21:28:25+08:00" />
+<meta property="article:modified_time" content="2020-08-07T21:28:25+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="Java多线程"/>
+<meta name="twitter:description" content="Java多线程 什么是进程 什么是线程 《操作系统》一书中给出了一个定义：进程是程序关于某数据集合的一次执行，是系统进行资源分配和调度的基本单位。"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" /><link rel="prev" href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java多线程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/java%E5%A4%9A%E7%BA%BF%E7%A8%8B\/"
+        },"genre": "posts","wordcount":  4094 ,
+        "url": "\/java%E5%A4%9A%E7%BA%BF%E7%A8%8B\/","datePublished": "2020-08-07T21:28:25+08:00","dateModified": "2020-08-07T21:28:25+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/" title="访问博客主页">🎈 Back </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="">✨Chen yuntao&#39;s cabin✨</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/" title="访问博客主页">🎈Back</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java多线程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-07">2020-08-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4094 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是进程-什么是线程">什么是进程 什么是线程</a></li>
+    <li><a href="#什么是多线程">什么是多线程</a></li>
+    <li><a href="#多线程与多进程有哪些区别">多线程与多进程有哪些区别</a></li>
+    <li><a href="#为什么需要多线程">为什么需要多线程</a></li>
+    <li><a href="#如何开启新的线程">如何开启新的线程</a>
+      <ul>
+        <li><a href="#下面是在一个单独线程中执行一个任务的简单流程">下面是在一个单独线程中执行一个任务的简单流程：</a></li>
+        <li><a href="#特别要注意">特别要注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#线程状态">线程状态</a></li>
+    <li><a href="#多线程执行的本质">多线程执行的本质</a></li>
+    <li><a href="#多线程带来的性能提升">多线程带来的性能提升</a></li>
+    <li><a href="#线程非常昂贵">线程非常昂贵</a></li>
+    <li><a href="#线程不安全的表现">线程不安全的表现</a></li>
+    <li><a href="#线程安全">线程安全</a></li>
+    <li><a href="#object类里的线程方法">Object类里的线程方法</a></li>
+    <li><a href="#线程池">线程池</a>
+      <ul>
+        <li><a href="#执行器executor">执行器(Executor)</a></li>
+      </ul>
+    </li>
+    <li><a href="#threadlocal">ThreadLocal</a>
+      <ul>
+        <li><a href="#概念">概念</a></li>
+        <li><a href="#threadlocal实现">ThreadLocal实现</a>
+          <ul>
+            <li><a href="#sett-value">Set(T value)</a></li>
+            <li><a href="#get">get()</a></li>
+            <li><a href="#initialvalue">initialValue()</a></li>
+            <li><a href="#remove">remove()</a></li>
+          </ul>
+        </li>
+        <li><a href="#当前线程的-threadlocalmap">当前线程的 ThreadLocalMap</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="java多线程">Java多线程</h1>
+<h2 id="什么是进程-什么是线程">什么是进程 什么是线程</h2>
+<blockquote>
+<p>《操作系统》一书中给出了一个定义：进程是程序关于某数据集合的一次执行，是系统进行资源分配和调度的基本单位。<br>
+《Java核心技术 卷 I》14章 给出了一个定义：一个程序同时执行多个任务。通常，每一个任务称为一个<em>线程 (thread)</em>，它是线程控制的简称。</p>
+</blockquote>
+<h2 id="什么是多线程">什么是多线程</h2>
+<p>可以同时运行一个以上线程的程序称为<em>多线程程序 (multithreaded)</em>，</p>
+<h2 id="多线程与多进程有哪些区别">多线程与多进程有哪些区别</h2>
+<p>本质的区别在于每个进程拥有自己的一整套变量，而线程则共享数据。因为这一性质，才导致多线程中共享的变量不是“安全的”。操作系统中，线程与进程相比较，线程更加轻量级，创建和撤销一个线程的开销要远小于线程。</p>
+<h2 id="为什么需要多线程">为什么需要多线程</h2>
+<ul>
+<li>CPU和内存、内存和硬盘读写速度极度不匹配，CPU的执行速度要远远快于其他设备。</li>
+<li>现代CPU都是多核的，比如一个八核CPU，当运行单线程的时候，另外7核都处于空闲状态，多线程可以提高CPU的利用率。</li>
+<li>Java的执行模型是 <strong>同步/阻塞</strong> 模型。在默认情况下，java就是这种传统的IO模型：
+<ul>
+<li>单线程处理问题按部就班，按照代码顺序执行。</li>
+<li>性能差劲。</li>
+</ul>
+</li>
+</ul>
+<h2 id="如何开启新的线程">如何开启新的线程</h2>
+<ul>
+<li>Thread类<br>
+Java提供了一个Thread线程类，它实现了Runnable接口。而Runnable接口中仅有一个抽象方法<code>run()</code>,它是一个函数式接口，可以传递给Runnable一个lambda表达式。<br></li>
+</ul>
+<h3 id="下面是在一个单独线程中执行一个任务的简单流程">下面是在一个单独线程中执行一个任务的简单流程：</h3>
+<ol>
+<li>将任务代码移到实现了Runnable接口的类的<code>run()</code>方法中。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Runnable</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">run</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>由于Runnable接口是一个函数式接口，可以用lambda表达式建立一个实例。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Runnable</span> <span class="n">r</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span><span class="cm">/** task code **/</span><span class="o">};</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>由Runnable创建一个Thread对象：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Thread</span> <span class="n">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="n">r</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>启动线程
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">thread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="特别要注意">特别要注意</h3>
+<ul>
+<li>只有<code>start()</code>方法才能并发执行。</li>
+<li>每多开一个线程，就会多一个执行流。</li>
+<li>每个线程都有自己独立的方法栈，每运行<code>start()</code>，就会给一个新线程开辟独立的方法栈，方法栈是线程私有的。</li>
+<li>静态变量/类变量是被所有线程所共享的。</li>
+</ul>
+<h2 id="线程状态">线程状态</h2>
+<p>线程可以有如下6种状态：</p>
+<ul>
+<li>New 新创建</li>
+<li>Runnable 可运行</li>
+<li>Block 被阻塞</li>
+<li>Waiting 等待</li>
+<li>Timed Waiting 计时等待</li>
+<li>Terminated 被终止</li>
+</ul>
+<ol>
+<li>新创建线程<br>当使用new操作符创建一个线程，如 <code>new Thread()</code> ，该线程还没有开始运行。这意味着线程的状态是New。</li>
+<li>可运行的线程<br>一旦调用<code>start()</code>方法，线程处于Runnable状态。一个可运行的线程可能正在运行也可能没有在运行，这取决于操作系统给线程提供运行的时间。一旦一个线程开始运行，它不必始终保持运行状态。</li>
+<li>被阻塞线程和等待线程<br>当线程处于被阻塞或等待状态时，它暂时不活动。它不运行任何代码而且消耗最少的资源。直到线程调度器重新激活该线程。
+<ul>
+<li>当一个线程试图获取一个内部对象锁，该线程进入阻塞状态。当所有其他线程释放该锁，并且线程调度器允许本线程持有它的时候，该线程将变成非阻塞状态。</li>
+<li>当线程等待另一个线程通知调度器的一个条件时，自己进入等待状态。</li>
+<li>有几个方法有一个超时参数。调用它们导致线程进入计时等待状态。这一状态将一直保持到超时期满。</li>
+</ul>
+</li>
+<li>被终止的线程
+<ol>
+<li>因为<code>run()</code>方法正常退出而自然死亡。</li>
+<li>因为一个没有捕获的异常终止了<code>run()</code>方法而意外死亡。</li>
+</ol>
+</li>
+</ol>
+<h2 id="多线程执行的本质">多线程执行的本质</h2>
+<p>多线程的本质就是，一段相同的代码被不同的线程以不可预知的顺序和速度执行。</p>
+<h2 id="多线程带来的性能提升">多线程带来的性能提升</h2>
+<ul>
+<li>对于IO密集型的应用特别有用
+<ul>
+<li>网络IO (通常包括数据库)</li>
+<li>文件IO</li>
+</ul>
+</li>
+<li>对于CPU密集型的应用稍有折扣</li>
+<li>性能提升的上限：理论上CPU占用可以达到100%
+<ul>
+<li>单核CPU：100%</li>
+<li>N核CPU：N × 100%</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程非常昂贵">线程非常昂贵</h2>
+<ul>
+<li>能不能使用线程达到无穷无尽的提升
+<ul>
+<li>不能</li>
+</ul>
+</li>
+<li>线程的昂贵性在于
+<ul>
+<li>CPU切换上下文很慢</li>
+<li>线程需要占用内存等系统资源</li>
+</ul>
+</li>
+<li>如果你的应用一天只有几个用户
+<ul>
+<li>使用 <code>new Thread().start()</code></li>
+</ul>
+</li>
+<li>如果你的应用负载很高，有很多用户访问
+<ul>
+<li>使用JUC包</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程不安全的表现">线程不安全的表现</h2>
+<ul>
+<li>
+<p>数据错误</p>
+<ul>
+<li>i++
+<ul>
+<li>使用多线程对变量i从0开始累加1000次，最后得到的结果不是1000，问题在于对变量累加不是原子操作：</li>
+<li>i++;被做了如下处理：</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="o">(</span><span class="n">1</span><span class="o">)</span> <span class="n">取i值</span><span class="err">，</span><span class="n">将i加载到寄存器</span><span class="err">。</span>
+  <span class="o">(</span><span class="n">2</span><span class="o">)</span> <span class="n">自增i</span><span class="err">。</span>
+  <span class="o">(</span><span class="n">3</span><span class="o">)</span> <span class="n">将结果写回i的内存位置</span><span class="err">。</span>
+  <span class="n">这里就会出现问题</span><span class="o">:</span>
+  <span class="n">我们假设i的初值为0</span><span class="err">，</span>
+  <span class="n">第一个线程1执行了步骤1</span><span class="err">、</span><span class="n">2</span><span class="err">。</span>
+  <span class="n">但是CPU给线程1执行的时间片完了</span><span class="err">，</span><span class="n">就会调度第二个线程2执行</span><span class="err">，</span>
+  <span class="n">但是此时i值为0并没有改变</span><span class="o">(</span><span class="n">线程1没有执行变量写回内存操作</span><span class="o">)</span><span class="err">，</span>
+  <span class="n">线程2继续执行完了步骤1</span><span class="err">、</span><span class="n">2</span><span class="err">、</span><span class="n">3</span><span class="err">，</span><span class="n">把此时的i值为1写回了内存</span><span class="err">，</span>
+  <span class="n">线程1又被调度获得了CPU</span><span class="err">，</span><span class="n">就继续之前没有进行的步骤3操作</span><span class="err">，</span>
+  <span class="n">线程1将之前执行步骤1</span><span class="err">、</span><span class="n">2的i值为1又写回了内存</span><span class="err">，</span>
+  <span class="n">覆盖了线程2写入的i值为1</span><span class="err">，</span><span class="n">此时的i值还是为1</span><span class="err">。</span><span class="n">就导致了数据错误</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>if-then-do
+<ul>
+<li>类似于i++的错误，也是因为多线程操作不是原子操作。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>死锁</p>
+<blockquote>
+<p>《操作系统》定义了死锁：如果一组进程中的每一个进程都在等待仅有该组进程中的其他进程才能引发的事件，那么成这组进程是死锁的。</p>
+</blockquote>
+<ul>
+<li>著名的HashMap的死循环问题。</li>
+<li>预防死锁产生的原则：
+<ul>
+<li>所有线程都按照相同的顺序来获取锁。</li>
+</ul>
+</li>
+<li>死锁问题的排查
+<ul>
+<li>jps/jstack</li>
+</ul>
+</li>
+<li>多线程经典问题：哲学家用餐问题。</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程安全">线程安全</h2>
+<ul>
+<li>线程的默认实现几乎都是线程不安全的，而且线程的操作不是原子性操作，导致共享变量的数据可能出错。</li>
+<li>实现线程安全的基本手段：
+<ul>
+<li>不可变的类：数据出错的根本原因就是并发的修改数据。
+<ul>
+<li>Integer/String</li>
+</ul>
+</li>
+<li>synchronized同步块
+<ul>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">1</span><span class="o">.</span> <span class="kd">public</span> <span class="kd">synchronized</span> <span class="nf">method</span><span class="o">(){</span><span class="cm">/**Concurrent code**/</span><span class="o">}</span>
+<span class="n">2</span><span class="o">.</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kd">synchronized</span> <span class="nf">method</span><span class="o">(){</span><span class="cm">/**Concurrent code**/</span><span class="o">}</span>
+<span class="n">3</span><span class="o">.</span> <span class="nf">synchronized</span><span class="o">((</span><span class="n">Object</span><span class="o">)</span> <span class="n">Lock</span><span class="o">){</span><span class="cm">/**Concurrent code**/</span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>同步块同步了什么东西？
+<ul>
+<li>synchronized(Object) 把这个对象当成锁</li>
+<li>static synchronized方法 把Class对象当成锁</li>
+<li>实例的synchronized方法 把该实例当成锁</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>普通Collection转ConcurrentCollection
+<ul>
+<li>Collections.synchronized</li>
+</ul>
+</li>
+<li>JUC
+<ul>
+<li>Atomic类</li>
+<li>ConcurrentHashMap
+<ul>
+<li>任何HashMap有线程不安全的地方都使用ConcurrentHashMap</li>
+<li>或者无脑使用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ReentrantLock 可重入锁
+<ul>
+<li>语法：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ReentrantLock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantLock</span><span class="o">();</span>
+<span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span><span class="c1">//加锁
+</span><span class="c1"></span>      
+<span class="cm">/**Concurrent code**/</span>
+
+<span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span><span class="c1">//解锁
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>条件对象
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Condition</span> <span class="n">newCondtion</span> <span class="o">=</span> <span class="n">Lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+<span class="n">newCondition</span><span class="o">.</span><span class="na">await</span><span class="o">();</span><span class="c1">//不满足条件，阻塞，放弃锁
+</span><span class="c1"></span><span class="n">newCondition</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span><span class="c1">//随机唤醒其他线程
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>读写锁ReentrantReadWriteLock</li>
+<li>注意synchronized也是可重入的
+<ul>
+<li>可重入锁也叫递归锁，意思是当一个线程中的某个对象持有锁的时候可以再次持有锁。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="object类里的线程方法">Object类里的线程方法</h2>
+<ul>
+<li>Java从一开始就把线程作为语言特性，提供了语言级别的支持。</li>
+<li>为什么Java中的所有对象都能成为锁
+<ul>
+<li>Object中有 <code>wait()/notify()/notifyAll()</code>方法</li>
+</ul>
+</li>
+</ul>
+<h2 id="线程池">线程池</h2>
+<p>构建一个新的线程是要付出一定代价的，因为涉及与操作系统的交互。如果程序中创建了大量的生命周期很短的线程，就应该使用线程池(thread pool);一个线程池中包含许多准备运行的空闲线程。将Runnable对象交给线程池，就会有一个线程调用run方法。当run方法退出，线程不会死亡，而是在线程池中准备下一次运行。<br></p>
+<h3 id="执行器executor">执行器(Executor)</h3>
+<p>执行器类中有许多静态工场方法构建线程池。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">newFixedThreadPool</span>	<span class="n">该池包含固定数量的线程</span><span class="err">，</span><span class="n">空闲线程会被一直保留</span>
+<span class="n">newCachedThreadPool</span>	<span class="n">必要时创建新线程</span><span class="err">，</span><span class="n">空闲线程会被保留60秒</span>
+<span class="n">newSingleThreadPool</span>	<span class="n">只有一个线程的线程池</span><span class="err">，</span><span class="n">该线程顺序执行每一个提交的任务</span><span class="o">(</span><span class="n">类似于Swing事件分配线程</span><span class="o">)</span>
+<span class="n">newScheduledThreadPool</span>	<span class="n">用于预定执行而构建的固定线程池</span><span class="err">，</span><span class="n">替代java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Timer</span>
+<span class="n">newSingleThreadScheduledPool</span>	<span class="n">用于预定执行而构建的单线程池</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>下面总结了在使用连接池时应该做的事情：
+<ol>
+<li>调用Executors类中的静态方法newCacheThreadPool或newFixedThreadPool。</li>
+<li>调用submit提交Runnable或者Callable对象。</li>
+<li>如果想要取消一个任务，或如果提交Callable对象，就要保存好返回的Future对象。</li>
+<li>当不再提交任何任务时，调用shotdown()。该方法启动该线程池的关闭序列。被关闭的执行器不再接受新的任务。当所有任务完成以后，线程池中的线程死亡。</li>
+</ol>
+</li>
+</ul>
+<h2 id="threadlocal">ThreadLocal</h2>
+<h3 id="概念">概念</h3>
+<blockquote>
+<p>ThreadLocal 用于提供线程局部变量，在多线程环境可以保证各个线程里的变量独立于其它线程里的变量。也就是说 ThreadLocal 可以为每个线程创建一个单独的变量副本，相当于线程的 private static 类型变量。<br>
+ThreadLocal 的作用和同步机制有些相反：同步机制是为了保证多线程环境下数据的一致性；而 ThreadLocal 是保证了多线程环境下数据的独立性。<br>
+对于 ThreadLocal 类型的变量，在一个线程中设置值，不影响其在其它线程中的值。也就是说 ThreadLocal 类型的变量的值在每个线程中是独立的。</p>
+</blockquote>
+<h3 id="threadlocal实现">ThreadLocal实现</h3>
+<p>ThreadLocal 是构造函数只是一个简单的无参构造函数，并且没有任何实现。<br></p>
+<h4 id="sett-value">Set(T value)</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">set</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+    <span class="n">ThreadLocalMap</span> <span class="n">map</span> <span class="o">=</span> <span class="n">getMap</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">map</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="k">else</span>
+        <span class="n">createMap</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">set</span><span class="o">(</span><span class="n">T</span> <span class="n">value</span><span class="o">)</span> <span class="n">方法中</span><span class="err">，</span><span class="n">首先获取当前线程</span><span class="err">，</span><span class="n">然后在获取到当前线程的</span> <span class="n">ThreadLocalMap</span><span class="err">，</span><span class="n">如果</span> <span class="n">ThreadLocalMap</span> <span class="n">不为</span> <span class="kc">null</span><span class="err">，</span><span class="n">则将</span> <span class="n">value</span> <span class="n">保存到</span> <span class="n">ThreadLocalMap</span> <span class="n">中</span><span class="err">，</span><span class="n">并用当前</span> <span class="n">ThreadLocal</span> <span class="n">作为</span> <span class="n">key</span><span class="err">；</span><span class="n">否则创建一个</span> <span class="n">ThreadLocalMap</span> <span class="n">并给到当前线程</span><span class="err">，</span><span class="n">然后保存</span> <span class="n">value</span><span class="err">。</span>
+<span class="n">ThreadLocalMap</span> <span class="n">相当于一个</span> <span class="n">HashMap</span><span class="err">，</span><span class="n">是真正保存值的地方</span><span class="err">。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="get">get()</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">T</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+    <span class="n">ThreadLocalMap</span> <span class="n">map</span> <span class="o">=</span> <span class="n">getMap</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">map</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ThreadLocalMap</span><span class="o">.</span><span class="na">Entry</span> <span class="n">e</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">getEntry</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">e</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;unchecked&#34;</span><span class="o">)</span>
+            <span class="n">T</span> <span class="n">result</span> <span class="o">=</span> <span class="o">(</span><span class="n">T</span><span class="o">)</span><span class="n">e</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+            <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">setInitialValue</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>同样的，在 get() 方法中也会获取到当前线程的 ThreadLocalMap，如果 ThreadLocalMap 不为 null，则把获取 key 为当前 ThreadLocal 的值；否则调用 setInitialValue() 方法返回初始值，并保存到新创建的 ThreadLocalMap 中。</p>
+<h4 id="initialvalue">initialValue()</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">T</span> <span class="nf">setInitialValue</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">T</span> <span class="n">value</span> <span class="o">=</span> <span class="n">initialValue</span><span class="o">();</span>
+    <span class="n">Thread</span> <span class="n">t</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+    <span class="n">ThreadLocalMap</span> <span class="n">map</span> <span class="o">=</span> <span class="n">getMap</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">map</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="k">else</span>
+        <span class="n">createMap</span><span class="o">(</span><span class="n">t</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>initialValue() 是 ThreadLocal 的初始值，默认返回 null，子类可以重写改方法，用于设置 ThreadLocal 的初始值。</p>
+<h4 id="remove">remove()</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">remove</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">ThreadLocalMap</span> <span class="n">m</span> <span class="o">=</span> <span class="n">getMap</span><span class="o">(</span><span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">());</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">m</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">m</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>ThreadLocal 还有一个 remove() 方法，用来移除当前 ThreadLocal 对应的值。同样也是通过当前线程的 ThreadLocalMap 来移除相应的值。</p>
+<h3 id="当前线程的-threadlocalmap">当前线程的 ThreadLocalMap</h3>
+<blockquote>
+<p>    在 set，get，initialValue 和 remove 方法中都会获取到当前线程，然后通过当前线程获取到 ThreadLocalMap，如果 ThreadLocalMap 为 null，则会创建一个 ThreadLocalMap，并给到当前线程。<br>
+    每一个线程都会持有有一个 ThreadLocalMap，用来维护线程本地的值。
+在使用 ThreadLocal 类型变量进行相关操作时，都会通过当前线程获取到 ThreadLocalMap 来完成操作。每个线程的 ThreadLocalMap 是属于线程自己的，ThreadLocalMap 中维护的值也是属于线程自己的。这就保证了 ThreadLocal 类型的变量在每个线程中是独立的，在多线程环境下不会相互影响。</p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" data-title="Java多线程"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" class="prev" rel="prev" title="Java的Collection体系"><i class="fas fa-angle-left fa-fw"></i>Java的Collection体系</a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
