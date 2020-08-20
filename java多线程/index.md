@@ -249,5 +249,5 @@ public void remove() {
 ThreadLocal 还有一个 remove() 方法，用来移除当前 ThreadLocal 对应的值。同样也是通过当前线程的 ThreadLocalMap 来移除相应的值。
 ### 当前线程的 ThreadLocalMap
 >&nbsp;&nbsp;&nbsp;&nbsp;在 set，get，initialValue 和 remove 方法中都会获取到当前线程，然后通过当前线程获取到 ThreadLocalMap，如果 ThreadLocalMap 为 null，则会创建一个 ThreadLocalMap，并给到当前线程。<br>
-&nbsp;&nbsp;&nbsp;&nbsp;每一个线程都会持有有一个 ThreadLocalMap，用来维护线程本地的值。
+>&nbsp;&nbsp;&nbsp;&nbsp;每一个线程都会持有有一个 ThreadLocalMap，用来维护线程本地的值。
 在使用 ThreadLocal 类型变量进行相关操作时，都会通过当前线程获取到 ThreadLocalMap 来完成操作。每个线程的 ThreadLocalMap 是属于线程自己的，ThreadLocalMap 中维护的值也是属于线程自己的。这就保证了 ThreadLocal 类型的变量在每个线程中是独立的，在多线程环境下不会相互影响。
