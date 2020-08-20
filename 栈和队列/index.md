@@ -1,4 +1,4 @@
-# 算法第四版关于栈和队列
+# 栈和队列
 
 
 ## 栈和队列
@@ -157,10 +157,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
           }
           StdOut.println(vals.pop());
       }
-}```
-
-
-
+    }
 
 **下压堆栈（链表实现）**
 
@@ -252,42 +249,4 @@ public class Queue<Item> implements Iterable<Item>{
 	}
 }
 ```
-
-
-
-### 练习
-
-编写一个函数，接受一条链表的首结点作为参数，将链表反转并返回结果链表的首结点。
-
-迭代的方式解答：为了完成这个任务，我们需要记录链表中的三个连续的结点：`reverse、first、second`。
-在每一轮迭代中，我们从原始链表中提取结点first并将它插入到逆链表的开头。我们需要一直保持`first`指向原来链表中所有剩余结点的首结点，`second`指向原来链表的所有剩余结点的第二个结点，`reverse`指向结果链表中的首结点。
-
-```java
-迭代
-public Node reverse(Node x){
-    Node first = x;
-    Node reverse = null;
-    while(first!=null){
-        Node second = first.next;
-        first.next = reverse;
-        reverse = first;
-        first = second;
-    }
-    return reverse;
-}
-
-递归:假设链表含有N个结点，我们先递归颠倒最后N-1个结点，然后小心地将原链表中的首结点插入到结果链表的末端。
-public Node reverse(Node first){
-    if(first = null)
-        return null;
-    if(first.next == null)
-        return first;
-    Node second = first.next;
-    Node rest = reverse(second);
-    second.next = first;
-    first.next = null;
-    return rest;
-}
-```
-
 

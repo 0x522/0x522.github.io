@@ -74,5 +74,6 @@ Maven的依赖范围在xml文件中用`<scope>`表示，参数有以下：
 | 安装 install  | 安装     | 安装打包的项目到本地仓库，以供其他项目使用               |
 | 部署 deploy   | 部署     | 拷贝最终的工程包到远程仓库中，以共享给其他开发人员和工程 |
 
+
 # 参考书
 [Maven实战.pdf](https://github.com/guanpengchn/awesome-books/blob/master/Java/Maven%E5%AE%9E%E6%88%98.pdf)
