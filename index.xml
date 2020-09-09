@@ -4,9 +4,16 @@
         <link>/</link>
         <description>这是我的全新 Hugo 网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chenyuntao1997@163.com (作者)</managingEditor>
-            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Fri, 07 Aug 2020 21:28:25 &#43;0800</lastBuildDate>
+            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>html常用标签</title>
+    <link>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+    <pubDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+    <description><![CDATA[HTML常用标签 a标签 属性 href target 内置名字 _blank _top _parent _self target具体作用 跳转到外部页面 跳转到内部锚点 跳转到邮箱或者电话 download 不是打开页面，而是下载页面]]></description>
+</item><item>
     <title>Java多线程</title>
     <link>/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
     <pubDate>Fri, 07 Aug 2020 21:28:25 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>/cookie/</guid>
     <description><![CDATA[会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一]]></description>
-</item><item>
-    <title>堆排序</title>
-    <link>/%E5%A0%86%E6%8E%92%E5%BA%8F/</link>
-    <pubDate>Wed, 01 Apr 2020 17:59:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/%E5%A0%86%E6%8E%92%E5%BA%8F/</guid>
-    <description><![CDATA[堆排序 O (nlgn) 堆排序是指利用堆这种数据结构所设计的一种排序算法。堆是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于]]></description>
 </item></channel>
 </rss>
