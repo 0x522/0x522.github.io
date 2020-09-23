@@ -4,7 +4,14 @@
         <link>/posts/</link>
         <description>所有文章 | </description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chenyuntao1997@163.com (作者)</managingEditor>
-            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Wed, 23 Sep 2020 08:01:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>浅析url</title>
+    <link>/%E6%B5%85%E6%9E%90url/</link>
+    <pubDate>Wed, 23 Sep 2020 08:01:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/%E6%B5%85%E6%9E%90url/</guid>
+    <description><![CDATA[URL 包含哪几部分 URL 包括: 协议 域名/ip 地址 路径 查询参数 锚点 以https://www.baidu.com/s?wd=hello&amp;rsv_]]></description>
+</item><item>
     <title>html常用标签</title>
     <link>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
     <pubDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>/session/</guid>
     <description><![CDATA[Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object]]></description>
-</item><item>
-    <title>cookie</title>
-    <link>/cookie/</link>
-    <pubDate>Sun, 19 Apr 2020 14:29:56 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/cookie/</guid>
-    <description><![CDATA[会话技术 会话：一次会话中包含多次请求和响应。 一次会话：浏览器第一次给服务器资源发送请求，会话建立，直到有一方断开为止，算一次会话。 功能：在一]]></description>
 </item></channel>
 </rss>
