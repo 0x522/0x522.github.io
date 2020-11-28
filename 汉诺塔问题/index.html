@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>汉诺塔问题 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="汉诺塔问题" />
-<meta property="og:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。 2、" />
+        <title>汉诺塔 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="汉诺塔" />
+<meta property="og:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为 A(起始柱子),B(中间柱子),C(目标柱子)。 2、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" />
 <meta property="og:image" content="/logo.png"/>
@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
-<meta name="twitter:title" content="汉诺塔问题"/>
-<meta name="twitter:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。 2、"/>
+<meta name="twitter:title" content="汉诺塔"/>
+<meta name="twitter:description" content="汉诺塔问题 汉诺塔问题是递归的一个具体案例。 汉诺游戏规则如下： 1、有三根相邻的柱子，标号为 A(起始柱子),B(中间柱子),C(目标柱子)。 2、"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "汉诺塔问题",
+        "headline": "汉诺塔",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98\/"
-        },"genre": "posts","wordcount":  1071 ,
+        },"genre": "posts","wordcount":  1036 ,
         "url": "\/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98\/","datePublished": "2020-03-17T17:59:56+08:00","dateModified": "2020-03-17T17:59:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,9 +104,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">汉诺塔问题</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">汉诺塔</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1071 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1036 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -125,9 +125,9 @@
 </li>
 <li>
 <p>汉诺游戏规则如下：</p>
-<p>1、有三根相邻的柱子，标号为A(起始柱子),B(中间柱子),C(目标柱子)。</p>
-<p>2、A柱子上从下到上按金字塔状叠放着n个不同大小的圆盘。</p>
-<p>3、现在把所有盘子一个一个移动到柱子C上，并且每次移动同一根柱子上都不能出现大盘子在小盘子上方。</p>
+<p>1、有三根相邻的柱子，标号为 A(起始柱子),B(中间柱子),C(目标柱子)。</p>
+<p>2、A 柱子上从下到上按金字塔状叠放着 n 个不同大小的圆盘。</p>
+<p>3、现在把所有盘子一个一个移动到柱子 C 上，并且每次移动同一根柱子上都不能出现大盘子在小盘子上方。</p>
 </li>
 <li>
 <p><strong>汉诺塔的解题思想</strong></p>
@@ -135,26 +135,26 @@
 <li>不考虑全局，不展开递归，人脑的思维内能力有限，所以我们需要把问题简化，<strong>只考虑当前应该怎么做即可</strong>。</li>
 <li>将汉诺塔问题看作两种情况：1.只有一个圆盘时 2.只有两个圆盘时(最下面的最大的盘子和上面的其他所有的盘子)。</li>
 <li>当递归调用开始，每一次递归都是对之前递归的重复，直到条件或断言终止。</li>
-<li>汉诺塔问题不是单一的递归问题，当圆盘个数大于1时，里面包含了3个步骤：(上面代表除最下面以外的所有盘子，下面代表最下面的盘子)
+<li>汉诺塔问题不是单一的递归问题，当圆盘个数大于 1 时，里面包含了 3 个步骤：(上面代表除最下面以外的所有盘子，下面代表最下面的盘子)
 <ul>
 <li>移动上面的所有盘子到中间柱子</li>
 <li>移动下面的盘子到目标柱子</li>
 <li>再把移动过的上面的所有盘子从中间柱子移动到目标柱子</li>
 </ul>
 </li>
-<li><strong>递归联想：假如有十个农民工，我们姑且叫他们老1，老2 &hellip;..老10</strong>
+<li><strong>递归联想：假如有十个农民工，我们姑且叫他们老 1，老 2 &hellip;..老 10</strong>
 <ul>
 <li><strong>村里承包项目，盖十层楼</strong></li>
-<li>村里把项目交给老10来做，老10只会盖第十层楼，没办法，没有前面9层楼他也没法盖啊，然后就把前9层的项目外包给了老9</li>
-<li>很巧，老9只会盖第九层楼，老9又把前8层项目外包给了老8</li>
-<li>老8也是一样，只会盖第8层，又把前7层外包给了老7</li>
-<li>老7只会盖第7层，然后又外包了下去</li>
-<li>老6&hellip;..</li>
-<li>老5&hellip;.</li>
-<li>老4&hellip;</li>
-<li>老3..</li>
-<li>老2..</li>
-<li><strong>最终老1拿到了这个盖第1层楼的活，没法再外包了(条件终止),然后老1就盖了起来，然后老1盖好1层了老2盖好2层&hellip;&hellip;老7盖好7层，老8盖好8层，直到老10盖好第十层，这个项目就算完工了</strong></li>
+<li>村里把项目交给老 10 来做，老 10 只会盖第十层楼，没办法，没有前面 9 层楼他也没法盖啊，然后就把前 9 层的项目外包给了老 9</li>
+<li>很巧，老 9 只会盖第九层楼，老 9 又把前 8 层项目外包给了老 8</li>
+<li>老 8 也是一样，只会盖第 8 层，又把前 7 层外包给了老 7</li>
+<li>老 7 只会盖第 7 层，然后又外包了下去</li>
+<li>老 6&hellip;..</li>
+<li>老 5&hellip;.</li>
+<li>老 4&hellip;</li>
+<li>老 3..</li>
+<li>老 2..</li>
+<li><strong>最终老 1 拿到了这个盖第 1 层楼的活，没法再外包了(条件终止),然后老 1 就盖了起来，然后老 1 盖好 1 层了老 2 盖好 2 层&hellip;&hellip;老 7 盖好 7 层，老 8 盖好 8 层，直到老 10 盖好第十层，这个项目就算完工了</strong></li>
 <li>这个故事就是纯正的递归思想，包括思路应该很清楚了</li>
 </ul>
 </li>
@@ -215,7 +215,7 @@
     <span class="o">}</span>
 <span class="c1">//A表示起始位置，B表示中间位置，C表示目标位置
 </span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">move</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">char</span> <span class="n">A</span><span class="o">,</span> <span class="kt">char</span> <span class="n">B</span><span class="o">,</span> <span class="kt">char</span> <span class="n">C</span><span class="o">)</span> <span class="o">{</span>
-       
+
         <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
             <span class="c1">//如果只有一个盘子，那么就从起始位置直接移到目标位置
 </span><span class="c1"></span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">1</span> <span class="o">+</span> <span class="s">&#34; From &#34;</span> <span class="o">+</span> <span class="n">A</span> <span class="o">+</span> <span class="s">&#34; to &#34;</span> <span class="o">+</span> <span class="n">C</span><span class="o">);</span>
@@ -245,7 +245,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔问题"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/%E6%B1%89%E8%AF%BA%E5%A1%94%E9%97%AE%E9%A2%98/" data-title="汉诺塔"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>

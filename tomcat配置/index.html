@@ -6,21 +6,21 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Tomcat的配置 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Tomcat的配置" />
-<meta property="og:description" content="Tomcat的配置 部署项目方式的 直接将项目放到webapps目录下即可 按照文件路径来访问 简化部署：将项目打成一个.war的包，再将war包放" />
+<meta property="og:description" content="Tomcat 的配置 部署项目方式的 直接将项目放到 webapps 目录下即可 按照文件路径来访问 简化部署：将项目打成一个.war 的包，再将 war 包放置到 webapps 目录下，tomcat" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/tomcat%E9%85%8D%E7%BD%AE/" />
 <meta property="og:image" content="/logo.png"/>
-<meta property="article:published_time" content="2020-02-27T14:29:56+08:00" />
-<meta property="article:modified_time" content="2020-02-27T14:29:56+08:00" />
+<meta property="article:published_time" content="2019-12-27T14:29:56+08:00" />
+<meta property="article:modified_time" content="2019-12-27T14:29:56+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="Tomcat的配置"/>
-<meta name="twitter:description" content="Tomcat的配置 部署项目方式的 直接将项目放到webapps目录下即可 按照文件路径来访问 简化部署：将项目打成一个.war的包，再将war包放"/>
+<meta name="twitter:description" content="Tomcat 的配置 部署项目方式的 直接将项目放到 webapps 目录下即可 按照文件路径来访问 简化部署：将项目打成一个.war 的包，再将 war 包放置到 webapps 目录下，tomcat"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/tomcat%E9%85%8D%E7%BD%AE/" /><link rel="prev" href="/xml/" /><link rel="next" href="/servlet/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/tomcat%E9%85%8D%E7%BD%AE/" /><link rel="next" href="/jdbc/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/tomcat%E9%85%8D%E7%BD%AE\/"
-        },"genre": "posts","wordcount":  667 ,
-        "url": "\/tomcat%E9%85%8D%E7%BD%AE\/","datePublished": "2020-02-27T14:29:56+08:00","dateModified": "2020-02-27T14:29:56+08:00","publisher": {
+        },"genre": "posts","wordcount":  461 ,
+        "url": "\/tomcat%E9%85%8D%E7%BD%AE\/","datePublished": "2019-12-27T14:29:56+08:00","dateModified": "2019-12-27T14:29:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Tomcat的配置</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-27">2020-02-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 667 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-27">2019-12-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 461 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -115,24 +115,24 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#tomcat的配置">Tomcat的配置</a>
+    <li><a href="#tomcat-的配置">Tomcat 的配置</a>
       <ul>
-        <li><a href="#idea与tomcat的相关配置">IDEA与tomcat的相关配置</a></li>
+        <li><a href="#idea-与-tomcat-的相关配置">IDEA 与 tomcat 的相关配置</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="tomcat的配置">Tomcat的配置</h2>
+            </div><div class="content" id="content"><h2 id="tomcat-的配置">Tomcat 的配置</h2>
 <ul>
 <li>部署项目方式的
 <ol>
-<li>直接将项目放到webapps目录下即可
+<li>直接将项目放到 webapps 目录下即可
 <ul>
 <li>按照文件路径来访问</li>
-<li><strong>简化部署</strong>：将项目打成一个.war的包，再将war包放置到webapps目录下，tomcat会自动生成一个相应的文件夹，删除时直接删除war包也会自动删除相应的文件夹</li>
+<li><strong>简化部署</strong>：将项目打成一个.war 的包，再将 war 包放置到 webapps 目录下，tomcat 会自动生成一个相应的文件夹，删除时直接删除 war 包也会自动删除相应的文件夹</li>
 </ul>
 </li>
-<li>配置conf/server.xml文件
+<li>配置 conf/server.xml 文件
 <ul>
 <li>在<Host>标签体中配置
 <ul>
@@ -143,12 +143,12 @@
 </li>
 </ul>
 </li>
-<li>在conf\Catalina\localhost创建任意名称的xml文件，在xml文件中编写内容
+<li>在 conf\Catalina\localhost 创建任意名称的 xml 文件，在 xml 文件中编写内容
 <ul>
 <li>
 <Context docBase="项目路径">
 </li>
-<li>此时的虚拟目录就是xml的文件名</li>
+<li>此时的虚拟目录就是 xml 的文件名</li>
 </ul>
 </li>
 </ol>
@@ -157,15 +157,15 @@
 <ul>
 <li>目录结构
 <ul>
-<li>java动态项目
+<li>java 动态项目
 <ul>
 <li>项目根目录
 <ul>
-<li>WEB-INF目录
+<li>WEB-INF 目录
 <ul>
-<li>web.xml：web项目的核心配置文件</li>
+<li>web.xml：web 项目的核心配置文件</li>
 <li>classes：放置字节码文件的目录</li>
-<li>lib：放置依赖的jar包</li>
+<li>lib：放置依赖的 jar 包</li>
 </ul>
 </li>
 </ul>
@@ -176,10 +176,10 @@
 </li>
 </ul>
 </li>
-<li>将Tomcat集成到idea中
+<li>将 Tomcat 集成到 idea 中
 <ul>
-<li>run-&gt;configurations-&gt;Templates里面选择tomcatserver-&gt;local或者remote</li>
-<li>另外在Deployment里面设置Applicant context为/，这样就可以不加路径直接访问项目</li>
+<li>run-&gt;configurations-&gt;Templates 里面选择 tomcatserver-&gt;local 或者 remote</li>
+<li>另外在 Deployment 里面设置 Applicant context 为/，这样就可以不加路径直接访问项目</li>
 </ul>
 </li>
 <li>设置更新自动重新部署项目(热部署)
@@ -193,17 +193,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="idea与tomcat的相关配置">IDEA与tomcat的相关配置</h3>
+<h3 id="idea-与-tomcat-的相关配置">IDEA 与 tomcat 的相关配置</h3>
 <ol>
-<li>idea会为每一个tomcat部署的项目单独建立一份配置文件
+<li>idea 会为每一个 tomcat 部署的项目单独建立一份配置文件
 <ul>
-<li>查看控制台<code>log:Using CATALINA_BASE:   &quot;C:\Users\cyunt\.IntelliJIdea2019.1\system\tomcat\_tomcatDemo&quot;</code></li>
+<li>查看控制台<code>log:Using CATALINA_BASE: &quot;C:\Users\cyunt\.IntelliJIdea2019.1\system\tomcat\_tomcatDemo&quot;</code></li>
 </ul>
 </li>
-<li>工作空间项目和tomcat部署的web项目
+<li>工作空间项目和 tomcat 部署的 web 项目
 <ul>
-<li>tomcat真正访问的是<strong>tomcat部署的web项目</strong>，tmocat部署的web项目对应着<strong>工作空间项目的web目录下的所有资源</strong></li>
-<li>WEB-INF目录下的资源不能被浏览器直接访问</li>
+<li>tomcat 真正访问的是<strong>tomcat 部署的 web 项目</strong>，tmocat 部署的 web 项目对应着<strong>工作空间项目的 web 目录下的所有资源</strong></li>
+<li>WEB-INF 目录下的资源不能被浏览器直接访问</li>
 </ul>
 </li>
 </ol>
@@ -211,7 +211,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-02-27</span>
+                <span>更新于 2019-12-27</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -230,8 +230,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/xml/" class="prev" rel="prev" title="XML"><i class="fas fa-angle-left fa-fw"></i>XML</a>
-            <a href="/servlet/" class="next" rel="next" title="Servlet">Servlet<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav">
+            <a href="/jdbc/" class="next" rel="next" title="JDBC">JDBC<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">

@@ -14,11 +14,11 @@
     <guid>/ajax/</guid>
     <description><![CDATA[Ajax AJAX 即“Asynchronous JavaScript and XML”（异步的 JavaScript 与 XML 技术），指的是一套综合了多项技术的浏览器端网页开发技术。 异步:点击这里了解 为什么需]]></description>
 </item><item>
-    <title>Docker原理及其应用</title>
-    <link>/docker%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</link>
+    <title>Docker</title>
+    <link>/docker/</link>
     <pubDate>Mon, 19 Oct 2020 16:06:55 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>/docker%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/</guid>
+    <guid>/docker/</guid>
     <description><![CDATA[Docker 什么是 docker Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker 允许用户将基础设施（Infrast]]></description>
 </item><item>
     <title>正则表达式</title>
@@ -28,14 +28,14 @@
     <guid>/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
     <description><![CDATA[正则表达式 为什么要学习正则表达式 可以在支持正则表达式的文本编辑器中提高工作效率 用很少的代码完成复杂的文本提取工作 什么是正则表达式 正则表达式用]]></description>
 </item><item>
-    <title>浅析url</title>
-    <link>/%E6%B5%85%E6%9E%90url/</link>
+    <title>URL</title>
+    <link>/url/</link>
     <pubDate>Wed, 23 Sep 2020 08:01:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>/%E6%B5%85%E6%9E%90url/</guid>
+    <guid>/url/</guid>
     <description><![CDATA[URL 包含哪几部分 URL 包括: 协议 域名/ip 地址 路径 查询参数 锚点 以https://www.baidu.com/s?wd=hello&amp;rsv_]]></description>
 </item><item>
-    <title>html常用标签</title>
+    <title>HTML常用标签</title>
     <link>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
     <pubDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</pubDate>
     <author>作者</author>
@@ -63,18 +63,18 @@
     <guid>/git%E5%92%8Cgithub/</guid>
     <description><![CDATA[基本概念 什么是Git git是一个分布式版本控制程序，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核]]></description>
 </item><item>
-    <title>使用hexo搭建个人博客</title>
-    <link>/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+    <title>Hexo搭建个人博客</title>
+    <link>/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[hexo 和 hugo 都是现在比较火的搭建博客的第三方框架 前期准备 git nodejs 两者直接安装最新版本或者推荐版本即可。 开始搭建 因为hexo是基于nodejs框架的，所]]></description>
+    <guid>/hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[hexo 和 hugo 都是现在比较火的搭建博客的第三方框架 前期准备 git nodejs 两者直接安装最新版本或者推荐版本即可。 开始搭建 因为 hexo 是基于 nodejs 框架的，所以搭建前必须要安]]></description>
 </item><item>
-    <title>利用hugo搭建个人博客</title>
+    <title>Hugo搭建个人博客</title>
     <link>/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Thu, 16 Jul 2020 09:59:56 &#43;0800</pubDate>
     <author>作者</author>
     <guid>/hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-    <description><![CDATA[使用Hugo搭建个人博客 前期准备工作 下载 hugo，查看官方文档根据步骤下载。 测试hugo能否运行，在gitbash或者cmd中写入命令 hugo ve]]></description>
+    <description><![CDATA[使用 Hugo 搭建个人博客 前期准备工作 下载 hugo，查看官方文档根据步骤下载。 测试 hugo 能否运行，在 gitbash 或者 cmd 中写入命令 hugo version，出现 Hugo Static Site Generator v0.74.1-15163266 类]]></description>
 </item></channel>
 </rss>

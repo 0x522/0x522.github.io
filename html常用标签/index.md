@@ -1,4 +1,4 @@
-# html常用标签
+# HTML常用标签
 
 
 # HTML 常用标签
@@ -81,7 +81,7 @@
   - textarea
   - label
 - 注意事项
-  - 一半不见听 input 的 click 事件
+  - 一般不监听 input 的 click 事件
   - form 里面的 input 要有 name
   - form 里面要放一个 type=submit 才能触发 submit 事件。
 

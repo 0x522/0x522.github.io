@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Servlet - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Servlet" />
-<meta property="og:description" content="Servlet 基本概念：运行在服务器端的小程序 Servlet就是一个接口，定义了java类被浏览器访问到的规则(被tomcat识别的规则) 用户需要自定义" />
+<meta property="og:description" content="Servlet 基本概念：运行在服务器端的小程序 Servlet 就是一个接口，定义了 java 类被浏览器访问到的规则(被服务器识别的规则) 用户需要自定义一个类，实现 Servlet 接口，重写" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/servlet/" />
 <meta property="og:image" content="/logo.png"/>
@@ -16,11 +16,11 @@
 <meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="Servlet"/>
-<meta name="twitter:description" content="Servlet 基本概念：运行在服务器端的小程序 Servlet就是一个接口，定义了java类被浏览器访问到的规则(被tomcat识别的规则) 用户需要自定义"/>
+<meta name="twitter:description" content="Servlet 基本概念：运行在服务器端的小程序 Servlet 就是一个接口，定义了 java 类被浏览器访问到的规则(被服务器识别的规则) 用户需要自定义一个类，实现 Servlet 接口，重写"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/servlet/" /><link rel="prev" href="/tomcat%E9%85%8D%E7%BD%AE/" /><link rel="next" href="/http/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/servlet/" /><link rel="prev" href="/xml/" /><link rel="next" href="/http/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/servlet\/"
-        },"genre": "posts","wordcount":  1561 ,
+        },"genre": "posts","wordcount":  1234 ,
         "url": "\/servlet\/","datePublished": "2020-02-28T14:29:56+08:00","dateModified": "2020-02-28T14:29:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Servlet</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-28">2020-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1561 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-28">2020-02-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1234 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -123,18 +123,18 @@
 <li>
 <p><strong>基本概念</strong>：运行在服务器端的小程序</p>
 <ul>
-<li>Servlet就是一个接口，定义了java类被浏览器访问到的规则(被tomcat识别的规则)</li>
-<li>用户需要自定义一个类，实现Servlet接口，重写方法</li>
+<li>Servlet 就是一个接口，定义了 java 类被浏览器访问到的规则(被服务器识别的规则)</li>
+<li>用户需要自定义一个类，实现 Servlet 接口，重写方法</li>
 </ul>
 </li>
 <li>
-<p><strong>第一个Servlet</strong></p>
+<p><strong>第一个 Servlet</strong></p>
 <ul>
 <li>
-<p>创建JavaEE项目</p>
+<p>创建 JavaEE 项目</p>
 </li>
 <li>
-<p>定义一个类，实现Servlet接口</p>
+<p>定义一个类，实现 Servlet 接口</p>
 <ul>
 <li>
 <div class="highlight"><div class="chroma">
@@ -152,9 +152,9 @@
 <p>实现接口中的抽象方法</p>
 </li>
 <li>
-<p>配置Servlet</p>
+<p>配置 Servlet</p>
 <ul>
-<li>web.xml里面加入servlet标签</li>
+<li>web.xml 里面加入 servlet 标签</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -182,17 +182,17 @@
 </ul>
 </li>
 <li>
-<p><strong>Servlet执行原理</strong></p>
+<p><strong>Servlet 执行原理</strong></p>
 <ol>
-<li>当服务器接收到客户端浏览器的请求后，会解析请求url路径，获取访问的Servlet的资源路径</li>
-<li>查找web.xml文件，是否有对应的<url-pattern>标签体内容</li>
+<li>当服务器接收到客户端浏览器的请求后，会解析请求 url 路径，获取访问的 Servlet 的资源路径</li>
+<li>查找 web.xml 文件，是否有对应的<url-pattern>标签体内容</li>
 <li>如果有，则在找到对应的<servlet-class>里面的全类名</li>
-<li>tomcat会将字节码文件加载进内存，并创建其对象</li>
-<li>调用Servlet的方法</li>
+<li>tomcat 会将字节码文件加载进内存，并创建其对象</li>
+<li>调用 Servlet 的方法</li>
 </ol>
 </li>
 <li>
-<p><strong>Servlet中的方法</strong></p>
+<p><strong>Servlet 中的方法</strong></p>
 <ul>
 <li>
 <div class="highlight"><div class="chroma">
@@ -258,13 +258,13 @@
 </span><span class="cm">     * @param servletConfig
 </span><span class="cm">     * @throws ServletException
 </span><span class="cm">     */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span><span class="n">ServletConfig</span> <span class="n">servletConfig</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span><span class="n">ServletConfig</span> <span class="n">servletConfig</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span>
 <span class="o">{</span>
-        
+
 <span class="o">}</span>
-    
-    
-    
+
+
+
 <span class="cm">/**
 </span><span class="cm">     * 每一次servlet被访问时，执行，执行多次
 </span><span class="cm">     * @param servletRequest
@@ -272,34 +272,34 @@
 </span><span class="cm">     * @throws ServletException
 </span><span class="cm">     * @throws IOException
 </span><span class="cm">     */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">servletRequest</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">servletResponse</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">ServletRequest</span> <span class="n">servletRequest</span><span class="o">,</span> <span class="n">ServletResponse</span> <span class="n">servletResponse</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span>
 <span class="o">{</span>
-        
+
 <span class="o">}</span>
-    
-    
-    
+
+
+
 <span class="cm">/**
 </span><span class="cm">     * 销毁方法，服务器正常关闭时，执行，执行一次
 </span><span class="cm">     */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span> 
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span>
 <span class="o">{</span>
-    
+
 <span class="o">}</span>
-    
-    
-    
+
+
+
  <span class="cm">/**
 </span><span class="cm">     * serclet配置对象,需要实现
 </span><span class="cm">     * @return
 </span><span class="cm">     */</span>
-<span class="kd">public</span> <span class="n">ServletConfig</span> <span class="nf">getServletConfig</span><span class="o">()</span> 
+<span class="kd">public</span> <span class="n">ServletConfig</span> <span class="nf">getServletConfig</span><span class="o">()</span>
 <span class="o">{</span>
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
 <span class="o">}</span>
-    
-    
-    
+
+
+
 <span class="cm">/**
 </span><span class="cm">     * 获取servlet信息的方法，需要实现
 </span><span class="cm">     * @return
@@ -313,49 +313,49 @@
 </ul>
 </li>
 <li>
-<p><strong>Servlet生命周期</strong></p>
+<p><strong>Servlet 生命周期</strong></p>
 <ul>
-<li><strong>被创建</strong>：执行init方法，只执行一次
+<li><strong>被创建</strong>：执行 init 方法，只执行一次
 <ul>
-<li><strong>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的</strong>
+<li><strong>Servlet 的 init 方法，只执行一次，说明一个 Servlet 在内存中只存在一个对象，Servlet 是单例的</strong>
 <ul>
 <li>多个用户同时访问时，可能会出现安全问题</li>
-<li>解决方案：尽量不在Servlet中定义成员变量，应该在方法中定义局部变量，如果已经定义了成员变量，不要对变量修改值</li>
+<li>解决方案：尽量不在 Servlet 中定义成员变量，应该在方法中定义局部变量，如果已经定义了成员变量，不要对变量修改值</li>
 </ul>
 </li>
-<li><strong>Servlet什么时候被创建？</strong>
+<li><strong>Servlet 什么时候被创建？</strong>
 <ul>
-<li>默认情况下，第一次被访问时，Servlet被创建</li>
-<li>可以配置执行Servlet的创建时机，在web.xml中的<servlet>标签中指定<load-on-startup>标签的内容来指定Servlet的创建时机
+<li>默认情况下，第一次被访问时，Servlet 被创建</li>
+<li>可以配置执行 Servlet 的创建时机，在 web.xml 中的<servlet>标签中指定<load-on-startup>标签的内容来指定 Servlet 的创建时机
 <ol>
 <li>第一次被访问时被创建：<load-on-startup>中的值为负数，默认值是-1</li>
-<li>在服务器启动时被创建：<load-on-startup>中的值为大于1的整数</li>
+<li>在服务器启动时被创建：<load-on-startup>中的值为大于 1 的整数</li>
 </ol>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>提供服务</strong>：执行service方法，执行多次
+<li><strong>提供服务</strong>：执行 service 方法，执行多次
 <ul>
-<li>每次访问Servlet时，Service方法都会被调用一次</li>
+<li>每次访问 Servlet 时，Service 方法都会被调用一次</li>
 </ul>
 </li>
-<li><strong>被销毁</strong>：执行destroy方法，执行一次
+<li><strong>被销毁</strong>：执行 destroy 方法，执行一次
 <ul>
-<li>Servlet被销毁时执行(销毁之前)，服务器关闭时，Servlet被销毁</li>
-<li>只有服务器正常关闭时，才会执行destroy方法</li>
+<li>Servlet 被销毁时执行(销毁之前)，服务器关闭时，Servlet 被销毁</li>
+<li>只有服务器正常关闭时，才会执行 destroy 方法</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>Servlet3.0支持注解配置</strong></p>
+<p><strong>Servlet3.0 支持注解配置</strong></p>
 <ul>
-<li>Servlet3.0,可以支持注解配置，使用注解配置来代替繁琐的xml文档配置</li>
-<li>定义一个类，实现Servlet接口</li>
+<li>Servlet3.0,可以支持注解配置，使用注解配置来代替繁琐的 xml 文档配置</li>
+<li>定义一个类，实现 Servlet 接口</li>
 <li>重写方法</li>
-<li>在类上使用@WebServlet注解，进行配置
+<li>在类上使用@WebServlet 注解，进行配置
 <ul>
 <li>@WebServlet(&ldquo;资源路径&rdquo;)</li>
 </ul>
@@ -363,15 +363,15 @@
 </ul>
 </li>
 <li>
-<p><strong>Servlet体系结构</strong></p>
+<p><strong>Servlet 体系结构</strong></p>
 <ul>
-<li>Servlet有两个抽象的实现类：<strong>GenericServlet和HttpServlet</strong>
+<li>Servlet 有两个抽象的实现类：<strong>GenericServlet 和 HttpServlet</strong>
 <ul>
-<li>GenericServlet将Servlet接口中除了service方法以外的其他方法重写并没有做具体实现，只有service方法被定义成了抽象方法，所以只要在自定义的类中重写service方法即可</li>
-<li>HttpServlet是GenericServlet的子类，是对http协议的一种封装，用来简化操作
+<li>GenericServlet 将 Servlet 接口中除了 service 方法以外的其他方法重写并没有做具体实现，只有 service 方法被定义成了抽象方法，所以只要在自定义的类中重写 service 方法即可</li>
+<li>HttpServlet 是 GenericServlet 的子类，是对 http 协议的一种封装，用来简化操作
 <ol>
-<li>定义类集成HttpServlet</li>
-<li>重现doGet和doPost方法</li>
+<li>定义类集成 HttpServlet</li>
+<li>重现 doGet 和 doPost 方法</li>
 </ol>
 </li>
 </ul>
@@ -379,18 +379,18 @@
 </ul>
 </li>
 <li>
-<p><strong>Servlet相关配置</strong></p>
+<p><strong>Servlet 相关配置</strong></p>
 <ol>
-<li>url-pattern:Servlet访问路径
+<li>url-pattern:Servlet 访问路径
 <ul>
-<li>一个Servlet可以<strong>定义多个访问路径</strong>：<code>@WebServlet({&quot;/d2&quot;,&quot;/de2&quot;,&quot;/demo2&quot;})</code></li>
+<li>一个 Servlet 可以<strong>定义多个访问路径</strong>：<code>@WebServlet({&quot;/d2&quot;,&quot;/de2&quot;,&quot;/demo2&quot;})</code></li>
 <li>路径的定义规则：
 <ol>
 <li><strong>/xxx</strong></li>
-<li><strong>/xxx/xcomxx</strong>      <strong>多层路径</strong>：<strong>可以使用*通配符</strong>：<code>/*</code>或者<code>/user/*</code><strong>访问优先级最低</strong></li>
-<li>*<strong>.a(后缀名随意设置)</strong>     <strong>带.a后缀名的路径</strong>：任意路径加.a后缀来访问
+<li><strong>/xxx/xcomxx</strong> <strong>多层路径</strong>：<strong>可以使用*通配符</strong>：<code>/*</code>或者<code>/user/*</code><strong>访问优先级最低</strong></li>
+<li><strong>*.a(后缀名随意设置)</strong> <strong>带.a 后缀名的路径</strong>：任意路径加.a 后缀来访问
 <ul>
-<li>*<em>注意：/ <em>.a报错</em></em></li>
+<li><strong>注意：/ *.a 报错</strong></li>
 </ul>
 </li>
 </ol>
@@ -423,7 +423,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/tomcat%E9%85%8D%E7%BD%AE/" class="prev" rel="prev" title="Tomcat的配置"><i class="fas fa-angle-left fa-fw"></i>Tomcat的配置</a>
+    <div class="post-nav"><a href="/xml/" class="prev" rel="prev" title="XML"><i class="fas fa-angle-left fa-fw"></i>XML</a>
             <a href="/http/" class="next" rel="next" title="HTTP">HTTP<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>

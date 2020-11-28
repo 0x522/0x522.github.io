@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>session - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="session" />
-<meta property="og:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object" />
+        <title>Session - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Session" />
+<meta property="og:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession 对象： Object getAttribute(String name) void setAttribute(String name, object value) void removeAttribute(String name)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/session/" />
 <meta property="og:image" content="/logo.png"/>
@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
-<meta name="twitter:title" content="session"/>
-<meta name="twitter:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession对象： Object"/>
+<meta name="twitter:title" content="Session"/>
+<meta name="twitter:description" content="Session 概念：服务器端会话技术，在一次会话的多次请求间共享数据，将数据保存在服务器端的对象中。HttpSession HttpSession 对象： Object getAttribute(String name) void setAttribute(String name, object value) void removeAttribute(String name)"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "session",
+        "headline": "Session",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/session\/"
-        },"genre": "posts","wordcount":  628 ,
+        },"genre": "posts","wordcount":  489 ,
         "url": "\/session\/","datePublished": "2020-04-29T14:29:56+08:00","dateModified": "2020-04-29T14:29:56+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">session</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Session</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-29">2020-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 628 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-29">2020-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 489 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -122,7 +122,7 @@
 <ul>
 <li><strong>概念</strong>：服务器端会话技术，<strong>在一次会话</strong>的多次请求间共享数据，将数据保存在服务器端的对象中。<strong>HttpSession</strong>
 <ul>
-<li>HttpSession对象：
+<li>HttpSession 对象：
 <ul>
 <li>Object getAttribute(String name)</li>
 <li>void setAttribute(String name, object value)</li>
@@ -131,29 +131,29 @@
 </li>
 </ul>
 </li>
-<li><strong>获取session对象</strong>
+<li><strong>获取 session 对象</strong>
 <ul>
 <li>HttpSession session = request.getSession();</li>
 </ul>
 </li>
-<li><strong>Session原理</strong>
+<li><strong>Session 原理</strong>
 <ul>
-<li>Session的实现是依赖于cookie的，当第一次请求时，会创建一个session对象，并给他一个JsessionID，然后再次请求时getSession方法会寻找这个ID返回给session对象。所以在一次会话的多次请求中，使用的session是同一个。</li>
+<li>Session 的实现是依赖于 cookie 的，当第一次请求时，会创建一个 session 对象，并给他一个 JsessionID，然后再次请求时 getSession 方法会寻找这个 ID 返回给 session 对象。所以在一次会话的多次请求中，使用的 session 是同一个。</li>
 </ul>
 </li>
 <li><strong>细节</strong>
 <ol>
-<li>当客户端关闭后，服务端不关闭，两次获取session是否为同一个？
+<li>当客户端关闭后，服务端不关闭，两次获取 session 是否为同一个？
 <ul>
 <li>默认情况下，不是。</li>
-<li>可以手动设置使客户端关闭后再次访问服务器获取的session是同一个
+<li>可以手动设置使客户端关闭后再次访问服务器获取的 session 是同一个
 <ul>
-<li>创建一个cookie，
+<li>创建一个 cookie，
 <ul>
-<li><code>Cookie cookie = new  Cookie(&quot;JSession&quot;,session.getId());</code></li>
+<li><code>Cookie cookie = new Cookie(&quot;JSession&quot;,session.getId());</code></li>
 </ul>
 </li>
-<li>设置cookie对象的最大存活时间 1小时
+<li>设置 cookie 对象的最大存活时间 1 小时
 <ul>
 <li><code>cookie.setMaxAge(60*60)</code></li>
 </ul>
@@ -162,33 +162,33 @@
 </li>
 </ul>
 </li>
-<li>客户端不关闭，服务器关闭后，两次获取的session是同一个吗？
+<li>客户端不关闭，服务器关闭后，两次获取的 session 是同一个吗？
 <ul>
-<li>不是同一个，但是要确保数据不丢失。tomcat自动完成以下工作：
+<li>不是同一个，但是要确保数据不丢失。tomcat 自动完成以下工作：
 <ul>
-<li>session的钝化：
+<li>session 的钝化：
 <ul>
-<li>在服务器正常关闭之前，将session对象序列化到硬盘上。</li>
+<li>在服务器正常关闭之前，将 session 对象序列化到硬盘上。</li>
 </ul>
 </li>
-<li>session的活化：
+<li>session 的活化：
 <ul>
-<li>在服务器启动后，将session文件转化为内存中的session对象即可。</li>
+<li>在服务器启动后，将 session 文件转化为内存中的 session 对象即可。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>session的失效时间？什么时候被销毁？
+<li>session 的失效时间？什么时候被销毁？
 <ol>
 <li>服务器关闭</li>
-<li>session对象调用<code>invalidate（）</code></li>
-<li>session默认失效时间 30分钟
+<li>session 对象调用<code>invalidate（）</code></li>
+<li>session 默认失效时间 30 分钟
 <ul>
 <li>如何修改失效时间
 <ul>
-<li>找到web.xml里面的<code>&lt;session-config&gt;</code>标签修改<code>session-timeout</code>。</li>
+<li>找到 web.xml 里面的<code>&lt;session-config&gt;</code>标签修改<code>session-timeout</code>。</li>
 </ul>
 </li>
 </ul>
@@ -209,7 +209,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/session/" data-title="session"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/session/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/session/" data-title="session" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/session/" data-title="session"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/session/" data-title="session"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/session/" data-title="session" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/session/" data-title="session" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/session/" data-title="session"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/session/" data-title="Session"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/session/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/session/" data-title="Session" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/session/" data-title="Session"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/session/" data-title="Session"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/session/" data-title="Session" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/session/" data-title="Session" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/session/" data-title="Session"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -221,7 +221,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/cookie/" class="prev" rel="prev" title="cookie"><i class="fas fa-angle-left fa-fw"></i>cookie</a>
+    <div class="post-nav"><a href="/cookie/" class="prev" rel="prev" title="Cookie"><i class="fas fa-angle-left fa-fw"></i>Cookie</a>
             <a href="/vim/" class="next" rel="next" title="Vim">Vim<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>

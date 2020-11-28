@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Docker - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Docker" />
+<meta property="og:description" content="Docker 什么是 docker Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker 允许用户将基础设施（Infrast" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/docker/" />
+<meta property="og:image" content="/logo.png"/>
+<meta property="article:published_time" content="2020-10-19T16:06:55+08:00" />
+<meta property="article:modified_time" content="2020-10-19T16:06:55+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/logo.png"/>
+
+<meta name="twitter:title" content="Docker"/>
+<meta name="twitter:description" content="Docker 什么是 docker Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker 允许用户将基础设施（Infrast"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/docker/" /><link rel="prev" href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" /><link rel="next" href="/ajax/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Docker",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/docker\/"
+        },"genre": "posts","wordcount":  2330 ,
+        "url": "\/docker\/","datePublished": "2020-10-19T16:06:55+08:00","dateModified": "2020-10-19T16:06:55+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><span class="header-title-pre">✨</span>Welcome to the House from Chenyuntao<span class="header-title-post">✨</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/" title="访问博客主页">🎈 Back </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="请输入查找信息" id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><span class="header-title-pre">✨</span>Welcome to the House from Chenyuntao<span class="header-title-post">✨</span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="请输入查找信息" id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">📋文章</a><a class="menu-item" href="/" title="访问博客主页">🎈Back</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Docker</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-19">2020-10-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2330 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是-docker">什么是 docker</a></li>
+    <li><a href="#docker-引擎">Docker 引擎</a></li>
+    <li><a href="#docker-对象">Docker 对象</a></li>
+    <li><a href="#docker-能做什么">Docker 能做什么</a></li>
+    <li><a href="#docker-的基本概念">Docker 的基本概念</a>
+      <ul>
+        <li><a href="#docker-对比-vm">docker 对比 VM</a></li>
+        <li><a href="#docker-pullimages">docker pull/images</a></li>
+        <li><a href="#docker-runps">docker run/ps</a>
+          <ul>
+            <li><a href="#docker-run">docker run</a></li>
+          </ul>
+        </li>
+        <li><a href="#docker-startstop">docker start/stop</a></li>
+        <li><a href="#docker-rm">docker rm</a></li>
+        <li><a href="#docker-exec">docker exec</a></li>
+        <li><a href="#docker-logs">docker logs</a></li>
+        <li><a href="#docker-inspect">docker inspect</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-分层的镜像">Docker 分层的镜像</a>
+      <ul>
+        <li><a href="#dockerfile">Dockerfile</a></li>
+        <li><a href="#docker-的镜像仓库与-tag">Docker 的镜像仓库与 tag</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-与-kubernetesk8s">Docker 与 Kubernetes(k8s)</a>
+      <ul>
+        <li><a href="#k8s">k8s</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="docker">Docker</h1>
+<h2 id="什么是-docker">什么是 docker</h2>
+<p>Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker 允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。<br>
+Docker 容器与虚拟机类似，但二者在原理上不同。容器是将操作系统层虚拟化，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker 也为容器提供更强的业界的隔离兼容。<br>
+<strong>Docker 利用 Linux 核心中的资源分离机制，例如 cgroups，以及 Linux 核心名字空间（namespaces），来创建独立的容器（containers）。</strong></p>
+<h2 id="docker-引擎">Docker 引擎</h2>
+<p>Docker 引擎(Docker Engine)是一个服务端-客户端结构的应用，主要有这些部分：Docker 守护进程、Docker Engine AP 页面存档备份，存于互联网档案馆、Docker 客户端。<br></p>
+<ul>
+<li>Docker 守护进程(Docker daemons)，也叫 dockerd ，是一个持久化的进程，用户管理容器。守护进程会监听 Docker Engine API 页面存档备份，存于互联网档案馆 的请求。</li>
+<li>Docker Engine API 页面存档备份，存于互联网档案馆是用于与 Docker 守护进程交互用的的 API。它是一个 RESTful API，因此它不仅可以被 Docker 客户端调用，也可以被 wget 和 curl 等命令调用。</li>
+<li><strong>Docker 客户端，也叫 docker，是大部分用户与 Docker 交互的主要方式。用户通过客户端将命令发送给守护进程。命令会遵循 Docker Engine API 页面存档备份，存于互联网档案馆。</strong></li>
+</ul>
+<h2 id="docker-对象">Docker 对象</h2>
+<p>Docker 的对象是指 Images、Containers、Networks、Volumes、Plugins 等等。</p>
+<ul>
+<li>容器（Containers）是镜像的可运行的实例。容器可通过 API 或 CLI（命令行）进行操控。</li>
+<li>镜像（Images）是一个只读模板，用于指示创建容器。 镜像分层(layers)构建的，而定义这些层次的文件叫 Dockerfile。</li>
+<li>服务（Services）允许用户跨越不同的 Docker 守护进程（Docker daemons）的情况下增加容器，并将这些容器分为管理者（managers）和工作者（workers），让他们为 swarm 共同工作。</li>
+</ul>
+<h2 id="docker-能做什么">Docker 能做什么</h2>
+<ul>
+<li>保证开发、测试、交付、部署的环境完全一致</li>
+<li>抱枕资源的隔离</li>
+<li>启动临时的、用完及弃的环境，例如测试</li>
+<li>秒级的超大规模部署和扩容</li>
+</ul>
+<h2 id="docker-的基本概念">Docker 的基本概念</h2>
+<ul>
+<li>
+<p>镜像 images
+一个预先定义好的模板文件，Docker 引擎可以按照这个模板文件启动无数个一模一样互不干扰的容器。</p>
+</li>
+<li>
+<p>容器 container
+是一台虚拟的计算机，它拥有独立的</p>
+<ul>
+<li>
+<p>网络</p>
+</li>
+<li>
+<p>文件系统</p>
+</li>
+<li>
+<p>进程</p>
+<p>它默认和宿主机不发生任何交互，这意味着数据是没有持久化的。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="docker-对比-vm">docker 对比 VM</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/vm%20versus%20docker.jpg"
+        data-srcset="/vm%20versus%20docker.jpg, /vm%20versus%20docker.jpg 1.5x, /vm%20versus%20docker.jpg 2x"
+        data-sizes="auto"
+        alt="/vm%20versus%20docker.jpg"
+        title="/vm%20versus%20docker.jpg" /></p>
+<h3 id="docker-pullimages">docker pull/images</h3>
+<ul>
+<li><code>docker pull</code>是下载一个指定的镜像，方便随时启动。例如：docker pull mysql：6.7.28 下载一个 mysql 版本为 5.7.28。</li>
+<li><code>docker images</code>产看本地已经有的镜像。</li>
+</ul>
+<h3 id="docker-runps">docker run/ps</h3>
+<ul>
+<li><code>docker run</code>装载镜像成为一个容器。
+<ul>
+<li>就好像从蛋糕模子做出来一个蛋糕</li>
+<li>在这个容器看来，自己就是一台独立的计算机</li>
+<li>每个容器有一个 ID，支持缩写，例如容器 id 是 234sdhfsakjhf，就可以简写为 234s</li>
+</ul>
+</li>
+<li><code>docker run -it &lt;镜像名&gt; &lt;镜像中要运行的命令和参数&gt;</code>
+<ul>
+<li>交互式命令行，当前 shell 中运行，CTRL+c 退出</li>
+</ul>
+</li>
+<li><code>docker run -d &lt;镜像名&gt; &lt;镜像中要运行的命令和参数&gt;</code>
+<ul>
+<li>daemon 模式，在后台运行容器</li>
+</ul>
+</li>
+</ul>
+<h4 id="docker-run">docker run</h4>
+<ul>
+<li><code>--name</code>为容器指定一个名字</li>
+<li><code>--restart=always</code>遇到错误自动重启</li>
+<li><code>-v &lt;本地文件&gt;:&lt;容器文件&gt;</code></li>
+<li><code>-p &lt;本地端口&gt;:&lt;容器端口&gt;</code></li>
+<li><code>-e NAME=VALUE</code></li>
+</ul>
+<h3 id="docker-startstop">docker start/stop</h3>
+<ul>
+<li>启动/停止一个容器
+<ul>
+<li>可以想象为开关机</li>
+</ul>
+</li>
+</ul>
+<h3 id="docker-rm">docker rm</h3>
+<ul>
+<li>删除一个容器
+<ul>
+<li>想象成将电脑丢掉</li>
+</ul>
+</li>
+<li><code>docker rm -f &lt;容器名或id&gt;</code> 强制删除某个容器</li>
+</ul>
+<h3 id="docker-exec">docker exec</h3>
+<ul>
+<li>指定目标容器，进入容器执行命令
+<ul>
+<li><code>docker run -it &lt;目标容器ID&gt; &lt;目标命令(通常为bash)&gt;</code></li>
+</ul>
+</li>
+<li>调试、解决问题必备命令</li>
+</ul>
+<h3 id="docker-logs">docker logs</h3>
+<ul>
+<li><code>docker logs&lt;容器ID或容器名&gt;</code>
+<ul>
+<li>查看目标容器的输出</li>
+</ul>
+</li>
+<li><code>docker logs -f&lt;容器ID或容器名&gt;</code></li>
+</ul>
+<h3 id="docker-inspect">docker inspect</h3>
+<ul>
+<li>高级命令：查看容器的详细状态(json 格式)</li>
+</ul>
+<h2 id="docker-分层的镜像">Docker 分层的镜像</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/mirror.jpg"
+        data-srcset="/mirror.jpg, /mirror.jpg 1.5x, /mirror.jpg 2x"
+        data-sizes="auto"
+        alt="/mirror.jpg"
+        title="/mirror.jpg" /></p>
+<p><strong>分层的镜像实现了 docker 容器的复用。</strong></p>
+<h3 id="dockerfile">Dockerfile</h3>
+<ul>
+<li>
+<p>指定镜像如何生成</p>
+</li>
+<li>
+<p>编写一个 Dockerfile</p>
+<ul>
+<li>在 Docker 中创建镜像最常用的方式，就是使用 Dockerfile。Dockerfile 是一个 Docker 镜像的描述文件，我们可以理解成火箭发射的 A、B、C、D…的步骤。Dockerfile 其内部包含了一条条的指令，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile">  <span class="c1">#基于centos镜像</span><span class="err">
+</span><span class="err"></span>  FROM centos<span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#维护人的信息</span><span class="err">
+</span><span class="err"></span>  MAINTAINER The CentOS Project &lt;xxxx@xxx.com&gt;<span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#安装httpd软件包</span><span class="err">
+</span><span class="err"></span>  RUN yum -y update<span class="err">
+</span><span class="err"></span>  RUN yum -y install httpd<span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#开启80端口</span><span class="err">
+</span><span class="err"></span>  EXPOSE <span class="m">80</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#复制网站首页文件至镜像中web站点下</span><span class="err">
+</span><span class="err"></span>  ADD index.html /var/www/html/index.html<span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#复制该脚本至镜像中，并修改其权限</span><span class="err">
+</span><span class="err"></span>  ADD run.sh /run.sh<span class="err">
+</span><span class="err"></span>  RUN chmod <span class="m">775</span> /run.sh<span class="err">
+</span><span class="err">
+</span><span class="err"></span>  <span class="c1">#当启动容器时执行的脚本文件</span><span class="err">
+</span><span class="err"></span>  CMD <span class="o">[</span><span class="s2">&#34;/run.sh&#34;</span><span class="o">]</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>docker build .</code> 以当前目录建立一个镜像 image</p>
+</li>
+<li>
+<p>每个镜像都会有一个唯一的 id</p>
+</li>
+</ul>
+<h3 id="docker-的镜像仓库与-tag">Docker 的镜像仓库与 tag</h3>
+<ul>
+<li>可以任意对镜像进⾏ tag 操作
+<ul>
+<li>决定了未来这个镜像会被 push 到哪⾥</li>
+<li>决定了未来从哪⾥下载镜像</li>
+</ul>
+</li>
+<li>可以⽅便的创建镜像仓库的私服
+<ul>
+<li><code>--registry-mirror</code></li>
+<li><code>--insecure-registry</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="docker-与-kubernetesk8s">Docker 与 Kubernetes(k8s)</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/dockerk8s.jpg"
+        data-srcset="/dockerk8s.jpg, /dockerk8s.jpg 1.5x, /dockerk8s.jpg 2x"
+        data-sizes="auto"
+        alt="/dockerk8s.jpg"
+        title="/dockerk8s.jpg" /><br>
+业界有一个形象的比喻</p>
+<ul>
+<li>传统服务被比作宠物 pets，意思是当对外的服务出了问题，宠物意味着你要尽心尽力的维护它，直到它健康没有任何问题。</li>
+<li>当基于 docker 的 k8s 出现后，服务就被比作 cattle，意思就是牲畜，当牲畜出现了问题，就把他杀掉再来一只顶替(杀掉容器&amp;&amp;重新启动容器)，而且成本很低。</li>
+</ul>
+<h3 id="k8s">k8s</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/docker%20versus%20kubernetes.jpg"
+        data-srcset="/docker%20versus%20kubernetes.jpg, /docker%20versus%20kubernetes.jpg 1.5x, /docker%20versus%20kubernetes.jpg 2x"
+        data-sizes="auto"
+        alt="/docker%20versus%20kubernetes.jpg"
+        title="/docker%20versus%20kubernetes.jpg" /></p>
+<ul>
+<li>kubernetes master 主节点 用于管理 Node</li>
+<li>Node 子节点，里面存放
+<ul>
+<li>kubelet 当前节点的管理员</li>
+<li>Kube-proxy 提供网络服务</li>
+<li>Pod 就可以理解为上面所说的 cattle，里面运行一个或多个 docker 容器，当他们其中有个别出了问题，就杀掉重启。</li>
+</ul>
+</li>
+</ul>
+<p><strong>k8s 提供自动滚动更新(rolling update) 服务，可以保证你的服务在更新的过程中不被更新中断</strong></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="/docker/" data-title="Docker"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="/docker/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="/docker/" data-title="Docker" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="/docker/" data-title="Docker"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/docker/" data-title="Docker"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="/docker/" data-title="Docker" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="/docker/" data-title="Docker" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/docker/" data-title="Docker"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="prev" rel="prev" title="正则表达式"><i class="fas fa-angle-left fa-fw"></i>正则表达式</a>
+            <a href="/ajax/" class="next" rel="next" title="Ajax">Ajax<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
