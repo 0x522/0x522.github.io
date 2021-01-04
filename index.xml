@@ -4,15 +4,43 @@
         <link>/</link>
         <description>这是我的全新 Hugo 网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chenyuntao1997@163.com (作者)</managingEditor>
-            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Tue, 10 Nov 2020 21:34:32 &#43;0800</lastBuildDate>
+            <webMaster>chenyuntao1997@163.com (作者)</webMaster><lastBuildDate>Mon, 04 Jan 2021 17:30:30 &#43;0800</lastBuildDate>
             <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>解决Spring循环依赖和三级缓存问题</title>
+    <link>/%E8%A7%A3%E5%86%B3spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8C%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Mon, 04 Jan 2021 17:30:30 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/%E8%A7%A3%E5%86%B3spring%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E5%92%8C%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[Spring 循环依赖 什么是循环依赖问题? 说白了就是死循环问题，A 对象创建依赖 B,B 对象创建依赖 A 1 new A(new B(new A(new B(……)))) //有参 创建对象时做了两件事： 在]]></description>
+</item><item>
+    <title>Git中如何修改已经push的commit的message</title>
+    <link>/git%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%B7%B2%E7%BB%8Fpush%E7%9A%84commit%E7%9A%84message/</link>
+    <pubDate>Fri, 04 Dec 2020 17:37:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/git%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%B7%B2%E7%BB%8Fpush%E7%9A%84commit%E7%9A%84message/</guid>
+    <description><![CDATA[背景 当你用终端操作 git，可能会出现 commit 的 message 乱码或者写错的情况，但是如果你已经将代码 push 到了 github 中，那么修改 message 就是一个非常麻烦的操作。 需要用到的命]]></description>
+</item><item>
+    <title>Java的Collection体系</title>
+    <link>/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/</link>
+    <pubDate>Mon, 23 Nov 2020 09:09:33 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/</guid>
+    <description><![CDATA[Collection Collection 是最基本的集合接口。JDK 提供的类都是继承自 Collection 的子接口，例如 List 和 Set。 Collection 是集合类的根接口，是高度抽象的集合，包含了集合的基本操作：添加]]></description>
+</item><item>
     <title>Ajax</title>
     <link>/ajax/</link>
     <pubDate>Tue, 10 Nov 2020 21:34:32 &#43;0800</pubDate>
     <author>作者</author>
     <guid>/ajax/</guid>
     <description><![CDATA[Ajax AJAX 即“Asynchronous JavaScript and XML”（异步的 JavaScript 与 XML 技术），指的是一套综合了多项技术的浏览器端网页开发技术。 异步:点击这里了解 为什么需]]></description>
+</item><item>
+    <title>Java多线程</title>
+    <link>/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <pubDate>Sat, 07 Nov 2020 21:28:25 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
+    <description><![CDATA[Java 多线程 什么是进程 什么是线程 《操作系统》一书中给出了一个定义：进程是程序关于某数据集合的一次执行，是系统进行资源分配和调度的基本单位。 《Ja]]></description>
 </item><item>
     <title>Docker</title>
     <link>/docker/</link>
@@ -27,34 +55,6 @@
     <author>作者</author>
     <guid>/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
     <description><![CDATA[正则表达式 为什么要学习正则表达式 可以在支持正则表达式的文本编辑器中提高工作效率 用很少的代码完成复杂的文本提取工作 什么是正则表达式 正则表达式用]]></description>
-</item><item>
-    <title>URL</title>
-    <link>/url/</link>
-    <pubDate>Wed, 23 Sep 2020 08:01:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/url/</guid>
-    <description><![CDATA[URL 包含哪几部分 URL 包括: 协议 域名/ip 地址 路径 查询参数 锚点 以https://www.baidu.com/s?wd=hello&amp;rsv_]]></description>
-</item><item>
-    <title>HTML常用标签</title>
-    <link>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
-    <pubDate>Wed, 09 Sep 2020 12:22:44 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
-    <description><![CDATA[HTML 常用标签 a 标签 属性 href target _blank _top _parent _self target 跳转到外部页面 跳转到内部锚点 跳转到邮箱或者电话 download 不是打开页面，而是下载页面 但是不是所有浏览器都支持 down]]></description>
-</item><item>
-    <title>Java多线程</title>
-    <link>/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
-    <pubDate>Fri, 07 Aug 2020 21:28:25 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
-    <description><![CDATA[Java多线程 什么是进程 什么是线程 《操作系统》一书中给出了一个定义：进程是程序关于某数据集合的一次执行，是系统进行资源分配和调度的基本单位。]]></description>
-</item><item>
-    <title>Java的Collection体系</title>
-    <link>/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/</link>
-    <pubDate>Thu, 23 Jul 2020 09:09:33 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/</guid>
-    <description><![CDATA[Collection Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。 Collection 是集合类的根接口，是高度抽象的集合，包]]></description>
 </item><item>
     <title>Git和Github</title>
     <link>/git%E5%92%8Cgithub/</link>

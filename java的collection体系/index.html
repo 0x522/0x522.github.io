@@ -6,21 +6,21 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Java的Collection体系 - </title><meta name="Description" content="这是我的全新 Hugo 网站"><meta property="og:title" content="Java的Collection体系" />
-<meta property="og:description" content="Collection Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。 Collection 是集合类的根接口，是高度抽象的集合，包" />
+<meta property="og:description" content="Collection Collection 是最基本的集合接口。JDK 提供的类都是继承自 Collection 的子接口，例如 List 和 Set。 Collection 是集合类的根接口，是高度抽象的集合，包含了集合的基本操作：添加" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" />
 <meta property="og:image" content="/logo.png"/>
-<meta property="article:published_time" content="2020-07-23T09:09:33+08:00" />
-<meta property="article:modified_time" content="2020-07-23T09:09:33+08:00" />
+<meta property="article:published_time" content="2020-11-23T09:09:33+08:00" />
+<meta property="article:modified_time" content="2020-11-23T09:09:33+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/logo.png"/>
 
 <meta name="twitter:title" content="Java的Collection体系"/>
-<meta name="twitter:description" content="Collection Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。 Collection 是集合类的根接口，是高度抽象的集合，包"/>
+<meta name="twitter:description" content="Collection Collection 是最基本的集合接口。JDK 提供的类都是继承自 Collection 的子接口，例如 List 和 Set。 Collection 是集合类的根接口，是高度抽象的集合，包含了集合的基本操作：添加"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" /><link rel="prev" href="/git%E5%92%8Cgithub/" /><link rel="next" href="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/java%E7%9A%84collection%E4%BD%93%E7%B3%BB/" /><link rel="prev" href="/ajax/" /><link rel="next" href="/git%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%B7%B2%E7%BB%8Fpush%E7%9A%84commit%E7%9A%84message/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,8 +29,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/java%E7%9A%84collection%E4%BD%93%E7%B3%BB\/"
-        },"genre": "posts","wordcount":  2865 ,
-        "url": "\/java%E7%9A%84collection%E4%BD%93%E7%B3%BB\/","datePublished": "2020-07-23T09:09:33+08:00","dateModified": "2020-07-23T09:09:33+08:00","publisher": {
+        },"genre": "posts","wordcount":  2416 ,
+        "url": "\/java%E7%9A%84collection%E4%BD%93%E7%B3%BB\/","datePublished": "2020-11-23T09:09:33+08:00","dateModified": "2020-11-23T09:09:33+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -43,7 +43,7 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title=""><span class="header-title-pre">✨</span>Welcome to the House from Chenyuntao<span class="header-title-post">✨</span></a>
+            <a href="/" title=""><span class="header-title-pre">✨</span>陈云涛的收藏<span class="header-title-post">✨</span></a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/posts/">📋 文章 </a><a class="menu-item" href="/" title="访问博客主页">🎈 Back </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
@@ -67,7 +67,7 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title=""><span class="header-title-pre">✨</span>Welcome to the House from Chenyuntao<span class="header-title-post">✨</span></a>
+                <a href="/" title=""><span class="header-title-pre">✨</span>陈云涛的收藏<span class="header-title-post">✨</span></a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Java的Collection体系</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-23">2020-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2865 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-23">2020-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2416 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -115,8 +115,8 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#collection的继承体系">Collection的继承体系</a></li>
-    <li><a href="#list和set约定">List和Set约定</a></li>
+    <li><a href="#collection-的继承体系">Collection 的继承体系</a></li>
+    <li><a href="#list-和-set-约定">List 和 Set 约定</a></li>
   </ul>
 
   <ul>
@@ -128,31 +128,31 @@
   </ul>
 
   <ul>
-    <li><a href="#注意工具类一般都是在实现类的名字后面加一个s例如guava中的listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个s,例如Guava中的Lists/Sets/Maps。</a></li>
+    <li><a href="#注意工具类一般都是在实现类的名字后面加一个-s例如-guava-中的-listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个 s,例如 Guava 中的 Lists/Sets/Maps。</a></li>
   </ul>
 
   <ul>
-    <li><a href="#google-guava是java的一组开源通用库主要由google工程师开发">Google Guava是Java的一组开源通用库，主要由Google工程师开发。</a></li>
+    <li><a href="#google-guava-是-java-的一组开源通用库主要由-google-工程师开发">Google Guava 是 Java 的一组开源通用库，主要由 Google 工程师开发。</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="collection">Collection</h1>
 <ul>
-<li>Collection 是最基本的集合接口。JDK提供的类都是继承自Collection的子接口，例如List和Set。</li>
+<li>Collection 是最基本的集合接口。JDK 提供的类都是继承自 Collection 的子接口，例如 List 和 Set。</li>
 <li>Collection 是集合类的根接口，是高度抽象的集合，包含了集合的基本操作：添加、删除、清空、遍历、是否为空、获取大小等。</li>
-<li>Collection 继承了<code>Iterable&lt;E&gt;</code>，所以Collection的体系都支持<code>iterator()</code>方法，该方法返回一个迭代器，使用该迭代器可以逐一访问Collection的每一个元素。</li>
-<li>Collection体系提供的常⽤⽅法：
+<li>Collection 继承了<code>Iterable&lt;E&gt;</code>，所以 Collection 的体系都支持<code>iterator()</code>方法，该方法返回一个迭代器，使用该迭代器可以逐一访问 Collection 的每一个元素。</li>
+<li>Collection 体系提供的常⽤⽅法：
 <ul>
 <li>R: <code>size()/isEmpty()/contains()/for()/stream() </code></li>
 <li>C/U: <code>add()/addAll()/retainAll()</code>
 <ul>
-<li>这里特别要说一下，<code>retainAll()</code> 非常容易踩坑，如果<code>a.retainAll(b)</code> 这相当于求集合a、b的交集，然后把结果集放在集合a中，最终可能会导致集合a的<code>size()</code>减少。</li>
+<li>这里特别要说一下，<code>retainAll()</code> 非常容易踩坑，如果<code>a.retainAll(b)</code> 这相当于求集合 a、b 的交集，然后把结果集放在集合 a 中，最终可能会导致集合 a 的<code>size()</code>减少。</li>
 </ul>
 </li>
 <li>D: <code>clear()/remove()/removeAll()</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="collection的继承体系">Collection的继承体系</h2>
+<h2 id="collection-的继承体系">Collection 的继承体系</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -177,65 +177,65 @@
         <span class="o">|--</span><span class="n">TreeSet</span>  <span class="n">基于</span> <span class="n">TreeMap</span> <span class="n">的</span> <span class="n">NavigableSet</span> <span class="n">实现</span><span class="err">。</span><span class="n">使用元素的自然顺序对元素进行排序</span><span class="err">，</span><span class="n">或者根据创建</span> <span class="n">set</span> <span class="n">时提供的</span> <span class="n">Comparator</span> <span class="n">进行排序</span><span class="err">，</span><span class="n">具体取决于使用的构造方法</span><span class="err">。</span> <span class="n">元素唯一</span><span class="err">。</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="list和set约定">List和Set约定</h2>
-<p>集合约定了List是有序的，而Set是无序的，有没有序是根据存储顺序和取出顺序是否一致来约定。</p>
-<h1 id="collection子接口">Collection子接口</h1>
+</div><h2 id="list-和-set-约定">List 和 Set 约定</h2>
+<p>集合约定了 List 是有序的，而 Set 是无序的，有没有序是根据存储顺序和取出顺序是否一致来约定。</p>
+<h1 id="collection-子接口">Collection 子接口</h1>
 <h2 id="list">List</h2>
-<p>List是一个有序的队列，每一个元素都有它的索引，第一个元素的索引值是0。</p>
+<p>List 是一个有序的队列，每一个元素都有它的索引，第一个元素的索引值是 0。</p>
 <ul>
 <li>ArrayList
 <ul>
-<li>List 中最常用的就是ArrayList，它是一个动态数组，它可以实现动态扩容，每次创建原数组容量<strong>1.5倍</strong>的新数组，把原数组的元素拷贝到新数组。ArrayList允许所有元素包括null，同时ArrayList也不是线程安全的。</li>
+<li>List 中最常用的就是 ArrayList，它是一个动态数组，它可以实现动态扩容，每次创建原数组容量<strong>1.5 倍</strong>的新数组，把原数组的元素拷贝到新数组。ArrayList 允许所有元素包括 null，同时 ArrayList 也不是线程安全的。</li>
 </ul>
 </li>
 <li>LinkedList
 <ul>
-<li>LinkedList实现了List接口，允许元素为空，LinkedList提供了额外的get,remove,insert方法，这些操作可以使LinkedList被用作堆栈、队列或双向队列。LinkedList并不是线程安全的，如果多个线程同时访问LinkedList，则必须自己实现访问同步，或者另外一种解决方法是在创建List时构造一个同步的List。</li>
+<li>LinkedList 实现了 List 接口，允许元素为空，LinkedList 提供了额外的 get,remove,insert 方法，这些操作可以使 LinkedList 被用作堆栈、队列或双向队列。LinkedList 并不是线程安全的，如果多个线程同时访问 LinkedList，则必须自己实现访问同步，或者另外一种解决方法是在创建 List 时构造一个同步的 List。</li>
 </ul>
 </li>
 </ul>
 <h2 id="重要约定hashcode">重要约定：HashCode</h2>
 <ul>
-<li>HashCode 在java中是int类型。</li>
-<li>同⼀个对象必须始终返回相同的hashCode 。</li>
-<li>两个对象的equals返回true，必须返回相同的hashCode。</li>
-<li>两个对象不等，也可能返回相同的hashCode，int最大42亿，而对象是无限的。</li>
+<li>HashCode 在 java 中是 int 类型。</li>
+<li>同⼀个对象必须始终返回相同的 hashCode 。</li>
+<li>两个对象的 equals 返回 true，必须返回相同的 hashCode。</li>
+<li>两个对象不等，也可能返回相同的 hashCode，int 最大 42 亿，而对象是无限的。</li>
 </ul>
 <h2 id="set">Set</h2>
-<p>Set是一个不允许有重复元素的集合。
+<p>Set 是一个不允许有重复元素的集合。
 判断重复：<code>equals()</code><br>
-Set中还引入了Hash桶的概念，这是一个抽象的容器，不同的HashCode就像是一个个的桶，而Set每加入新的对象就会依次对比它们的HashCode，如果与Hash桶相匹配就丢入桶内。将一个个对象映射成HashCode的方法是 <code>HashCode</code>。</p>
+Set 中还引入了 Hash 桶的概念，这是一个抽象的容器，不同的 HashCode 就像是一个个的桶，而 Set 每加入新的对象就会依次对比它们的 HashCode，如果与 Hash 桶相匹配就丢入桶内。将一个个对象映射成 HashCode 的方法是 <code>HashCode</code>。</p>
 <ul>
 <li>HashSet
 <ul>
-<li>HashSet是最高效的Set实现，线程不安全。</li>
-<li>HashSet依赖于HashMap，底层是通过HashMap实现的，HashMap的Key就是一个HashSet，所以HashSet能实现的HashMap都能实现，HashSet的构造器中 <code>new</code> 了一个HashMap。</li>
-<li>HashMap在1.7之前使用的是数组+链表实现，在1.8+使用的数组+链表+红黑树实现。<strong>链表长度大于8则转为红黑树</strong></li>
+<li>HashSet 是最高效的 Set 实现，线程不安全。</li>
+<li>HashSet 依赖于 HashMap，底层是通过 HashMap 实现的，HashMap 的 Key 就是一个 HashSet，所以 HashSet 能实现的 HashMap 都能实现，HashSet 的构造器中 <code>new</code> 了一个 HashMap。</li>
+<li>HashMap 在 1.7 之前使用的是数组+链表实现，在 1.8+使用的数组+链表+红黑树实现。<strong>链表长度大于 8 则转为红黑树</strong></li>
 </ul>
 </li>
-<li>LinkedHashSet 继承了HashSet。实现了一个有序的HashSet。</li>
+<li>LinkedHashSet 继承了 HashSet。实现了一个有序的 HashSet。</li>
 <li>TreeSet
 <ul>
-<li>同样，TreeSet依赖于TreeMap，底层通过TreeMap来实现的。</li>
-<li>TreeSet不允许null值。</li>
-<li>TreeSet线程不安全。</li>
-<li>TreeSet实现了SortedSet接口，从而保证了添加的元素按照元素的自然顺序(递增或其他顺序)在集合中进行存储。</li>
+<li>同样，TreeSet 依赖于 TreeMap，底层通过 TreeMap 来实现的。</li>
+<li>TreeSet 不允许 null 值。</li>
+<li>TreeSet 线程不安全。</li>
+<li>TreeSet 实现了 SortedSet 接口，从而保证了添加的元素按照元素的自然顺序(递增或其他顺序)在集合中进行存储。</li>
 </ul>
 </li>
 </ul>
 <h2 id="queuefifo">Queue(FIFO)</h2>
 <p>队列数据结构，先进先出。<br></p>
 <ul>
-<li>Deque 双端队列，继承自Queue，代替了栈(Stack)。</li>
-<li>PriorityQueue 优先级队列，本质上是堆。是Queue的实现类AbstractQueue的子类，实现了Serializable接口。</li>
+<li>Deque 双端队列，继承自 Queue，代替了栈(Stack)。</li>
+<li>PriorityQueue 优先级队列，本质上是堆。是 Queue 的实现类 AbstractQueue 的子类，实现了 Serializable 接口。</li>
 </ul>
 <h2 id="vector">Vector</h2>
-<p>类似与ArrayList的动态数组，线程安全，访问较慢。</p>
+<p>类似与 ArrayList 的动态数组，线程安全，访问较慢。</p>
 <ul>
-<li>Stack 栈(LIFO)，继承自Vector，先进后出，被双端队列替代。</li>
+<li>Stack 栈(LIFO)，继承自 Vector，先进后出，被双端队列替代。</li>
 </ul>
-<h1 id="集合的另一个基本接口map">集合的另一个基本接口Map</h1>
-<p>在《java Core 卷一 第九版》一书中的569页，13.3节 集合框架 的倒数第16行原文：“集合有两个基本的接口：Collection和Map。可以使用下列方法向集合中插入元素……”<br>
+<h1 id="集合的另一个基本接口-map">集合的另一个基本接口 Map</h1>
+<p>在《java Core 卷一 第九版》一书中的 569 页，13.3 节 集合框架 的倒数第 16 行原文：“集合有两个基本的接口：Collection 和 Map。可以使用下列方法向集合中插入元素……”<br>
 Map 接口中键和值一一映射。可以通过键来获取值。</p>
 <ul>
 <li>方法：
@@ -253,12 +253,12 @@ Map 接口中键和值一一映射。可以通过键来获取值。</p>
 </li>
 <li>HashMap
 <ul>
-<li>HashMap是Map的实现类，是最高效的Map实现。</li>
-<li>HashMap的key和value都允许为null，HashMap遇到key为null的时候，调用putForNullKey方法进行处理，而对value没有处理。</li>
-<li>HashMap是动态的，它的扩容类似与ArrayList，区别是HashMap是申请一个当前容量<strong>2倍</strong>的桶数组，再将HashMap的key/value映射逐个添加进去。</li>
-<li>HashMap线程不安全。原因是HashMap在多线程扩容时可能会变成死循环。解决方案是使用 <strong>ConcurrentHashMap</strong>。
+<li>HashMap 是 Map 的实现类，是最高效的 Map 实现。</li>
+<li>HashMap 的 key 和 value 都允许为 null，HashMap 遇到 key 为 null 的时候，调用 putForNullKey 方法进行处理，而对 value 没有处理。</li>
+<li>HashMap 是动态的，它的扩容类似与 ArrayList，区别是 HashMap 是申请一个当前容量<strong>2 倍</strong>的桶数组，再将 HashMap 的 key/value 映射逐个添加进去。</li>
+<li>HashMap 线程不安全。原因是 HashMap 在多线程扩容时可能会变成死循环。解决方案是使用 <strong>ConcurrentHashMap</strong>。
 <ol>
-<li>put时导致多线程数据不一致。有线程A、B，假设HashCode相同，A找到了与之对应的Hash桶坐标准备插入数据，但是此时A的时间片用完了，A进入阻塞状态，此时B找到Hash桶成功插入数据，但是和之前A要插入数据的位置相同，而后A又被调度，就会把B的数据覆盖，最后导致数据不一致问题。</li>
+<li>put 时导致多线程数据不一致。有线程 A、B，假设 HashCode 相同，A 找到了与之对应的 Hash 桶坐标准备插入数据，但是此时 A 的时间片用完了，A 进入阻塞状态，此时 B 找到 Hash 桶成功插入数据，但是和之前 A 要插入数据的位置相同，而后 A 又被调度，就会把 B 的数据覆盖，最后导致数据不一致问题。</li>
 <li>死循环，<code>get() -&gt; resize()</code> 导致的循环链表。</li>
 </ol>
 </li>
@@ -266,22 +266,22 @@ Map 接口中键和值一一映射。可以通过键来获取值。</p>
 </li>
 <li>Hashtable
 <ul>
-<li>继承自Dictionary类。Dictionary 是任何可将键映射到相应值的类的抽象父类。</li>
-<li>Hashtable的key和value都不允许为null，Hashtable遇到key为null，直接返回NullPointerException。</li>
-<li>Hashtable线程安全，而HashMap则不是。Hashtable几乎所有的public的方法都是<strong>synchronized</strong>的，而有些方法也是在内部通过<strong>synchronized</strong>代码块来实现。所以多线程使用Hashtable。</li>
+<li>继承自 Dictionary 类。Dictionary 是任何可将键映射到相应值的类的抽象父类。</li>
+<li>Hashtable 的 key 和 value 都不允许为 null，Hashtable 遇到 key 为 null，直接返回 NullPointerException。</li>
+<li>Hashtable 线程安全，而 HashMap 则不是。Hashtable 几乎所有的 public 的方法都是<strong>synchronized</strong>的，而有些方法也是在内部通过<strong>synchronized</strong>代码块来实现。所以多线程使用 Hashtable。</li>
 </ul>
 </li>
 </ul>
-<h1 id="collections工具类">Collections工具类</h1>
-<h2 id="注意工具类一般都是在实现类的名字后面加一个s例如guava中的listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个s,例如Guava中的Lists/Sets/Maps。</h2>
+<h1 id="collections-工具类">Collections 工具类</h1>
+<h2 id="注意工具类一般都是在实现类的名字后面加一个-s例如-guava-中的-listssetsmaps">注意：工具类一般都是在实现类的名字后面加一个 s,例如 Guava 中的 Lists/Sets/Maps。</h2>
 <ul>
 <li><code>emptySet()</code>: 等返回⼀个⽅便的空集合。</li>
 <li><code>synchronizedCollection</code>: 将⼀个集合变成线程安全的。</li>
 <li><code>unmodifiableCollection</code>: 将⼀个集合变成不可变的(也可以
-使⽤Guava的Immutable)。</li>
+使⽤ Guava 的 Immutable)。</li>
 </ul>
 <h1 id="guava">Guava</h1>
-<h2 id="google-guava是java的一组开源通用库主要由google工程师开发">Google Guava是Java的一组开源通用库，主要由Google工程师开发。</h2>
+<h2 id="google-guava-是-java-的一组开源通用库主要由-google-工程师开发">Google Guava 是 Java 的一组开源通用库，主要由 Google 工程师开发。</h2>
 <ul>
 <li>不要重复发明轮⼦！尽量使⽤经过实战检验的类库</li>
 <li><a href="https://github.com/google/guava" target="_blank" rel="noopener noreffer">Guava Github Repo</a><br></li>
@@ -291,7 +291,7 @@ Map 接口中键和值一一映射。可以通过键来获取值。</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-07-23</span>
+                <span>更新于 2020-11-23</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -310,13 +310,13 @@ Map 接口中键和值一一映射。可以通过键来获取值。</p>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/git%E5%92%8Cgithub/" class="prev" rel="prev" title="Git和Github"><i class="fas fa-angle-left fa-fw"></i>Git和Github</a>
-            <a href="/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="next" rel="next" title="Java多线程">Java多线程<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/ajax/" class="prev" rel="prev" title="Ajax"><i class="fas fa-angle-left fa-fw"></i>Ajax</a>
+            <a href="/git%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%B7%B2%E7%BB%8Fpush%E7%9A%84commit%E7%9A%84message/" class="next" rel="next" title="Git中如何修改已经push的commit的message">Git中如何修改已经push的commit的message<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">作者</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
