@@ -23,7 +23,7 @@ $ git push -f
 
 1. 使用 `git log` 查看日志。
    如图，提交记录会根据时间倒序展示。
-   ![git log](git-log.png)
+   ![git log](/git-log.png)
 2. 使用`git rebase -i HEAD~2` ,这里 1 可以换成别的数字，意思是显示最近 2 个提交记录。
 
    ```

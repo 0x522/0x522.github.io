@@ -6,7 +6,7 @@ Spring 循环依赖
 **什么是循环依赖问题?**
 
 - 说白了就是死循环问题，A 对象创建依赖 B,B 对象创建依赖 A
-  ![](cycledependency.png)
+  ![](/cycledependency.png)
 
 ```java
 new A(new B(new A(new B(……)))) //有参
