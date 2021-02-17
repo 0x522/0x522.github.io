@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "\/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F\/"
-        },"genre": "posts","wordcount":  530 ,
+        },"genre": "posts","wordcount":  526 ,
         "url": "\/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F\/","datePublished": "2021-02-17T14:19:13+08:00","dateModified": "2021-02-17T14:19:13+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">计数排序</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-17">2021-02-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 530 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-17">2021-02-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 526 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -127,23 +127,23 @@
 它的核心思想是：<br>
 利用桶数组的下标映射待排序数组元素值，重复元素就把桶数组元素累加来记录个数。</p>
 <h3 id="countsort">countSort</h3>
-<p>**计数排序的核心是构造桶数组，用桶数组的下标映射待排序数组的元素。**<br>
+<p>计数排序的核心是构造桶数组，用桶数组的下标映射待排序数组的元素。<br>
 特别要注意的是：<strong>计数排序的待排序数组如果指定排序区间，将会比从 0 开始的排序数组复杂</strong><br>
 构造排序函数的步骤：<br></p>
 <ul>
 <li>构造结果数组 result</li>
 <li>构造桶数组 count</li>
 <li>遍历 arr 数组，把其中元素值当作桶数组的下标。<strong>为了使桶数组 count 做到最节省空间，则使用 arr[i]-start 对齐。</strong></li>
-<li>桶数组累加。
-<img
+<li>桶数组累加。</li>
+</ul>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="%e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f-1.png"
-        data-srcset="%e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f-1.png, %e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f-1.png 1.5x, %e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f-1.png 2x"
+        data-src="countsort.png"
+        data-srcset="countsort.png, countsort.png 1.5x, countsort.png 2x"
         data-sizes="auto"
-        alt="计数排序-1.png"
-        title="计数排序-1.png" /></li>
-</ul>
+        alt="countsort.png"
+        title="countsort.png" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
