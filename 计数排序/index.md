@@ -18,7 +18,7 @@
 - 遍历 arr 数组，把其中元素值当作桶数组的下标。**为了使桶数组 count 做到最节省空间，则使用 arr[i]-start 对齐。**
 - 桶数组累加。
 
-![](countsort.png)
+![](/countsort.png)
 
 ```java
 import java.util.Arrays;
